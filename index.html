@@ -68,21 +68,76 @@
     align-items: center;
   }
 
-  /* FILTER PANEL */
-  .filter-panel {
-    display: none;
-    padding: 12px 20px 14px;
-    border-bottom: 1px solid var(--border);
-    background: var(--bg);
-    flex-direction: column;
-    gap: 10px;
+  /* DROPDOWNS */
+  .dropdown {
+    position: relative;
   }
-  .filter-panel.open { display: flex; }
-  .filter-panel-row {
+  .dd-trigger {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 7px 14px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .dd-trigger:hover { border-color: var(--accent); color: var(--accent); }
+  .dd-trigger.open  { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,0.07); }
+  .dd-trigger svg   { transition: transform 0.2s; }
+  .dd-trigger.open svg { transform: rotate(180deg); }
+  .dd-trigger.has-filter { border-color: var(--accent); color: var(--accent); }
+  .dd-trigger.has-filter-red { border-color: var(--red); color: var(--red); }
+  .dd-trigger.has-filter-green { border-color: var(--green); color: var(--green); }
+
+  .dd-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    min-width: 200px;
+    z-index: 100;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    overflow: hidden;
+    animation: ddFade 0.12s ease;
+  }
+  .dd-menu.open { display: block; }
+  @keyframes ddFade {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .dd-item {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-wrap: wrap;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-family: 'Barlow', sans-serif;
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.1s;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .dd-item:last-child { border-bottom: none; }
+  .dd-item:hover { background: var(--surface2); }
+  .dd-item.selected { color: var(--accent); font-weight: 600; }
+  .dd-item.selected.dd-red { color: var(--red); }
+  .dd-item.selected.dd-green { color: var(--green); }
+  .dd-item.dd-active { color: var(--muted); }
+  .op-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
 
   .filter-label {
@@ -94,41 +149,6 @@
     margin-right: 4px;
     white-space: nowrap;
   }
-
-  .toggle-filters-btn {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    padding: 6px 14px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-weight: 600;
-    font-family: 'Barlow', sans-serif;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .toggle-filters-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .toggle-filters-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,0.08); }
-
-  .filter-btn {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 5px 12px;
-    border-radius: 3px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.15s;
-    font-family: 'Barlow', sans-serif;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .filter-btn.active { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 600; }
-  .filter-btn.active-red { background: var(--red); color: #fff; border-color: var(--red); font-weight: 600; }
-  .filter-btn.active-green { background: var(--green); color: #000; border-color: var(--green); font-weight: 600; }
 
   .search-wrap {
     position: relative;
@@ -419,30 +439,6 @@
 
   .modal-chart-wrap { height: 180px; position: relative; }
 
-  /* OP BUTTONS */
-  .op-btn {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    padding: 4px 12px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-weight: 600;
-    font-family: 'Barlow', sans-serif;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .op-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .op-btn.active { color: #000; font-weight: 700; }
-  .op-btn[id="op-all"].active { background: var(--accent); border-color: var(--accent); color: #000; }
-  .op-btn[id="op-LATA"].active         { background: #ff6b35; border-color: #ff6b35; color: #fff; }
-  .op-btn[id="op-SIDER"].active        { background: #7c6af7; border-color: #7c6af7; color: #fff; }
-  .op-btn[id="op-GRANELEIRO"].active   { background: #ffd32a; border-color: #ffd32a; color: #000; }
-  .op-btn[id="op-CAÇAMBA"].active      { background: #00e676; border-color: #00e676; color: #000; }
-  .op-btn[id="op-BAÚ_ALUMINIO"].active { background: #00b8d4; border-color: #00b8d4; color: #000; }
 
   .op-tag {
     display: inline-block;
@@ -613,38 +609,48 @@
   </div>
 
   <div class="table-card">
-    <!-- Table header with search + filter toggle -->
     <div class="table-header">
       <div class="table-title">Motoristas</div>
       <div class="count-badge" id="countBadge">0 motoristas</div>
       <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
-        <button class="toggle-filters-btn" id="toggleFiltersBtn" onclick="toggleFilters()">⚙ Filtros</button>
+
+        <!-- Status dropdown -->
+        <div class="dropdown" id="ddStatus">
+          <button class="dd-trigger" id="ddStatusBtn" onclick="toggleDropdown('ddStatus')">
+            <span id="ddStatusLabel">Status</span>
+            <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="dd-menu" id="ddStatusMenu">
+            <div class="dd-item dd-active" data-val="all"      onclick="setFilter('all')">Todos</div>
+            <div class="dd-item dd-green"  data-val="recebe"   onclick="setFilter('recebe')">💰 Recebem bônus</div>
+            <div class="dd-item dd-green"  data-val="best"     onclick="setFilter('best')">🟢 Melhores notas</div>
+            <div class="dd-item dd-green"  data-val="improved" onclick="setFilter('improved')">📈 Melhoraram</div>
+            <div class="dd-item dd-red"    data-val="never"    onclick="setFilter('never')">❌ Nunca receberam</div>
+            <div class="dd-item dd-red"    data-val="worst"    onclick="setFilter('worst')">🔴 Piores notas</div>
+            <div class="dd-item dd-red"    data-val="declined" onclick="setFilter('declined')">📉 Pioraram</div>
+          </div>
+        </div>
+
+        <!-- Operação dropdown -->
+        <div class="dropdown" id="ddOp">
+          <button class="dd-trigger" id="ddOpBtn" onclick="toggleDropdown('ddOp')">
+            <span id="ddOpLabel">Operação</span>
+            <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="dd-menu" id="ddOpMenu">
+            <div class="dd-item dd-active" data-val="all"         onclick="setOp('all')">Todas</div>
+            <div class="dd-item" data-val="LATA"        onclick="setOp('LATA')"><span class="op-dot" style="background:#ff6b35"></span>LATA</div>
+            <div class="dd-item" data-val="SIDER"       onclick="setOp('SIDER')"><span class="op-dot" style="background:#7c6af7"></span>SIDER</div>
+            <div class="dd-item" data-val="GRANELEIRO"  onclick="setOp('GRANELEIRO')"><span class="op-dot" style="background:#ffd32a"></span>GRANELEIRO</div>
+            <div class="dd-item" data-val="CAÇAMBA"     onclick="setOp('CAÇAMBA')"><span class="op-dot" style="background:#00e676"></span>CAÇAMBA</div>
+            <div class="dd-item" data-val="BAÚ ALUMINIO" onclick="setOp('BAÚ ALUMINIO')"><span class="op-dot" style="background:#00b8d4"></span>BAÚ ALUMÍNIO</div>
+          </div>
+        </div>
+
         <div class="search-wrap" style="margin-left:0">
           <span class="search-icon">🔍</span>
           <input type="text" id="searchInput" placeholder="Pesquisar motorista..." oninput="onSearch()" />
         </div>
-      </div>
-    </div>
-
-    <!-- Collapsible filter panel -->
-    <div class="filter-panel" id="filterPanel">
-      <div class="filter-panel-row">
-        <span class="filter-label">Status:</span>
-        <button class="filter-btn active" id="btn-all" onclick="setFilter('all')">Todos</button>
-        <button class="filter-btn" id="btn-never" onclick="setFilter('never')">❌ Nunca receberam</button>
-        <button class="filter-btn" id="btn-worst" onclick="setFilter('worst')">🔴 Piores notas</button>
-        <button class="filter-btn" id="btn-best" onclick="setFilter('best')">🟢 Melhores notas</button>
-        <button class="filter-btn" id="btn-declined" onclick="setFilter('declined')">📉 Pioraram</button>
-        <button class="filter-btn" id="btn-improved" onclick="setFilter('improved')">📈 Melhoraram</button>
-      </div>
-      <div class="filter-panel-row" style="border-top:1px solid var(--border);padding-top:10px;margin-top:2px">
-        <span class="filter-label">Operação:</span>
-        <button class="op-btn active" id="op-all" onclick="setOp('all')">Todas</button>
-        <button class="op-btn" id="op-LATA" onclick="setOp('LATA')">🟠 LATA</button>
-        <button class="op-btn" id="op-SIDER" onclick="setOp('SIDER')">🟣 SIDER</button>
-        <button class="op-btn" id="op-GRANELEIRO" onclick="setOp('GRANELEIRO')">🟡 GRANELEIRO</button>
-        <button class="op-btn" id="op-CAÇAMBA" onclick="setOp('CAÇAMBA')">🟢 CAÇAMBA</button>
-        <button class="op-btn" id="op-BAÚ_ALUMINIO" onclick="setOp('BAÚ ALUMINIO')">🔵 BAÚ ALUMÍNIO</button>
       </div>
     </div>
 
@@ -755,23 +761,50 @@ function applyFilters(drivers) {
 
 function setFilter(f) {
   currentFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => { b.className = 'filter-btn'; });
-  const map = { all: 'btn-all', worst: 'btn-worst', best: 'btn-best', declined: 'btn-declined', improved: 'btn-improved', recebe: 'btn-recebe', never: 'btn-never' };
-  const btn = document.getElementById(map[f]);
-  if (btn) {
-    if (f === 'declined' || f === 'worst' || f === 'never') btn.classList.add('active-red');
-    else if (f === 'best' || f === 'improved' || f === 'recebe') btn.classList.add('active-green');
-    else btn.classList.add('active');
+  // Update item selection
+  document.querySelectorAll('#ddStatusMenu .dd-item').forEach(el => el.classList.remove('selected'));
+  const sel = document.querySelector(`#ddStatusMenu .dd-item[data-val="${f}"]`);
+  if (sel) sel.classList.add('selected');
+  // Update trigger label + color
+  const labels = { all:'Status', recebe:'💰 Recebem', never:'❌ Nunca receberam', worst:'🔴 Piores notas', best:'🟢 Melhores', declined:'📉 Pioraram', improved:'📈 Melhoraram' };
+  const trigger = document.getElementById('ddStatusBtn');
+  document.getElementById('ddStatusLabel').textContent = labels[f] || 'Status';
+  trigger.className = 'dd-trigger';
+  if (f !== 'all') {
+    if (f === 'declined' || f === 'worst' || f === 'never') trigger.classList.add('has-filter-red');
+    else trigger.classList.add('has-filter-green');
   }
+  closeAllDropdowns();
   renderTable();
 }
 
 function setOp(op) {
   currentOp = op;
-  document.querySelectorAll('.op-btn').forEach(b => { b.className = 'op-btn'; });
-  const btn = document.getElementById('op-' + op.replace(/\s/g,'_'));
-  if (btn) btn.classList.add('active');
+  document.querySelectorAll('#ddOpMenu .dd-item').forEach(el => el.classList.remove('selected'));
+  const sel = document.querySelector(`#ddOpMenu .dd-item[data-val="${op}"]`);
+  if (sel) sel.classList.add('selected');
+  const trigger = document.getElementById('ddOpBtn');
+  document.getElementById('ddOpLabel').textContent = op === 'all' ? 'Operação' : op;
+  trigger.className = 'dd-trigger';
+  if (op !== 'all') trigger.classList.add('has-filter');
+  closeAllDropdowns();
   renderTable();
+}
+
+function toggleDropdown(id) {
+  const menu = document.getElementById(id + 'Menu');
+  const btn  = document.getElementById(id + 'Btn');
+  const isOpen = menu.classList.contains('open');
+  closeAllDropdowns();
+  if (!isOpen) {
+    menu.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+
+function closeAllDropdowns() {
+  document.querySelectorAll('.dd-menu').forEach(m => m.classList.remove('open'));
+  document.querySelectorAll('.dd-trigger').forEach(b => b.classList.remove('open'));
 }
 
 function onSearch() {
@@ -779,13 +812,10 @@ function onSearch() {
   renderTable();
 }
 
-function toggleFilters() {
-  const panel = document.getElementById('filterPanel');
-  const btn   = document.getElementById('toggleFiltersBtn');
-  const open  = panel.classList.toggle('open');
-  btn.classList.toggle('active', open);
-  btn.textContent = open ? '✕ Fechar filtros' : '⚙ Filtros';
-}
+// Close dropdowns on outside click
+document.addEventListener('click', e => {
+  if (!e.target.closest('.dropdown')) closeAllDropdowns();
+});
 
 // ─── SORT ────────────────────────────────────────────────────────────────────
 function sortBy(key) {
