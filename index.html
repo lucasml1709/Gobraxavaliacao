@@ -20,6 +20,26 @@
     --yellow: #ffd32a;
     --text: #e8edf5;
     --muted: #6b7a99;
+    --header-bg1: #0d1525;
+    --header-bg2: #131e30;
+    --shadow: rgba(0,0,0,0.4);
+  }
+
+  :root[data-theme="light"] {
+    --bg: #f0f2f7;
+    --surface: #ffffff;
+    --surface2: #e8ebf2;
+    --border: #d0d6e4;
+    --accent: #0099bb;
+    --accent2: #e05a20;
+    --green: #00a854;
+    --red: #d63031;
+    --yellow: #c8960a;
+    --text: #1a2035;
+    --muted: #7a8aaa;
+    --header-bg1: #1a2a4a;
+    --header-bg2: #1e3158;
+    --shadow: rgba(0,0,0,0.15);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,7 +53,7 @@
 
   /* HEADER */
   header {
-    background: linear-gradient(135deg, #0d1525 0%, #131e30 100%);
+    background: linear-gradient(135deg, var(--header-bg1) 0%, var(--header-bg2) 100%);
     border-bottom: 1px solid var(--border);
     padding: 18px 32px;
     display: flex;
@@ -107,7 +127,7 @@
     border-radius: 6px;
     min-width: 200px;
     z-index: 100;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 32px var(--shadow);
     overflow: hidden;
     animation: ddFade 0.12s ease;
   }
@@ -570,6 +590,26 @@
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
+  /* THEME TOGGLE */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 7px 14px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
   @media (max-width: 1200px) {
     .kpi-grid { grid-template-columns: repeat(3, 1fr); }
     .charts-row { grid-template-columns: 1fr; }
@@ -591,6 +631,10 @@
   <div class="header-sub">Dashboard de Avaliação de Motoristas · 2025</div>
   <div class="header-right">
     <span style="font-size:12px;color:var(--muted)" id="lastUpdate">Jan · Fev · Mar</span>
+    <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Alternar tema">
+      <span id="themeIcon">☀️</span>
+      <span id="themeLabel">Tema Claro</span>
+    </button>
   </div>
 </header>
 
@@ -697,6 +741,47 @@
 
 <script src="driverData.js"></script>
 <script>
+// ─── THEME ───────────────────────────────────────────────────────────────────
+function getTheme() {
+  return document.documentElement.getAttribute('data-theme') || 'dark';
+}
+
+function toggleTheme() {
+  const current = getTheme();
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('gobrax-theme', next);
+  updateThemeBtn(next);
+  // Re-render charts with new colors
+  renderCharts();
+}
+
+function updateThemeBtn(theme) {
+  const icon  = document.getElementById('themeIcon');
+  const label = document.getElementById('themeLabel');
+  if (theme === 'light') {
+    icon.textContent  = '🌙';
+    label.textContent = 'Tema Escuro';
+  } else {
+    icon.textContent  = '☀️';
+    label.textContent = 'Tema Claro';
+  }
+}
+
+// Apply saved theme on load
+(function() {
+  const saved = localStorage.getItem('gobrax-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+  updateThemeBtn(saved);
+})();
+
+function chartTickColor() {
+  return getTheme() === 'light' ? '#7a8aaa' : '#6b7a99';
+}
+function chartGridColor() {
+  return getTheme() === 'light' ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)';
+}
+
 // ─── PROCESS DATA ────────────────────────────────────────────────────────────
 const MONTHS = ['Janeiro', 'Fevereiro', 'Março'];
 const MONTH_SHORT = ['Jan', 'Fev', 'Mar'];
@@ -900,7 +985,7 @@ function renderCharts() {
   const chartDefaults = {
     responsive: true,
     maintainAspectRatio: false,
-    plugins: { legend: { labels: { color: '#6b7a99', font: { family: 'Barlow', size: 12 } } } }
+    plugins: { legend: { labels: { color: chartTickColor(), font: { family: 'Barlow', size: 12 } } } }
   };
 
   // Distribution histogram — 1 motorista = 1 contagem pela média
@@ -932,8 +1017,8 @@ function renderCharts() {
     options: {
       ...chartDefaults,
       scales: {
-        x: { ticks: { color: '#6b7a99', font: { family: 'Barlow' } }, grid: { color: 'rgba(255,255,255,0.04)' } },
-        y: { ticks: { color: '#6b7a99', font: { family: 'Barlow' } }, grid: { color: 'rgba(255,255,255,0.06)' } }
+        x: { ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } },
+        y: { ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } }
       },
       plugins: { ...chartDefaults.plugins, legend: { display: false } }
     }
@@ -1085,8 +1170,8 @@ function openModal(name) {
       responsive: true,
       maintainAspectRatio: false,
       scales: {
-        x: { ticks: { color: '#6b7a99', font: { family: 'Barlow', size: 13 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
-        y: { min: 0, max: 100, ticks: { color: '#6b7a99', font: { family: 'Barlow' } }, grid: { color: 'rgba(255,255,255,0.06)' } }
+        x: { ticks: { color: chartTickColor(), font: { family: 'Barlow', size: 13 } }, grid: { color: chartGridColor() } },
+        y: { min: 0, max: 100, ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } }
       },
       plugins: { legend: { display: false } }
     }
