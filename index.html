@@ -477,6 +477,110 @@
   .op-CAÇAMBA      { background: rgba(0,230,118,0.15);   color: #00e676; border: 1px solid rgba(0,230,118,0.3); }
   .op-BAÚ_ALUMINIO { background: rgba(0,184,212,0.15);   color: #00b8d4; border: 1px solid rgba(0,184,212,0.3); }
 
+  /* WORST 20 SECTION */
+  .worst-section {
+    margin-bottom: 24px;
+  }
+
+  .worst-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .worst-header {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(90deg, rgba(255,71,87,0.08) 0%, transparent 60%);
+  }
+
+  .worst-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.3px;
+  }
+
+  .worst-subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+
+  .worst-empty {
+    padding: 32px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .worst-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    transition: background 0.1s;
+    cursor: pointer;
+    min-width: 0;
+  }
+  .worst-item:nth-child(4n) { border-right: none; }
+  .worst-item:nth-last-child(-n+4) { border-bottom: none; }
+  .worst-item:hover { background: var(--surface2); }
+
+  .worst-rank {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--red);
+    opacity: 0.6;
+    min-width: 20px;
+    flex-shrink: 0;
+  }
+
+  .worst-info { flex: 1; min-width: 0; }
+
+  .worst-name {
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1px;
+  }
+
+  .worst-km {
+    font-size: 10px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .worst-score-pill {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    min-width: 36px;
+    text-align: center;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255,71,87,0.12);
+    color: var(--red);
+    flex-shrink: 0;
+  }
+
+  .worst-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
   /* TOP 3 */
   .top3-item {
     display: flex;
@@ -674,6 +778,52 @@
     <div class="chart-card">
       <div class="chart-title">🏆 Top 3 Motoristas</div>
       <div id="top3Container"></div>
+    </div>
+  </div>
+
+  <!-- WORST 20 SECTION -->
+  <div class="worst-section">
+    <div class="worst-card">
+      <div class="worst-header">
+        <div>
+          <span class="worst-title">🚨 20 Piores Motoristas</span>
+          <span class="worst-subtitle" id="worstSubtitle">· nota &lt; 80 · mínimo 1.500 km · todos os meses · todas as operações</span>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;margin-left:auto">
+
+          <!-- Mês dropdown -->
+          <div class="dropdown" id="ddWorstMonth">
+            <button class="dd-trigger" id="ddWorstMonthBtn" onclick="toggleDropdown('ddWorstMonth')">
+              <span id="ddWorstMonthLabel">Mês</span>
+              <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="dd-menu" id="ddWorstMonthMenu">
+              <div class="dd-item dd-active selected" data-val="all" onclick="setWorstMonth('all')">Todos os meses</div>
+              <div class="dd-item" data-val="0" onclick="setWorstMonth(0)">Janeiro</div>
+              <div class="dd-item" data-val="1" onclick="setWorstMonth(1)">Fevereiro</div>
+              <div class="dd-item" data-val="2" onclick="setWorstMonth(2)">Março</div>
+            </div>
+          </div>
+
+          <!-- Operação dropdown -->
+          <div class="dropdown" id="ddWorstOp">
+            <button class="dd-trigger" id="ddWorstOpBtn" onclick="toggleDropdown('ddWorstOp')">
+              <span id="ddWorstOpLabel">Operação</span>
+              <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="dd-menu" id="ddWorstOpMenu">
+              <div class="dd-item dd-active selected" data-val="all" onclick="setWorstOp('all')">Todas</div>
+              <div class="dd-item" data-val="LATA" onclick="setWorstOp('LATA')"><span class="op-dot" style="background:#ff6b35"></span>LATA</div>
+              <div class="dd-item" data-val="SIDER" onclick="setWorstOp('SIDER')"><span class="op-dot" style="background:#7c6af7"></span>SIDER</div>
+              <div class="dd-item" data-val="GRANELEIRO" onclick="setWorstOp('GRANELEIRO')"><span class="op-dot" style="background:#ffd32a"></span>GRANELEIRO</div>
+              <div class="dd-item" data-val="CAÇAMBA" onclick="setWorstOp('CAÇAMBA')"><span class="op-dot" style="background:#00e676"></span>CAÇAMBA</div>
+              <div class="dd-item" data-val="BAÚ ALUMINIO" onclick="setWorstOp('BAÚ ALUMINIO')"><span class="op-dot" style="background:#00b8d4"></span>BAÚ ALUMÍNIO</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div id="worstGrid"></div>
     </div>
   </div>
 
@@ -1212,9 +1362,96 @@ function closeModalBtn() {
   document.getElementById('modalOverlay').classList.remove('open');
 }
 
+// ─── WORST 20 ────────────────────────────────────────────────────────────────
+let currentWorstMonth = 'all';
+let currentWorstOp = 'all';
+
+function setWorstMonth(month) {
+  currentWorstMonth = month;
+  // Update selection in menu
+  document.querySelectorAll('#ddWorstMonthMenu .dd-item').forEach(el => el.classList.remove('selected'));
+  const val = month === 'all' ? 'all' : String(month);
+  const sel = document.querySelector(`#ddWorstMonthMenu .dd-item[data-val="${val}"]`);
+  if (sel) sel.classList.add('selected');
+  // Update trigger label
+  const labels = { all: 'Mês', 0: 'Janeiro', 1: 'Fevereiro', 2: 'Março' };
+  document.getElementById('ddWorstMonthLabel').textContent = labels[month] ?? 'Mês';
+  const btn = document.getElementById('ddWorstMonthBtn');
+  btn.className = 'dd-trigger' + (month !== 'all' ? ' has-filter' : '');
+  closeAllDropdowns();
+  renderWorst20();
+}
+
+function setWorstOp(op) {
+  currentWorstOp = op;
+  document.querySelectorAll('#ddWorstOpMenu .dd-item').forEach(el => el.classList.remove('selected'));
+  const sel = document.querySelector(`#ddWorstOpMenu .dd-item[data-val="${op}"]`);
+  if (sel) sel.classList.add('selected');
+  document.getElementById('ddWorstOpLabel').textContent = op === 'all' ? 'Operação' : op;
+  const btn = document.getElementById('ddWorstOpBtn');
+  btn.className = 'dd-trigger' + (op !== 'all' ? ' has-filter' : '');
+  closeAllDropdowns();
+  renderWorst20();
+}
+
+function renderWorst20() {
+  const grid = document.getElementById('worstGrid');
+  let candidates;
+  const monthIdx = currentWorstMonth;
+
+  if (monthIdx === 'all') {
+    candidates = ALL_DRIVERS
+      .filter(d => {
+        const opOk = currentWorstOp === 'all' ? true : d.ops.some(op => op && op.includes(currentWorstOp));
+        return d.avg !== null && d.avg < 80 && d.kmTotal > 1500 && opOk;
+      })
+      .sort((a, b) => a.avg - b.avg)
+      .slice(0, 20)
+      .map(d => ({ name: d.name, score: d.avg, km: d.kmTotal, driver: d }));
+  } else {
+    const mi = monthIdx;
+    candidates = ALL_DRIVERS
+      .filter(d => {
+        const s = d.scores[mi];
+        const km = d.kms[mi];
+        const op = d.ops[mi];
+        const opOk = currentWorstOp === 'all' ? true : (op && op.includes(currentWorstOp));
+        return s !== null && s < 80 && km > 1500 && opOk;
+      })
+      .sort((a, b) => a.scores[mi] - b.scores[mi])
+      .slice(0, 20)
+      .map(d => ({ name: d.name, score: d.scores[mi], km: d.kms[mi], driver: d }));
+  }
+
+  // Update subtitle
+  const monthLabel = monthIdx === 'all' ? 'todos os meses' : ['Janeiro','Fevereiro','Março'][monthIdx];
+  const opLabel = currentWorstOp === 'all' ? 'todas as operações' : currentWorstOp;
+  document.getElementById('worstSubtitle').textContent = `· Nota inferior a 80 e mínimo 1.500 km rodados· ${monthLabel} · ${opLabel}`;
+
+  if (!candidates.length) {
+    grid.innerHTML = `<div class="worst-empty">🎉 Nenhum motorista com nota &lt; 80 e mais de 1.500 km neste filtro.</div>`;
+    return;
+  }
+
+  grid.innerHTML = `<div class="worst-grid">` +
+    candidates.map((c, i) => {
+      const kmLabel = c.km ? c.km.toLocaleString('pt-BR', {maximumFractionDigits: 0}) + ' km' : '—';
+      return `<div class="worst-item" onclick="openModal('${c.name.replace(/'/g,"\\'")}')">
+        <div class="worst-rank">${i + 1}°</div>
+        <div class="worst-info">
+          <div class="worst-name" title="${c.name}">${c.name}</div>
+          <div class="worst-km">${kmLabel}</div>
+        </div>
+        <div class="worst-score-pill">${c.score}</div>
+      </div>`;
+    }).join('') +
+  `</div>`;
+}
+
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 renderKPIs();
 renderCharts();
+renderWorst20();
 renderTable();
 </script>
 </body>
