@@ -1124,7 +1124,7 @@ function scoreClass(s) {
 function renderKPIs() {
   const totalDrivers = ALL_DRIVERS.length;
   const avgAll = Math.round(ALL_DRIVERS.reduce((a,d) => a + d.avg, 0) / totalDrivers);
-  const best = ALL_DRIVERS.reduce((a,d) => d.avg > a.avg ? d : a);
+const best = [...ALL_DRIVERS].sort((a,b) => b.avg - a.avg || b.kmTotal - a.kmTotal)[0];
   const declined = ALL_DRIVERS.filter(d => d.declined).length;
   const recebem = ALL_DRIVERS.filter(d => d.avg > 80).length;
   const nuncaRecebeu = ALL_DRIVERS.filter(d => d.scores.every(s => s === null || s <= 80)).length;
