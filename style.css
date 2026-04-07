@@ -530,7 +530,7 @@ tbody td.driver-name {
 
 .worst-rank {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--red);
   opacity: 0.6;
