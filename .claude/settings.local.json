@@ -8,7 +8,9 @@
       "Bash(node restore.js)",
       "Bash(node:*)",
       "Bash(git diff:*)",
-      "Bash(C:\\\\Users\\\\01008017\\\\AppData\\\\Local\\\\Programs\\\\Git\\\\bin\\\\sh.exe -c \"git show HEAD:index.html\")"
+      "Bash(C:\\\\Users\\\\01008017\\\\AppData\\\\Local\\\\Programs\\\\Git\\\\bin\\\\sh.exe -c \"git show HEAD:index.html\")",
+      "Bash(cmd /c \"dir &quot;C:\\\\Users\\\\01008017\\\\Desktop\\\\NOVO\\\\Nova pasta\\\\Gobraxavaliacao&quot; /s /b\")",
+      "Bash(winget install:*)"
     ]
   }
 }
