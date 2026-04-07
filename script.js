@@ -75,12 +75,65 @@ let sortKey = 'avg';
 let sortDir = -1;
 let chartDist = null, modalChartRef = null;
 
+// --- GLOBAL MONTH FILTER -------------------------------------------------------------
+let globalMonth = 'all'; // 'all', 0, 1, 2
+
+function setGlobalMonth(month) {
+  globalMonth = month;
+  // Reset bin filter whenever month changes
+  activeBinFilter = null;
+  document.querySelectorAll('.bin-filter-tag').forEach(el => el.remove());
+  document.querySelectorAll('.month-btn').forEach(b => {
+    b.classList.toggle('active', String(b.dataset.month) === String(month));
+  });
+  // Update subtitle labels
+  const monthLabel = month === 'all' ? 'todos os meses' : MONTHS[month];
+  document.getElementById('chartDistTitle').textContent =
+    month === 'all' ? 'Distribuição de Notas — Todos os Meses' : `Distribuição de Notas — ${MONTHS[month]}`;
+
+  // Re-render everything
+  renderKPIs();
+  renderCharts();
+  renderWorst20();
+  renderTable();
+}
+
+// Helper: get score for current global month (null if no data)
+function monthScore(driver) {
+  if (globalMonth === 'all') return driver.avg;
+  return driver.scores[globalMonth];
+}
+
+// Helper: get km for current global month
+function monthKm(driver) {
+  if (globalMonth === 'all') return driver.kmTotal;
+  return driver.kms[globalMonth] || 0;
+}
+
+// Helper: get op for current global month
+function monthOp(driver) {
+  if (globalMonth === 'all') return driver.ops.find(o => o) || null;
+  return driver.ops[globalMonth] || null;
+}
+
 // --- FILTERS -------------------------------------------------------------------------
 function applyFilters(drivers) {
   let filtered = [...drivers];
 
+  // Filter by current month: driver must have data for that month
+  if (globalMonth !== 'all') {
+    filtered = filtered.filter(d => d.scores[globalMonth] !== null);
+  }
+
   if (currentOp !== 'all') {
-    filtered = filtered.filter(d => d.ops.some(op => op && op.includes(currentOp)));
+    if (globalMonth === 'all') {
+      filtered = filtered.filter(d => d.ops.some(op => op && op.includes(currentOp)));
+    } else {
+      filtered = filtered.filter(d => {
+        const op = d.ops[globalMonth];
+        return op && op.includes(currentOp);
+      });
+    }
   }
 
   if (searchQuery) {
@@ -91,18 +144,46 @@ function applyFilters(drivers) {
     );
   }
 
-  if (currentFilter === 'worst') filtered.sort((a,b) => a.avg - b.avg).splice(50);
-  else if (currentFilter === 'best') filtered.sort((a,b) => b.avg - a.avg).splice(50);
-  else if (currentFilter === 'declined') filtered = filtered.filter(d => d.declined);
-  else if (currentFilter === 'improved') filtered = filtered.filter(d => d.improved);
-  else if (currentFilter === 'recebe') filtered = filtered.filter(d => d.avg > 80);
-  else if (currentFilter === 'never') filtered = filtered.filter(d => d.scores.every(s => s === null || s <= 80));
+  // Bin filter from chart click
+  if (activeBinFilter) {
+    filtered = filtered.filter(d => {
+      const s = monthScore(d);
+      return s !== null && s >= activeBinFilter.low && s <= activeBinFilter.high;
+    });
+  }
+
+  if (currentFilter === 'worst') filtered.sort((a,b) => monthScore(a) - monthScore(b)).splice(50);
+  else if (currentFilter === 'best') filtered.sort((a,b) => monthScore(b) - monthScore(a)).splice(50);
+  else if (currentFilter === 'declined') {
+    if (globalMonth === 'all') filtered = filtered.filter(d => d.declined);
+    else if (globalMonth > 0) {
+      const mi = globalMonth;
+      filtered = filtered.filter(d => d.scores[mi] !== null && d.scores[mi-1] !== null && d.scores[mi] < d.scores[mi-1]);
+    }
+  }
+  else if (currentFilter === 'improved') {
+    if (globalMonth === 'all') filtered = filtered.filter(d => d.improved);
+    else if (globalMonth > 0) {
+      const mi = globalMonth;
+      filtered = filtered.filter(d => d.scores[mi] !== null && d.scores[mi-1] !== null && d.scores[mi] > d.scores[mi-1]);
+    }
+  }
+  else if (currentFilter === 'recebe') filtered = filtered.filter(d => monthScore(d) > 80);
+  else if (currentFilter === 'never') {
+    if (globalMonth === 'all')
+      filtered = filtered.filter(d => d.scores.every(s => s === null || s <= 80));
+    else
+      filtered = filtered.filter(d => { const s = d.scores[globalMonth]; return s !== null && s <= 80; });
+  }
 
   return filtered;
 }
 
 function setFilter(f) {
   currentFilter = f;
+  // Clear bin filter when changing status filter
+  activeBinFilter = null;
+  document.querySelectorAll('.bin-filter-tag').forEach(el => el.remove());
   // Update item selection
   document.querySelectorAll('#ddStatusMenu .dd-item').forEach(el => el.classList.remove('selected'));
   const sel = document.querySelector(`#ddStatusMenu .dd-item[data-val="${f}"]`);
@@ -201,39 +282,70 @@ function scoreClass(s) {
 
 // --- KPI CARDS -----------------------------------------------------------------------
 function renderKPIs() {
-  const totalDrivers = ALL_DRIVERS.length;
-  const avgAll = Math.round(ALL_DRIVERS.reduce((a,d) => a + d.avg, 0) / totalDrivers);
-const best = [...ALL_DRIVERS].sort((a,b) => b.avg - a.avg || b.kmTotal - a.kmTotal)[0];
-  const declined = ALL_DRIVERS.filter(d => d.declined).length;
-  const improved = ALL_DRIVERS.filter(d => d.improved).length;
-  const recebem = ALL_DRIVERS.filter(d => d.avg > 80).length;
-  const nuncaRecebeu = ALL_DRIVERS.filter(d => d.scores.every(s => s === null || s <= 80)).length;
+  const monthDrivers = ALL_DRIVERS.map(d => {
+    const s = monthScore(d);
+    const km = monthKm(d);
+    const op = monthOp(d);
+    return { ...d, _monthScore: s, _monthKm: km, _monthOp: op };
+  }).filter(d => d._monthScore !== null);
+
+  // For "improved/declined" we need two-month comparison
+  let declinedCount = 0, improvedCount = 0;
+  if (globalMonth === 'all') {
+    // Original trend: Jan vs Mar
+    declinedCount = ALL_DRIVERS.filter(d => d.declined).length;
+    improvedCount = ALL_DRIVERS.filter(d => d.improved).length;
+  } else {
+    // For specific month, show improved as "nota > avg" vs prior month
+    const mi = globalMonth;
+    if (mi > 0) {
+      ALL_DRIVERS.forEach(d => {
+        const prev = d.scores[mi - 1];
+        const curr = d.scores[mi];
+        if (prev !== null && curr !== null) {
+          if (curr < prev) declinedCount++;
+          if (curr > prev) improvedCount++;
+        }
+      });
+    } else {
+      // January - no trend available
+    }
+  }
+
+  const totalDrivers = monthDrivers.length;
+  const avgAll = totalDrivers ? Math.round(monthDrivers.reduce((a, d) => a + d._monthScore, 0) / totalDrivers) : 0;
+  const best = [...monthDrivers].sort((a, b) => b._monthScore - a._monthScore || b._monthKm - a._monthKm)[0];
+  const recebem = monthDrivers.filter(d => d._monthScore > 80).length;
+  const nuncaRecebeu = monthDrivers.filter(d => d._monthScore <= 80).length;
+
+  const subSuffix = globalMonth === 'all' ? 'Vínculos ativos (nome + OP)' : MONTHS[globalMonth];
+  const trendSuffix = globalMonth === 'all' ? 'Evolução entre Jan e Mar' : globalMonth > 0 ? `vs ${(MONTHS[globalMonth - 1]).slice(0, 3)}` : '—';
 
   document.getElementById('kpiGrid').innerHTML = `
     <div class="kpi-card accent">
       <div class="kpi-label">Total Motoristas</div>
       <div class="kpi-value">${totalDrivers}</div>
-      <div class="kpi-sub">Vínculos ativos (nome + OP)</div>
+      <div class="kpi-sub">${subSuffix}</div>
     </div>
     <div class="kpi-card green">
       <div class="kpi-label">Recebem Bônus</div>
       <div class="kpi-value">${recebem}</div>
-      <div class="kpi-sub">Nota média acima de 80</div>
+      <div class="kpi-sub">Nota acima de 80</div>
     </div>
     <div class="kpi-card green">
       <div class="kpi-label">Melhor Motorista</div>
-      <div class="kpi-value">${best.avg}</div>
-      <div class="kpi-sub" style="max-width:140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${best.name}">${best.name}</div>
+      <div class="kpi-value">${best ? best._monthScore : '—'}</div>
+      <div class="kpi-sub" style="max-width:140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${best ? best.name : ''}">${best ? best.name : '—'}</div>
     </div>
     <div class="kpi-card green">
       <div class="kpi-label">Melhoraram</div>
-      <div class="kpi-value">${improved}</div>
-      <div class="kpi-sub">Evolução entre Jan e Mar</div>
+      <div class="kpi-value">${improvedCount}</div>
+      <div class="kpi-sub">${trendSuffix}</div>
     </div>
     <div class="kpi-card orange">
       <div class="kpi-label">Nunca Receberam</div>
       <div class="kpi-value">${nuncaRecebeu}</div>
-      <div class="kpi-sub">Nota ≤80 em todos os meses</div>
+      <div class="kpi-sub">Nota ≤80</div>
     </div>
   `;
 }
@@ -246,23 +358,24 @@ function renderCharts() {
     plugins: { legend: { labels: { color: chartTickColor(), font: { family: 'Barlow', size: 12 } } } }
   };
 
-  // Distribution histogram — 1 motorista = 1 contagem pela média
+  // Distribution histogram — use monthScore if globalMonth is set
   const binEdges = [0,10,20,30,40,50,60,70,80,90,101];
   const binLabels = ['0-9','10-19','20-29','30-39','40-49','50-59','60-69','70-79','80-89','90-100'];
   const counts = new Array(10).fill(0);
   ALL_DRIVERS.forEach(d => {
-    if (d.avg !== null) {
-      const idx = binEdges.findIndex((edge, i) => i < binEdges.length - 1 && d.avg >= binEdges[i] && d.avg < binEdges[i+1]);
+    const s = monthScore(d);
+    if (s !== null) {
+      const idx = binEdges.findIndex((edge, i) => i < binEdges.length - 1 && s >= binEdges[i] && s < binEdges[i+1]);
       if (idx >= 0) counts[idx]++;
     }
   });
 
   const colors = binLabels.map((_, i) => {
     const start = i * 10;
-    if (start >= 90) return 'rgba(0,230,118,0.8)';   // 90-100 verde
-    if (start >= 80) return 'rgba(0,212,255,0.8)';   // 80-89 azul (recebem se >80)
-    if (start >= 60) return 'rgba(255,211,42,0.8)';  // 60-79 amarelo
-    return 'rgba(255,71,87,0.8)';                     // <60 vermelho
+    if (start >= 90) return 'rgba(0,230,118,0.8)';
+    if (start >= 80) return 'rgba(0,212,255,0.8)';
+    if (start >= 60) return 'rgba(255,211,42,0.8)';
+    return 'rgba(255,71,87,0.8)';
   });
 
   if (chartDist) chartDist.destroy();
@@ -278,7 +391,20 @@ function renderCharts() {
         x: { ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } },
         y: { ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } }
       },
-      plugins: { ...chartDefaults.plugins, legend: { display: false } }
+      plugins: { ...chartDefaults.plugins, legend: { display: false } },
+      onClick: (evt, elements) => {
+        if (elements.length > 0) {
+          const idx = elements[0].index;
+          const low = binEdges[idx];
+          const high = binEdges[idx + 1] - 1;
+          setBinFilter(low, high);
+        } else {
+          clearBinFilter();
+        }
+      },
+      onHover: (evt, elements) => {
+        evt.native.target.style.cursor = elements.length ? 'pointer' : 'default';
+      }
     }
   });
 
@@ -286,9 +412,30 @@ function renderCharts() {
   renderTop3();
 }
 
+let activeBinFilter = null;
+
+function setBinFilter(low, high) {
+  activeBinFilter = { low, high };
+  // Update dropdown filters accordingly
+  setFilter('all');
+  renderTable();
+}
+
+function clearBinFilter() {
+  activeBinFilter = null;
+  renderTable();
+}
+
+// --- BIN FILTER TAG ---
+function getBinFilterHtml() {
+  if (!activeBinFilter) return '';
+  return `<button class="bin-filter-tag" onclick="clearBinFilter()">&times; Notas ${activeBinFilter.low}-${activeBinFilter.high}</button>`;
+}
+
 function renderTop3() {
   const top3 = [...ALL_DRIVERS]
-    .sort((a,b) => b.avg - a.avg || b.kmTotal - a.kmTotal)
+    .filter(d => monthScore(d) !== null)
+    .sort((a, b) => monthScore(b) - monthScore(a) || monthKm(b) - monthKm(a))
     .slice(0, 3);
   const medals = [
     { label: '1°', cls: 'gold',   color: '#ffd700' },
@@ -297,16 +444,20 @@ function renderTop3() {
   ];
   const html = top3.map((d, i) => {
     const m = medals[i];
-    const ops = [...new Set(d.ops.filter(Boolean))].join(', ');
-    const bar = Math.round((d.avg / 100) * 100);
+    const s = monthScore(d);
+    const km = monthKm(d);
+    const opsStr = globalMonth === 'all'
+      ? [...new Set(d.ops.filter(Boolean))].join(', ')
+      : (d.ops[globalMonth] || '—');
+    const bar = Math.round((s / 100) * 100);
     return `<div class="top3-item" onclick="openModal('${d.name.replace(/'/g,"\\'")}')" style="cursor:pointer">
       <div class="top3-rank ${m.cls}">${m.label}</div>
       <div class="top3-info">
         <div class="top3-name" title="${d.name}">${d.name}</div>
-        <div class="top3-detail">${ops || '—'} · ${d.kmTotal.toLocaleString('pt-BR',{maximumFractionDigits:0})} km</div>
+        <div class="top3-detail">${opsStr || '—'} · ${km.toLocaleString('pt-BR',{maximumFractionDigits:0})} km</div>
         <div class="top3-bar-wrap"><div class="top3-bar" style="width:${bar}%;background:${m.color}"></div></div>
       </div>
-      <div class="top3-score" style="color:${m.color}">${d.avg}</div>
+      <div class="top3-score" style="color:${m.color}">${s}</div>
     </div>`;
   }).join('');
   document.getElementById('top3Container').innerHTML = html;
@@ -318,6 +469,13 @@ function renderTable() {
   const sorted = sortDrivers(filtered);
 
   document.getElementById('countBadge').textContent = `${sorted.length} motoristas`;
+  // Bin filter tag
+  const badge = document.getElementById('countBadge').parentElement;
+  let existingTag = badge.querySelector('.bin-filter-tag');
+  if (existingTag) existingTag.remove();
+  if (activeBinFilter) {
+    badge.insertAdjacentHTML('afterend', getBinFilterHtml());
+  }
 
   const tbody = document.getElementById('tableBody');
   const empty = document.getElementById('emptyState');
@@ -330,15 +488,16 @@ function renderTable() {
   empty.style.display = 'none';
 
   tbody.innerHTML = sorted.map((d, i) => {
+    const ms = monthScore(d);
+    const recebeTag = ms > 80
+      ? `<span class="badge-recebe">✓ recebe</span>`
+      : ``;
+
     const trendHtml = d.trend > 0
       ? `<span class="trend-up">↑ +${d.trend}</span>`
       : d.trend < 0
         ? `<span class="trend-down">↓ ${d.trend}</span>`
         : `<span class="trend-same" style="font-size:11px">Sem movimentação</span>`;
-
-    const recebeTag = d.avg > 80
-      ? `<span class="badge-recebe">✓ recebe</span>`
-      : ``;
 
     const opTagsHtml = (op) => {
       if (!op) return '';
@@ -368,7 +527,7 @@ function renderTable() {
       ${monthCellHtml(d.scores[0], d.kms[0], d.ops[0])}
       ${monthCellHtml(d.scores[1], d.kms[1], d.ops[1])}
       ${monthCellHtml(d.scores[2], d.kms[2], d.ops[2])}
-      <td class="right"><span class="score-pill ${scoreClass(d.avg)}">${d.avg}</span></td>
+      <td class="right"><span class="score-pill ${scoreClass(ms)}">${ms !== null ? ms : '—'}</span></td>
       <td class="right">${trendHtml}</td>
       <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${d.kmTotal ? d.kmTotal.toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>
     </tr>`;
@@ -446,24 +605,7 @@ function closeModalBtn() {
 }
 
 // --- WORST 20 -------------------------------------------------------------------------
-let currentWorstMonth = 'all';
 let currentWorstOp = 'all';
-
-function setWorstMonth(month) {
-  currentWorstMonth = month;
-  // Update selection in menu
-  document.querySelectorAll('#ddWorstMonthMenu .dd-item').forEach(el => el.classList.remove('selected'));
-  const val = month === 'all' ? 'all' : String(month);
-  const sel = document.querySelector(`#ddWorstMonthMenu .dd-item[data-val="${val}"]`);
-  if (sel) sel.classList.add('selected');
-  // Update trigger label
-  const labels = { all: 'Mês', 0: 'Janeiro', 1: 'Fevereiro', 2: 'Março' };
-  document.getElementById('ddWorstMonthLabel').textContent = labels[month] ?? 'Mês';
-  const btn = document.getElementById('ddWorstMonthBtn');
-  btn.className = 'dd-trigger' + (month !== 'all' ? ' has-filter' : '');
-  closeAllDropdowns();
-  renderWorst20();
-}
 
 function setWorstOp(op) {
   currentWorstOp = op;
@@ -479,10 +621,10 @@ function setWorstOp(op) {
 
 function renderWorst20() {
   const grid = document.getElementById('worstGrid');
-  let candidates;
-  const monthIdx = currentWorstMonth;
+  const mi = globalMonth;
 
-  if (monthIdx === 'all') {
+  let candidates;
+  if (mi === 'all') {
     candidates = ALL_DRIVERS
       .filter(d => {
         const opOk = currentWorstOp === 'all' ? true : d.ops.some(op => op && op.includes(currentWorstOp));
@@ -490,9 +632,8 @@ function renderWorst20() {
       })
       .sort((a, b) => a.avg - b.avg)
       .slice(0, 20)
-      .map(d => ({ name: d.name, score: d.avg, km: d.kmTotal, driver: d }));
+      .map(d => ({ name: d.name, score: d.avg, km: d.kmTotal }));
   } else {
-    const mi = monthIdx;
     candidates = ALL_DRIVERS
       .filter(d => {
         const s = d.scores[mi];
@@ -503,11 +644,11 @@ function renderWorst20() {
       })
       .sort((a, b) => a.scores[mi] - b.scores[mi])
       .slice(0, 20)
-      .map(d => ({ name: d.name, score: d.scores[mi], km: d.kms[mi], driver: d }));
+      .map(d => ({ name: d.name, score: d.scores[mi], km: d.kms[mi] }));
   }
 
   // Update subtitle
-  const monthLabel = monthIdx === 'all' ? 'todos os meses' : ['Janeiro','Fevereiro','Março'][monthIdx];
+  const monthLabel = mi === 'all' ? 'todos os meses' : MONTHS[mi];
   const opLabel = currentWorstOp === 'all' ? 'todas as operações' : currentWorstOp;
   document.getElementById('worstSubtitle').textContent = `· Nota inferior a 80 e mínimo 1.500 km rodados · ${monthLabel} · ${opLabel}`;
 

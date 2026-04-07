@@ -191,6 +191,53 @@ header {
 /* MAIN */
 main { padding: 24px 32px; }
 
+/* MONTH FILTER BAR */
+.month-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.month-filter-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.month-toggle-group {
+  display: inline-flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.month-btn {
+  background: var(--surface2);
+  border: none;
+  color: var(--text);
+  padding: 6px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Barlow', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-right: 1px solid var(--border);
+}
+.month-btn:last-child { border-right: none; }
+.month-btn:hover { background: rgba(0,212,255,0.08); color: var(--accent); }
+.month-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+.chart-click-hint {
+  font-size: 10px;
+  color: var(--muted);
+  font-style: italic;
+  display: block;
+  margin-top: 4px;
+}
+
 /* KPI CARDS */
 .kpi-grid {
   display: grid;
@@ -298,6 +345,22 @@ main { padding: 24px 32px; }
   padding: 2px 10px;
   border-radius: 4px;
   font-size: 12px;
+}
+
+.bin-filter-tag {
+  background: rgba(0,212,255,0.12);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.bin-filter-tag:hover {
+  background: rgba(0,212,255,0.2);
 }
 
 .table-wrap { overflow-x: auto; max-height: 420px; overflow-y: auto; }
@@ -531,8 +594,8 @@ tbody td.driver-name {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 22px;
   font-weight: 700;
-  color: #000;
-  opacity: 0.7;
+  color: var(--text);
+  opacity: 0.6;
   min-width: 30px;
   flex-shrink: 0;
 }
