@@ -205,6 +205,7 @@ function renderKPIs() {
   const avgAll = Math.round(ALL_DRIVERS.reduce((a,d) => a + d.avg, 0) / totalDrivers);
 const best = [...ALL_DRIVERS].sort((a,b) => b.avg - a.avg || b.kmTotal - a.kmTotal)[0];
   const declined = ALL_DRIVERS.filter(d => d.declined).length;
+  const improved = ALL_DRIVERS.filter(d => d.improved).length;
   const recebem = ALL_DRIVERS.filter(d => d.avg > 80).length;
   const nuncaRecebeu = ALL_DRIVERS.filter(d => d.scores.every(s => s === null || s <= 80)).length;
 
@@ -224,10 +225,10 @@ const best = [...ALL_DRIVERS].sort((a,b) => b.avg - a.avg || b.kmTotal - a.kmTot
       <div class="kpi-value">${best.avg}</div>
       <div class="kpi-sub" style="max-width:140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${best.name}">${best.name}</div>
     </div>
-    <div class="kpi-card red">
-      <div class="kpi-label">Pioraram</div>
-      <div class="kpi-value">${declined}</div>
-      <div class="kpi-sub">Queda entre Jan e Mar</div>
+    <div class="kpi-card green">
+      <div class="kpi-label">Melhoraram</div>
+      <div class="kpi-value">${improved}</div>
+      <div class="kpi-sub">Evolução entre Jan e Mar</div>
     </div>
     <div class="kpi-card orange">
       <div class="kpi-label">Nunca Receberam</div>
@@ -508,7 +509,7 @@ function renderWorst20() {
   // Update subtitle
   const monthLabel = monthIdx === 'all' ? 'todos os meses' : ['Janeiro','Fevereiro','Março'][monthIdx];
   const opLabel = currentWorstOp === 'all' ? 'todas as operações' : currentWorstOp;
-  document.getElementById('worstSubtitle').textContent = `· Nota inferior a 80 e mínimo 1.500 km rodados· ${monthLabel} · ${opLabel}`;
+  document.getElementById('worstSubtitle').textContent = `· Nota inferior a 80 e mínimo 1.500 km rodados · ${monthLabel} · ${opLabel}`;
 
   if (!candidates.length) {
     grid.innerHTML = `<div class="worst-empty">🎉 Nenhum motorista com nota &lt; 80 e mais de 1.500 km neste filtro.</div>`;

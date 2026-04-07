@@ -568,6 +568,11 @@ tbody td.driver-name {
   flex-shrink: 0;
 }
 
+.worst-score-pill.improved-pill {
+  background: rgba(0,230,118,0.12);
+  color: var(--green);
+}
+
 .worst-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
