@@ -10,7 +10,27 @@
       "Bash(git diff:*)",
       "Bash(C:\\\\Users\\\\01008017\\\\AppData\\\\Local\\\\Programs\\\\Git\\\\bin\\\\sh.exe -c \"git show HEAD:index.html\")",
       "Bash(cmd /c \"dir &quot;C:\\\\Users\\\\01008017\\\\Desktop\\\\NOVO\\\\Nova pasta\\\\Gobraxavaliacao&quot; /s /b\")",
-      "Bash(winget install:*)"
+      "Bash(winget install:*)",
+      "Bash(/c/Users/01008017/AppData/Local/Programs/Git/bin/bash.exe -c \"ls /c/Users/01008017/Desktop/NOVO/Nova\\\\ pasta/Gobraxavaliacao/\")",
+      "Bash(\"/c/Users/01008017/AppData/Local/Programs/Git/bin/bash.exe\" -c \"cd '/c/Users/01008017/Desktop/NOVO/Nova pasta/Gobraxavaliacao' && ls -la\")",
+      "Bash(cmd /c \"dir /s /b *.js *.jsx *.ts *.tsx\")",
+      "Bash(C:/Windows/System32/cmd.exe /c \"dir /s /b *.*\")",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse -Include *.js,*.jsx,*.ts,*.tsx | Select-Object -First 30 FullName\")",
+      "Bash(git add:*)",
+      "Bash(echo:*)",
+      "Bash(bash --version)",
+      "Bash(set:*)",
+      "Bash(C:\\\\Users\\\\01008017\\\\AppData\\\\Local\\\\Programs\\\\Git\\\\bin\\\\git.exe status:*)",
+      "Bash(C:\\\\Users\\\\01008017\\\\AppData\\\\Local\\\\Programs\\\\Git\\\\bin\\\\bash.exe -c \"ls -la\")",
+      "Bash(C:\\\\Users\\\\01008017\\\\AppData\\\\Local\\\\Programs\\\\Git\\\\cmd\\\\git.exe status:*)",
+      "Bash(dir:*)",
+      "Bash(cd C:Users01008017DesktopNOVONova pastaGobraxavaliacao)",
+      "Bash(C:\\\\Users\\\\01008017\\\\AppData\\\\Local\\\\Programs\\\\Git\\\\cmd\\\\git.exe -C \"C:\\\\Users\\\\01008017\\\\Desktop\\\\NOVO\\\\Nova pasta\\\\Gobraxavaliacao\" status)",
+      "Bash(C:\\\\Users\\\\01008017\\\\AppData\\\\Local\\\\Programs\\\\Git\\\\bin\\\\git.exe -C \"C:\\\\Users\\\\01008017\\\\Desktop\\\\NOVO\\\\Nova pasta\\\\Gobraxavaliacao\" status)",
+      "Bash(C:\\\\Users\\\\01008017\\\\AppData\\\\Local\\\\Programs\\\\Git\\\\bin\\\\bash.exe -c \"cd /c/Users/01008017/Desktop/NOVO/Nova\\\\ pasta/Gobraxavaliacao && git status\")",
+      "Bash(SHELL=/bin/bash git status)",
+      "Bash(where bash:*)",
+      "Bash(git:*)"
     ]
   }
 }
