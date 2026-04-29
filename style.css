@@ -586,8 +586,8 @@ tbody td.driver-name {
   cursor: pointer;
   min-width: 0;
 }
-.worst-item:nth-child(4n) { border-right: none; }
-.worst-item:nth-last-child(-n+4) { border-bottom: none; }
+.worst-item:nth-child(5n) { border-bottom: none; }
+.worst-item:nth-child(n+16) { border-right: none; }
 .worst-item:hover { background: var(--surface2); }
 
 .worst-rank {
@@ -638,6 +638,8 @@ tbody td.driver-name {
 .worst-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column;
   gap: 0;
 }
 
