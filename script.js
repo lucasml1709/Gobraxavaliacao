@@ -314,7 +314,9 @@ function renderKPIs() {
 
   const totalDrivers = monthDrivers.length;
   const avgAll = totalDrivers ? Math.round(monthDrivers.reduce((a, d) => a + d._monthScore, 0) / totalDrivers) : 0;
-  const best = [...monthDrivers].sort((a, b) => b._monthScore - a._monthScore || b._monthKm - a._monthKm)[0];
+  const best = monthDrivers
+    .filter(d => d._monthKm > 1500)
+    .sort((a, b) => b._monthScore - a._monthScore || b._monthKm - a._monthKm)[0];
   const recebem = monthDrivers.filter(d => d._monthScore > 80).length;
   const nuncaRecebeu = monthDrivers.filter(d => d._monthScore <= 80).length;
 
