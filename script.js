@@ -434,7 +434,7 @@ function getBinFilterHtml() {
 
 function renderTop3() {
   const top3 = [...ALL_DRIVERS]
-    .filter(d => monthScore(d) !== null)
+    .filter(d => monthScore(d) !== null && monthKm(d) > 1500)
     .sort((a, b) => monthScore(b) - monthScore(a) || monthKm(b) - monthKm(a))
     .slice(0, 3);
   const medals = [
