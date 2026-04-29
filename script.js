@@ -118,7 +118,16 @@ function monthOp(driver) {
 }
 
 function receivesBonus(driver) {
+  if (globalMonth === 'all') return driver.scores.some(s => s !== null && s > 80);
   return monthScore(driver) > 80;
+}
+
+function neverReceivedBonus(driver) {
+  if (globalMonth === 'all') {
+    return driver.scores.some(s => s !== null) && driver.scores.every(s => s === null || s <= 80);
+  }
+  const s = monthScore(driver);
+  return s !== null && s <= 80;
 }
 
 // --- FILTERS -------------------------------------------------------------------------
@@ -175,7 +184,7 @@ function applyFilters(drivers) {
   }
   else if (currentFilter === 'recebe') filtered = filtered.filter(d => receivesBonus(d));
   else if (currentFilter === 'never') {
-    filtered = filtered.filter(d => monthScore(d) !== null && monthScore(d) <= 80);
+    filtered = filtered.filter(d => neverReceivedBonus(d));
   }
 
   return filtered;
@@ -319,8 +328,8 @@ function renderKPIs() {
   const best = monthDrivers
     .filter(d => d._monthKm > RANKING_MIN_KM)
     .sort((a, b) => b._monthScore - a._monthScore || b._monthKm - a._monthKm)[0];
-  const recebem = monthDrivers.filter(d => d._monthScore > 80).length;
-  const nuncaRecebeu = monthDrivers.filter(d => d._monthScore <= 80).length;
+  const recebem = monthDrivers.filter(d => receivesBonus(d)).length;
+  const nuncaRecebeu = monthDrivers.filter(d => neverReceivedBonus(d)).length;
 
   const subSuffix = globalMonth === 'all' ? 'Vínculos ativos (nome + OP)' : MONTHS[globalMonth];
   const trendSuffix = globalMonth === 'all' ? 'Evolução entre Jan e Mar' : globalMonth > 0 ? `vs ${(MONTHS[globalMonth - 1]).slice(0, 3)}` : '—';
