@@ -43,7 +43,6 @@ function chartGridColor() {
 const MONTHS = ['Janeiro', 'Fevereiro', 'Março'];
 const MONTH_SHORT = ['Jan', 'Fev', 'Mar'];
 const MONTH_KEYS = ['jan', 'fev', 'mar'];
-const BONUS_MIN_KM = 1000;
 const RANKING_MIN_KM = 1500;
 
 function processDrivers(data) {
@@ -119,7 +118,7 @@ function monthOp(driver) {
 }
 
 function receivesBonus(driver) {
-  return monthScore(driver) > 80 && monthKm(driver) > BONUS_MIN_KM;
+  return monthScore(driver) > 80;
 }
 
 // --- FILTERS -------------------------------------------------------------------------
@@ -176,7 +175,7 @@ function applyFilters(drivers) {
   }
   else if (currentFilter === 'recebe') filtered = filtered.filter(d => receivesBonus(d));
   else if (currentFilter === 'never') {
-    filtered = filtered.filter(d => monthScore(d) !== null && monthScore(d) <= 80 && monthKm(d) > BONUS_MIN_KM);
+    filtered = filtered.filter(d => monthScore(d) !== null && monthScore(d) <= 80);
   }
 
   return filtered;
@@ -320,8 +319,8 @@ function renderKPIs() {
   const best = monthDrivers
     .filter(d => d._monthKm > RANKING_MIN_KM)
     .sort((a, b) => b._monthScore - a._monthScore || b._monthKm - a._monthKm)[0];
-  const recebem = monthDrivers.filter(d => d._monthScore > 80 && d._monthKm > BONUS_MIN_KM).length;
-  const nuncaRecebeu = monthDrivers.filter(d => d._monthScore <= 80 && d._monthKm > BONUS_MIN_KM).length;
+  const recebem = monthDrivers.filter(d => d._monthScore > 80).length;
+  const nuncaRecebeu = monthDrivers.filter(d => d._monthScore <= 80).length;
 
   const subSuffix = globalMonth === 'all' ? 'Vínculos ativos (nome + OP)' : MONTHS[globalMonth];
   const trendSuffix = globalMonth === 'all' ? 'Evolução entre Jan e Mar' : globalMonth > 0 ? `vs ${(MONTHS[globalMonth - 1]).slice(0, 3)}` : '—';
@@ -335,7 +334,7 @@ function renderKPIs() {
     <div class="kpi-card green">
       <div class="kpi-label">Recebem Bônus</div>
       <div class="kpi-value">${recebem}</div>
-      <div class="kpi-sub">Nota acima de 80 e +1.000 km</div>
+      <div class="kpi-sub">Nota acima de 80</div>
     </div>
     <div class="kpi-card green">
       <div class="kpi-label">Melhor Motorista</div>
@@ -350,7 +349,7 @@ function renderKPIs() {
     <div class="kpi-card orange">
       <div class="kpi-label">Nunca Receberam</div>
       <div class="kpi-value">${nuncaRecebeu}</div>
-      <div class="kpi-sub">Nota ≤80 e +1.000 km</div>
+      <div class="kpi-sub">Nota ≤80</div>
     </div>
   `;
 }
