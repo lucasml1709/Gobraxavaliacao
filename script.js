@@ -347,7 +347,7 @@ function renderKPIs() {
       <div class="kpi-sub">${trendSuffix}</div>
     </div>
     <div class="kpi-card orange">
-      <div class="kpi-label">Nunca Receberam</div>
+      <div class="kpi-label">Motoristas que não receberam</div>
       <div class="kpi-value">${nuncaRecebeu}</div>
       <div class="kpi-sub">Nota ≤80</div>
     </div>
