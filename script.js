@@ -43,6 +43,8 @@ function chartGridColor() {
 const MONTHS = ['Janeiro', 'Fevereiro', 'Março'];
 const MONTH_SHORT = ['Jan', 'Fev', 'Mar'];
 const MONTH_KEYS = ['jan', 'fev', 'mar'];
+const BONUS_MIN_KM = 1000;
+const RANKING_MIN_KM = 1500;
 
 function processDrivers(data) {
   return data.map(r => {
@@ -116,6 +118,10 @@ function monthOp(driver) {
   return driver.ops[globalMonth] || null;
 }
 
+function receivesBonus(driver) {
+  return monthScore(driver) > 80 && monthKm(driver) > BONUS_MIN_KM;
+}
+
 // --- FILTERS -------------------------------------------------------------------------
 function applyFilters(drivers) {
   let filtered = [...drivers];
@@ -168,12 +174,9 @@ function applyFilters(drivers) {
       filtered = filtered.filter(d => d.scores[mi] !== null && d.scores[mi-1] !== null && d.scores[mi] > d.scores[mi-1]);
     }
   }
-  else if (currentFilter === 'recebe') filtered = filtered.filter(d => monthScore(d) > 80);
+  else if (currentFilter === 'recebe') filtered = filtered.filter(d => receivesBonus(d));
   else if (currentFilter === 'never') {
-    if (globalMonth === 'all')
-      filtered = filtered.filter(d => d.scores.every(s => s === null || s <= 80));
-    else
-      filtered = filtered.filter(d => { const s = d.scores[globalMonth]; return s !== null && s <= 80; });
+    filtered = filtered.filter(d => monthScore(d) !== null && monthScore(d) <= 80 && monthKm(d) > BONUS_MIN_KM);
   }
 
   return filtered;
@@ -315,10 +318,10 @@ function renderKPIs() {
   const totalDrivers = monthDrivers.length;
   const avgAll = totalDrivers ? Math.round(monthDrivers.reduce((a, d) => a + d._monthScore, 0) / totalDrivers) : 0;
   const best = monthDrivers
-    .filter(d => d._monthKm > 1500)
+    .filter(d => d._monthKm > RANKING_MIN_KM)
     .sort((a, b) => b._monthScore - a._monthScore || b._monthKm - a._monthKm)[0];
-  const recebem = monthDrivers.filter(d => d._monthScore > 80).length;
-  const nuncaRecebeu = monthDrivers.filter(d => d._monthScore <= 80).length;
+  const recebem = monthDrivers.filter(d => d._monthScore > 80 && d._monthKm > BONUS_MIN_KM).length;
+  const nuncaRecebeu = monthDrivers.filter(d => d._monthScore <= 80 && d._monthKm > BONUS_MIN_KM).length;
 
   const subSuffix = globalMonth === 'all' ? 'Vínculos ativos (nome + OP)' : MONTHS[globalMonth];
   const trendSuffix = globalMonth === 'all' ? 'Evolução entre Jan e Mar' : globalMonth > 0 ? `vs ${(MONTHS[globalMonth - 1]).slice(0, 3)}` : '—';
@@ -332,7 +335,7 @@ function renderKPIs() {
     <div class="kpi-card green">
       <div class="kpi-label">Recebem Bônus</div>
       <div class="kpi-value">${recebem}</div>
-      <div class="kpi-sub">Nota acima de 80</div>
+      <div class="kpi-sub">Nota acima de 80 e +1.000 km</div>
     </div>
     <div class="kpi-card green">
       <div class="kpi-label">Melhor Motorista</div>
@@ -347,7 +350,7 @@ function renderKPIs() {
     <div class="kpi-card orange">
       <div class="kpi-label">Nunca Receberam</div>
       <div class="kpi-value">${nuncaRecebeu}</div>
-      <div class="kpi-sub">Nota ≤80</div>
+      <div class="kpi-sub">Nota ≤80 e +1.000 km</div>
     </div>
   `;
 }
@@ -436,7 +439,7 @@ function getBinFilterHtml() {
 
 function renderTop3() {
   const top3 = [...ALL_DRIVERS]
-    .filter(d => monthScore(d) !== null && monthKm(d) > 1500)
+    .filter(d => monthScore(d) !== null && monthKm(d) > RANKING_MIN_KM)
     .sort((a, b) => monthScore(b) - monthScore(a) || monthKm(b) - monthKm(a))
     .slice(0, 3);
   const medals = [
@@ -491,7 +494,7 @@ function renderTable() {
 
   tbody.innerHTML = sorted.map((d, i) => {
     const ms = monthScore(d);
-    const recebeTag = ms > 80
+    const recebeTag = receivesBonus(d)
       ? `<span class="badge-recebe">✓ recebe</span>`
       : ``;
 
@@ -542,8 +545,8 @@ function openModal(name) {
   if (!d) return;
 
   document.getElementById('modalName').textContent = d.name;
-  const recebeStatus = d.avg > 80 ? '✓ Recebe bônus' : '✗ Não recebe bônus';
-  const recebeColor = d.avg > 80 ? 'var(--green)' : 'var(--red)';
+  const recebeStatus = receivesBonus(d) ? '✓ Recebe bônus' : '✗ Não recebe bônus';
+  const recebeColor = receivesBonus(d) ? 'var(--green)' : 'var(--red)';
   document.getElementById('modalSub').innerHTML = `Média: <strong>${d.avg}</strong> pts · ${d.kmTotal.toLocaleString('pt-BR',{maximumFractionDigits:0})} km rodados · <span style="color:${recebeColor};font-weight:600">${recebeStatus}</span>`;
 
   const monthsHtml = MONTHS.map((m, i) => {
