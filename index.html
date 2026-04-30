@@ -58,7 +58,19 @@
           <span class="worst-title">20 Piores Motoristas</span>
           <span class="worst-subtitle" id="worstSubtitle">· Nota inferior a 80 e mínimo 1.500 km rodados · todos os meses · todas as operações</span>
         </div>
-        <div style="display:flex;gap:8px;align-items:center;margin-left:auto">
+        <div class="worst-controls">
+          <div class="dropdown" id="ddWorstMonth">
+            <button class="dd-trigger" id="ddWorstMonthBtn" onclick="toggleDropdown('ddWorstMonth')">
+              <span id="ddWorstMonthLabel">Mês</span>
+              <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="dd-menu" id="ddWorstMonthMenu">
+              <div class="dd-item dd-active selected" data-val="all" onclick="setWorstMonth('all')">Todos</div>
+              <div class="dd-item" data-val="0" onclick="setWorstMonth(0)">Janeiro</div>
+              <div class="dd-item" data-val="1" onclick="setWorstMonth(1)">Fevereiro</div>
+              <div class="dd-item" data-val="2" onclick="setWorstMonth(2)">Março</div>
+            </div>
+          </div>
           <div class="dropdown" id="ddWorstOp">
             <button class="dd-trigger" id="ddWorstOpBtn" onclick="toggleDropdown('ddWorstOp')">
               <span id="ddWorstOpLabel">Operação</span>

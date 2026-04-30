@@ -95,7 +95,6 @@ function setGlobalMonth(month) {
   // Re-render everything
   renderKPIs();
   renderCharts();
-  renderWorst20();
   renderTable();
 }
 
@@ -619,6 +618,19 @@ function closeModalBtn() {
 
 // --- WORST 20 -------------------------------------------------------------------------
 let currentWorstOp = 'all';
+let currentWorstMonth = 'all';
+
+function setWorstMonth(month) {
+  currentWorstMonth = month;
+  document.querySelectorAll('#ddWorstMonthMenu .dd-item').forEach(el => el.classList.remove('selected'));
+  const sel = document.querySelector(`#ddWorstMonthMenu .dd-item[data-val="${month}"]`);
+  if (sel) sel.classList.add('selected');
+  document.getElementById('ddWorstMonthLabel').textContent = month === 'all' ? 'Mês' : MONTHS[month];
+  const btn = document.getElementById('ddWorstMonthBtn');
+  btn.className = 'dd-trigger' + (month !== 'all' ? ' has-filter' : '');
+  closeAllDropdowns();
+  renderWorst20();
+}
 
 function setWorstOp(op) {
   currentWorstOp = op;
@@ -634,7 +646,7 @@ function setWorstOp(op) {
 
 function renderWorst20() {
   const grid = document.getElementById('worstGrid');
-  const mi = globalMonth;
+  const mi = currentWorstMonth;
 
   let candidates;
   if (mi === 'all') {
