@@ -11,7 +11,6 @@ function toggleTheme() {
   updateThemeBtn(next);
   // Re-render charts with new colors
   renderCharts();
-  renderTableEvolutionChart(applyFilters(ALL_DRIVERS));
 }
 
 function updateThemeBtn(theme) {
@@ -38,9 +37,6 @@ function chartTickColor() {
 }
 function chartGridColor() {
   return getTheme() === 'light' ? 'rgba(0,0,0,0.06)' : 'rgba(255,255,255,0.05)';
-}
-function cssColor(name) {
-  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
 
 // --- PROCESS DATA --------------------------------------------------------------------
@@ -78,7 +74,7 @@ let currentOp = 'all';
 let searchQuery = '';
 let sortKey = 'avg';
 let sortDir = -1;
-let chartDist = null, chartTableEvolution = null, modalChartRef = null;
+let chartDist = null, modalChartRef = null;
 let tableMonth = 'all';
 
 // --- GLOBAL MONTH FILTER -------------------------------------------------------------
@@ -556,70 +552,6 @@ function renderTop3() {
   document.getElementById('top3Container').innerHTML = html;
 }
 
-function renderTableEvolutionChart(drivers) {
-  const canvas = document.getElementById('chartTableEvolution');
-  if (!canvas) return;
-
-  const monthlyAverages = MONTH_KEYS.map((_, mi) => {
-    const scores = drivers.map(d => d.scores[mi]).filter(s => s !== null);
-    return scores.length ? Math.round(scores.reduce((sum, s) => sum + s, 0) / scores.length) : null;
-  });
-  const monthlyCounts = MONTH_KEYS.map((_, mi) => drivers.filter(d => d.scores[mi] !== null).length);
-  const selectedOpLabel = currentOp === 'all' ? 'Todas as operações' : currentOp;
-  const selectedMonthLabel = tableMonth === 'all' ? 'todos os meses' : MONTHS[tableMonth];
-  document.getElementById('tableEvolutionTitle').textContent =
-    `Evolução geral — ${selectedOpLabel} · ${selectedMonthLabel}`;
-
-  const pointColors = monthlyAverages.map((score, mi) => {
-    if (tableMonth !== 'all' && mi === tableMonth) return cssColor('--accent2');
-    return score === null ? cssColor('--muted') : cssColor(scoreColor(score).match(/--[^)]+/)?.[0] || '--accent');
-  });
-
-  if (chartTableEvolution) chartTableEvolution.destroy();
-  const barColors = monthlyAverages.map((score, mi) => {
-    if (tableMonth !== 'all' && mi === tableMonth) return cssColor('--accent2');
-    if (score === null) return 'rgba(107,122,153,0.18)';
-    return score >= 90 ? 'rgba(0,230,118,0.72)'
-      : score > 80 ? 'rgba(0,212,255,0.72)'
-      : score >= 70 ? 'rgba(255,211,42,0.72)'
-      : 'rgba(255,71,87,0.72)';
-  });
-
-  chartTableEvolution = new Chart(canvas, {
-    type: 'bar',
-    data: {
-      labels: MONTH_SHORT,
-      datasets: [{
-        label: 'Média',
-        data: monthlyAverages,
-        backgroundColor: barColors,
-        borderColor: pointColors,
-        borderWidth: 1,
-        borderRadius: 5,
-        borderSkipped: false,
-        maxBarThickness: 58
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        x: { ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } },
-        y: { min: 0, max: 100, ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } }
-      },
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: ctx => `Média: ${ctx.raw ?? '—'}`,
-            afterLabel: ctx => `Motoristas: ${monthlyCounts[ctx.dataIndex]}`
-          }
-        }
-      }
-    }
-  });
-}
-
 // --- TABLE ---------------------------------------------------------------------------
 function renderTable() {
   let filtered = applyFilters(ALL_DRIVERS);
@@ -629,7 +561,6 @@ function renderTable() {
   const sorted = sortDrivers(filtered);
   const hasGestores = ALL_DRIVERS.some(x => x.gestor);
   renderTableHeader(hasGestores);
-  renderTableEvolutionChart(sorted);
 
   document.getElementById('countBadge').textContent = `${sorted.length} motoristas`;
   // Bin filter tag

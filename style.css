@@ -492,17 +492,6 @@ tbody td.driver-name {
   font-weight: 600;
 }
 
-.table-evolution-card {
-  margin: 0 18px 16px;
-  padding: 14px 14px 12px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-}
-.table-evolution-wrap {
-  height: 210px;
-  margin-top: 10px;
-}
 .ms-null { color: var(--muted); }
 
 /* MODAL */
