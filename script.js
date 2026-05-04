@@ -40,14 +40,14 @@ function chartGridColor() {
 }
 
 // --- PROCESS DATA --------------------------------------------------------------------
-const MONTHS = ['Janeiro', 'Fevereiro', 'Março'];
-const MONTH_SHORT = ['Jan', 'Fev', 'Mar'];
-const MONTH_KEYS = ['jan', 'fev', 'mar'];
+const MONTHS = ['Janeiro', 'Fevereiro', 'Março', 'Abril'];
+const MONTH_SHORT = ['Jan', 'Fev', 'Mar', 'Abr'];
+const MONTH_KEYS = ['jan', 'fev', 'mar', 'abr'];
 const RANKING_MIN_KM = 1500;
 
 function processDrivers(data) {
   return data.map(r => {
-    const months = [r.jan, r.fev, r.mar];
+    const months = MONTH_KEYS.map(key => r[key]);
     const scores = months.map(m => m?.score ?? null);
     const kms    = months.map(m => m?.km ?? 0);
     const ops    = months.map(m => m?.op ?? null);
@@ -77,7 +77,7 @@ let sortDir = -1;
 let chartDist = null, modalChartRef = null;
 
 // --- GLOBAL MONTH FILTER -------------------------------------------------------------
-let globalMonth = 'all'; // 'all', 0, 1, 2
+let globalMonth = 'all'; // 'all' or month index from MONTH_KEYS
 
 function setGlobalMonth(month) {
   globalMonth = month;
@@ -264,9 +264,11 @@ function sortDrivers(drivers) {
     if (sortKey === 'gestor') { va = a.gestor||''; vb = b.gestor||''; return va < vb ? sortDir : va > vb ? -sortDir : 0; }
     if (sortKey === 'op') { va = a.op||''; vb = b.op||''; return va < vb ? sortDir : va > vb ? -sortDir : 0; }
     if (sortKey === 'avg') { va = a.avg ?? -1; vb = b.avg ?? -1; }
-    else if (sortKey === 'jan') { va = a.scores[0] ?? -1; vb = b.scores[0] ?? -1; }
-    else if (sortKey === 'fev') { va = a.scores[1] ?? -1; vb = b.scores[1] ?? -1; }
-    else if (sortKey === 'mar') { va = a.scores[2] ?? -1; vb = b.scores[2] ?? -1; }
+    else if (MONTH_KEYS.includes(sortKey)) {
+      const monthIndex = MONTH_KEYS.indexOf(sortKey);
+      va = a.scores[monthIndex] ?? -1;
+      vb = b.scores[monthIndex] ?? -1;
+    }
     else if (sortKey === 'trend') { va = a.trend; vb = b.trend; }
     else if (sortKey === 'km') { va = a.kmTotal; vb = b.kmTotal; }
     else { va = a.avg ?? -1; vb = b.avg ?? -1; }
@@ -302,7 +304,7 @@ function renderKPIs() {
   // For "improved/declined" we need two-month comparison
   let declinedCount = 0, improvedCount = 0;
   if (globalMonth === 'all') {
-    // Original trend: Jan vs Mar
+    // Original trend: first month vs latest available month
     declinedCount = ALL_DRIVERS.filter(d => d.declined).length;
     improvedCount = ALL_DRIVERS.filter(d => d.improved).length;
   } else {
@@ -331,7 +333,7 @@ function renderKPIs() {
   const nuncaRecebeu = monthDrivers.filter(d => neverReceivedBonus(d)).length;
 
   const subSuffix = globalMonth === 'all' ? 'Vínculos ativos (nome + OP)' : MONTHS[globalMonth];
-  const trendSuffix = globalMonth === 'all' ? 'Evolução entre Jan e Mar' : globalMonth > 0 ? `vs ${(MONTHS[globalMonth - 1]).slice(0, 3)}` : '—';
+  const trendSuffix = globalMonth === 'all' ? `Evolução entre ${MONTH_SHORT[0]} e ${MONTH_SHORT[MONTH_SHORT.length - 1]}` : globalMonth > 0 ? `vs ${MONTH_SHORT[globalMonth - 1]}` : '—';
 
   document.getElementById('kpiGrid').innerHTML = `
     <div class="kpi-card accent">
@@ -536,9 +538,7 @@ function renderTable() {
       <td style="color:var(--muted);font-size:12px;width:40px">${i+1}</td>
       <td class="driver-name">${d.name}${recebeTag}</td>
       ${hasGestores ? `<td style="font-size:12px;color:var(--muted)">${d.gestor || '—'}</td>` : ''}
-      ${monthCellHtml(d.scores[0], d.kms[0], d.ops[0])}
-      ${monthCellHtml(d.scores[1], d.kms[1], d.ops[1])}
-      ${monthCellHtml(d.scores[2], d.kms[2], d.ops[2])}
+      ${MONTH_KEYS.map((_, mi) => monthCellHtml(d.scores[mi], d.kms[mi], d.ops[mi])).join('')}
       <td class="right"><span class="score-pill ${scoreClass(ms)}">${ms !== null ? ms : '—'}</span></td>
       <td class="right">${trendHtml}</td>
       <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${d.kmTotal ? d.kmTotal.toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>

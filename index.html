@@ -17,7 +17,7 @@
   </div>
   <div class="header-sub">Dashboard de Avaliação de Motoristas · 2026</div>
   <div class="header-right">
-    <span style="font-size:12px;color:var(--muted)" id="lastUpdate">Jan · Fev · Mar</span>
+    <span style="font-size:12px;color:var(--muted)" id="lastUpdate">Jan · Fev · Mar · Abr</span>
     <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Alternar tema">
       <span id="themeIcon"></span>
       <span id="themeLabel">Tema Claro</span>
@@ -34,6 +34,7 @@
       <button class="month-btn" data-month="0" onclick="setGlobalMonth(0)">Janeiro</button>
       <button class="month-btn" data-month="1" onclick="setGlobalMonth(1)">Fevereiro</button>
       <button class="month-btn" data-month="2" onclick="setGlobalMonth(2)">Março</button>
+      <button class="month-btn" data-month="3" onclick="setGlobalMonth(3)">Abril</button>
     </div>
   </div>
 
@@ -69,6 +70,7 @@
               <div class="dd-item" data-val="0" onclick="setWorstMonth(0)">Janeiro</div>
               <div class="dd-item" data-val="1" onclick="setWorstMonth(1)">Fevereiro</div>
               <div class="dd-item" data-val="2" onclick="setWorstMonth(2)">Março</div>
+              <div class="dd-item" data-val="3" onclick="setWorstMonth(3)">Abril</div>
             </div>
           </div>
           <div class="dropdown" id="ddWorstOp">
@@ -145,6 +147,7 @@
             <th class="right" onclick="sortBy('jan')">Janeiro</th>
             <th class="right" onclick="sortBy('fev')">Fevereiro</th>
             <th class="right" onclick="sortBy('mar')">Março</th>
+            <th class="right" onclick="sortBy('abr')">Abril</th>
             <th class="right" onclick="sortBy('avg')">Média</th>
             <th class="right" onclick="sortBy('trend')">Tendência</th>
             <th class="right" onclick="sortBy('km')">Km Total</th>
