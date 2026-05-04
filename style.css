@@ -418,6 +418,70 @@ tbody td.driver-name {
 .trend-down { color: var(--red); font-weight: 700; font-size: 13px; }
 .trend-same { color: var(--muted); font-size: 13px; }
 
+.evolution-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  min-width: 132px;
+}
+.evolution-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.evolution-delta {
+  min-width: 48px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 800;
+}
+.evolution-cell.up .evolution-delta {
+  background: rgba(0,230,118,0.14);
+  color: var(--green);
+}
+.evolution-cell.down .evolution-delta {
+  background: rgba(255,71,87,0.14);
+  color: var(--red);
+}
+.evolution-cell.same .evolution-delta,
+.evolution-cell.empty .evolution-delta {
+  background: rgba(107,122,153,0.12);
+  color: var(--muted);
+}
+.evolution-label {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.evolution-track {
+  position: relative;
+  width: 92px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.evolution-prev,
+.evolution-curr {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 6px;
+  border-radius: 3px;
+}
+.evolution-prev { background: rgba(107,122,153,0.45); }
+.evolution-curr { background: var(--accent); }
+.evolution-cell.up .evolution-curr { background: var(--green); }
+.evolution-cell.down .evolution-curr { background: var(--red); }
+.evolution-note {
+  font-size: 10px;
+  color: var(--muted);
+}
+
 .month-score {
   display: inline-block;
   min-width: 36px;
@@ -426,6 +490,18 @@ tbody td.driver-name {
   border-radius: 4px;
   font-size: 12px;
   font-weight: 600;
+}
+
+.table-evolution-card {
+  margin: 0 18px 16px;
+  padding: 14px 14px 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+.table-evolution-wrap {
+  height: 210px;
+  margin-top: 10px;
 }
 .ms-null { color: var(--muted); }
 
