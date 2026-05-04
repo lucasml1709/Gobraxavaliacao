@@ -75,6 +75,7 @@ let searchQuery = '';
 let sortKey = 'avg';
 let sortDir = -1;
 let chartDist = null, modalChartRef = null;
+let tableMonth = 'all';
 
 // --- GLOBAL MONTH FILTER -------------------------------------------------------------
 let globalMonth = 'all'; // 'all' or month index from MONTH_KEYS
@@ -132,18 +133,32 @@ function neverReceivedBonus(driver) {
 // --- FILTERS -------------------------------------------------------------------------
 function applyFilters(drivers) {
   let filtered = [...drivers];
+  const filterMonth = tableMonth !== 'all' ? tableMonth : globalMonth;
+  const filterScore = (driver) => filterMonth === 'all' ? driver.avg : driver.scores[filterMonth];
+  const filterOp = (driver) => filterMonth === 'all' ? driver.ops.find(o => o) || null : driver.ops[filterMonth] || null;
+  const filterReceivesBonus = (driver) => {
+    if (filterMonth === 'all') return driver.scores.some(s => s !== null && s > 80);
+    return filterScore(driver) > 80;
+  };
+  const filterNeverReceivedBonus = (driver) => {
+    if (filterMonth === 'all') {
+      return driver.scores.some(s => s !== null) && driver.scores.every(s => s === null || s <= 80);
+    }
+    const s = filterScore(driver);
+    return s !== null && s <= 80;
+  };
 
   // Filter by current month: driver must have data for that month
-  if (globalMonth !== 'all') {
-    filtered = filtered.filter(d => d.scores[globalMonth] !== null);
+  if (filterMonth !== 'all') {
+    filtered = filtered.filter(d => d.scores[filterMonth] !== null);
   }
 
   if (currentOp !== 'all') {
-    if (globalMonth === 'all') {
+    if (filterMonth === 'all') {
       filtered = filtered.filter(d => d.ops.some(op => op && op.includes(currentOp)));
     } else {
       filtered = filtered.filter(d => {
-        const op = d.ops[globalMonth];
+        const op = filterOp(d);
         return op && op.includes(currentOp);
       });
     }
@@ -160,30 +175,30 @@ function applyFilters(drivers) {
   // Bin filter from chart click
   if (activeBinFilter) {
     filtered = filtered.filter(d => {
-      const s = monthScore(d);
+      const s = filterScore(d);
       return s !== null && s >= activeBinFilter.low && s <= activeBinFilter.high;
     });
   }
 
-  if (currentFilter === 'worst') filtered.sort((a,b) => monthScore(a) - monthScore(b)).splice(50);
-  else if (currentFilter === 'best') filtered.sort((a,b) => monthScore(b) - monthScore(a)).splice(50);
+  if (currentFilter === 'worst') filtered.sort((a,b) => filterScore(a) - filterScore(b)).splice(50);
+  else if (currentFilter === 'best') filtered.sort((a,b) => filterScore(b) - filterScore(a)).splice(50);
   else if (currentFilter === 'declined') {
-    if (globalMonth === 'all') filtered = filtered.filter(d => d.declined);
-    else if (globalMonth > 0) {
-      const mi = globalMonth;
+    if (filterMonth === 'all') filtered = filtered.filter(d => d.declined);
+    else if (filterMonth > 0) {
+      const mi = filterMonth;
       filtered = filtered.filter(d => d.scores[mi] !== null && d.scores[mi-1] !== null && d.scores[mi] < d.scores[mi-1]);
     }
   }
   else if (currentFilter === 'improved') {
-    if (globalMonth === 'all') filtered = filtered.filter(d => d.improved);
-    else if (globalMonth > 0) {
-      const mi = globalMonth;
+    if (filterMonth === 'all') filtered = filtered.filter(d => d.improved);
+    else if (filterMonth > 0) {
+      const mi = filterMonth;
       filtered = filtered.filter(d => d.scores[mi] !== null && d.scores[mi-1] !== null && d.scores[mi] > d.scores[mi-1]);
     }
   }
-  else if (currentFilter === 'recebe') filtered = filtered.filter(d => receivesBonus(d));
+  else if (currentFilter === 'recebe') filtered = filtered.filter(d => filterReceivesBonus(d));
   else if (currentFilter === 'never') {
-    filtered = filtered.filter(d => neverReceivedBonus(d));
+    filtered = filtered.filter(d => filterNeverReceivedBonus(d));
   }
 
   return filtered;
@@ -245,6 +260,21 @@ function onSearch() {
   renderTable();
 }
 
+function setTableMonth(month) {
+  tableMonth = month;
+  sortKey = month === 'all' ? 'avg' : MONTH_KEYS[month];
+  sortDir = -1;
+  document.querySelectorAll('#ddTableMonthMenu .dd-item').forEach(el => el.classList.remove('selected'));
+  const sel = document.querySelector(`#ddTableMonthMenu .dd-item[data-val="${month}"]`);
+  if (sel) sel.classList.add('selected');
+  document.getElementById('ddTableMonthLabel').textContent = month === 'all' ? 'Mês tabela' : MONTHS[month];
+  const trigger = document.getElementById('ddTableMonthBtn');
+  trigger.className = 'dd-trigger';
+  if (month !== 'all') trigger.classList.add('has-filter');
+  closeAllDropdowns();
+  renderTable();
+}
+
 // Close dropdowns on outside click
 document.addEventListener('click', e => {
   if (!e.target.closest('.dropdown')) closeAllDropdowns();
@@ -269,6 +299,14 @@ function sortDrivers(drivers) {
       va = a.scores[monthIndex] ?? -1;
       vb = b.scores[monthIndex] ?? -1;
     }
+    else if (sortKey === 'tableTrend') {
+      va = comparisonDelta(a);
+      vb = comparisonDelta(b);
+    }
+    else if (sortKey === 'tableKm') {
+      va = tableKm(a);
+      vb = tableKm(b);
+    }
     else if (sortKey === 'trend') { va = a.trend; vb = b.trend; }
     else if (sortKey === 'km') { va = a.kmTotal; vb = b.kmTotal; }
     else { va = a.avg ?? -1; vb = b.avg ?? -1; }
@@ -290,6 +328,43 @@ function scoreClass(s) {
   if (s > 80) return 'good';
   if (s >= 70) return 'medium';
   return 'bad';
+}
+
+function tableScore(driver) {
+  return tableMonth === 'all' ? monthScore(driver) : driver.scores[tableMonth];
+}
+
+function tableKm(driver) {
+  return tableMonth === 'all' ? driver.kmTotal : (driver.kms[tableMonth] || 0);
+}
+
+function comparisonDelta(driver) {
+  if (tableMonth === 'all' || tableMonth === 0) return 0;
+  const prev = driver.scores[tableMonth - 1];
+  const curr = driver.scores[tableMonth];
+  return prev !== null && curr !== null ? curr - prev : 0;
+}
+
+function renderTableHeader(hasGestores) {
+  const monthHeaders = MONTH_KEYS.map((key, i) =>
+    `<th class="right" onclick="sortBy('${key}')">${MONTHS[i]}</th>`
+  ).join('');
+
+  const selectedMonthHeaders = tableMonth === 'all'
+    ? `${monthHeaders}
+      <th class="right" onclick="sortBy('avg')">Média</th>
+      <th class="right" onclick="sortBy('trend')">Tendência</th>
+      <th class="right" onclick="sortBy('km')">Km Total</th>`
+    : `<th class="right" onclick="sortBy('${MONTH_KEYS[tableMonth]}')">${MONTHS[tableMonth]}</th>
+      <th class="right" onclick="sortBy('tableTrend')">Comparativo</th>
+      <th class="right" onclick="sortBy('tableKm')">Km ${MONTH_SHORT[tableMonth]}</th>`;
+
+  document.getElementById('tableHeaderRow').innerHTML = `
+    <th style="width:40px">#</th>
+    <th>Motorista</th>
+    ${hasGestores ? '<th id="th-gestor" style="font-size:11px">Gestor</th>' : ''}
+    ${selectedMonthHeaders}
+  `;
 }
 
 // --- KPI CARDS -----------------------------------------------------------------------
@@ -480,7 +555,12 @@ function renderTop3() {
 // --- TABLE ---------------------------------------------------------------------------
 function renderTable() {
   let filtered = applyFilters(ALL_DRIVERS);
+  if (tableMonth !== 'all') {
+    filtered = filtered.filter(d => d.scores[tableMonth] !== null);
+  }
   const sorted = sortDrivers(filtered);
+  const hasGestores = ALL_DRIVERS.some(x => x.gestor);
+  renderTableHeader(hasGestores);
 
   document.getElementById('countBadge').textContent = `${sorted.length} motoristas`;
   // Bin filter tag
@@ -502,10 +582,9 @@ function renderTable() {
   empty.style.display = 'none';
 
   tbody.innerHTML = sorted.map((d, i) => {
-    const ms = monthScore(d);
-    const recebeTag = receivesBonus(d)
-      ? `<span class="badge-recebe">✓ recebe</span>`
-      : ``;
+    const ms = tableScore(d);
+    const tableReceivesBonus = tableMonth === 'all' ? receivesBonus(d) : ms > 80;
+    const recebeTag = tableReceivesBonus ? `<span class="badge-recebe">✓ recebe</span>` : ``;
 
     const trendHtml = d.trend > 0
       ? `<span class="trend-up">↑ +${d.trend}</span>`
@@ -531,17 +610,37 @@ function renderTable() {
       </div></td>`;
     };
 
-    const hasGestores = ALL_DRIVERS.some(x => x.gestor);
-    if (hasGestores) document.getElementById('th-gestor').style.display = '';
+    const comparisonHtml = () => {
+      if (tableMonth === 'all') return '';
+      if (tableMonth === 0) {
+        return `<td class="right"><span class="trend-same" style="font-size:11px">Sem mês anterior</span></td>`;
+      }
+      const prev = d.scores[tableMonth - 1];
+      const curr = d.scores[tableMonth];
+      const label = `${MONTH_SHORT[tableMonth - 1]} → ${MONTH_SHORT[tableMonth]}`;
+      if (prev === null || curr === null) {
+        return `<td class="right"><span class="trend-same" style="font-size:11px">${label}: sem base</span></td>`;
+      }
+      const delta = curr - prev;
+      if (delta > 0) return `<td class="right"><span class="trend-up">↑ +${delta}</span><div style="font-size:10px;color:var(--muted);margin-top:3px">${label}</div></td>`;
+      if (delta < 0) return `<td class="right"><span class="trend-down">↓ ${delta}</span><div style="font-size:10px;color:var(--muted);margin-top:3px">${label}</div></td>`;
+      return `<td class="right"><span class="trend-same" style="font-size:11px">Sem alteração</span><div style="font-size:10px;color:var(--muted);margin-top:3px">${label}</div></td>`;
+    };
+
+    const monthCellsHtml = tableMonth === 'all'
+      ? `${MONTH_KEYS.map((_, mi) => monthCellHtml(d.scores[mi], d.kms[mi], d.ops[mi])).join('')}
+        <td class="right"><span class="score-pill ${scoreClass(ms)}">${ms !== null ? ms : '—'}</span></td>
+        <td class="right">${trendHtml}</td>
+        <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${d.kmTotal ? d.kmTotal.toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>`
+      : `${monthCellHtml(d.scores[tableMonth], d.kms[tableMonth], d.ops[tableMonth])}
+        ${comparisonHtml()}
+        <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${tableKm(d) ? tableKm(d).toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>`;
 
     return `<tr onclick="openModal('${d.name.replace(/'/g,"\\'")}')">
       <td style="color:var(--muted);font-size:12px;width:40px">${i+1}</td>
       <td class="driver-name">${d.name}${recebeTag}</td>
       ${hasGestores ? `<td style="font-size:12px;color:var(--muted)">${d.gestor || '—'}</td>` : ''}
-      ${MONTH_KEYS.map((_, mi) => monthCellHtml(d.scores[mi], d.kms[mi], d.ops[mi])).join('')}
-      <td class="right"><span class="score-pill ${scoreClass(ms)}">${ms !== null ? ms : '—'}</span></td>
-      <td class="right">${trendHtml}</td>
-      <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${d.kmTotal ? d.kmTotal.toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>
+      ${monthCellsHtml}
     </tr>`;
   }).join('');
 }

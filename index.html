@@ -131,6 +131,20 @@
             <div class="dd-item" data-val="CÂMARA FRIA" onclick="setOp('CÂMARA FRIA')"><span class="op-dot" style="background:#64b4ff"></span>CÂMARA FRIA</div>
           </div>
         </div>
+        <!-- Mês da tabela -->
+        <div class="dropdown" id="ddTableMonth">
+          <button class="dd-trigger" id="ddTableMonthBtn" onclick="toggleDropdown('ddTableMonth')">
+            <span id="ddTableMonthLabel">Mês tabela</span>
+            <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="dd-menu" id="ddTableMonthMenu">
+            <div class="dd-item dd-active selected" data-val="all" onclick="setTableMonth('all')">Todos</div>
+            <div class="dd-item" data-val="0" onclick="setTableMonth(0)">Janeiro</div>
+            <div class="dd-item" data-val="1" onclick="setTableMonth(1)">Fevereiro</div>
+            <div class="dd-item" data-val="2" onclick="setTableMonth(2)">Março</div>
+            <div class="dd-item" data-val="3" onclick="setTableMonth(3)">Abril</div>
+          </div>
+        </div>
         <div class="search-wrap" style="margin-left:0">
           <span class="search-icon">🔍</span>
           <input type="text" id="searchInput" placeholder="Pesquisar motorista..." oninput="onSearch()" />
@@ -140,7 +154,7 @@
     <div class="table-wrap">
       <table>
         <thead>
-          <tr>
+          <tr id="tableHeaderRow">
             <th style="width:40px">#</th>
             <th>Motorista</th>
             <th id="th-gestor" style="display:none;font-size:11px">Gestor</th>
