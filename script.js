@@ -356,7 +356,7 @@ function renderTableHeader(hasGestores) {
       <th class="right" onclick="sortBy('trend')">Tendência</th>
       <th class="right" onclick="sortBy('km')">Km Total</th>`
     : `${tableMonth > 0 ? `<th class="right" onclick="sortBy('${MONTH_KEYS[tableMonth - 1]}')">${MONTHS[tableMonth - 1]}</th>
-      <th class="right" onclick="sortBy('tableTrend')">Comparativo</th>` : ''}
+      <th class="compare-col" onclick="sortBy('tableTrend')">Comparativo</th>` : ''}
       <th class="right" onclick="sortBy('${MONTH_KEYS[tableMonth]}')">${MONTHS[tableMonth]}</th>
       <th class="right" onclick="sortBy('tableKm')">Km ${MONTH_SHORT[tableMonth]}</th>`;
 
@@ -614,7 +614,7 @@ function renderTable() {
     const comparisonHtml = () => {
       if (tableMonth === 'all') return '';
       if (tableMonth === 0) {
-        return `<td class="right">
+        return `<td class="compare-col">
           <div class="evolution-cell empty">
             <div class="evolution-main"><span class="evolution-delta">—</span></div>
             <div class="evolution-note">Sem mês anterior</div>
@@ -625,7 +625,7 @@ function renderTable() {
       const curr = d.scores[tableMonth];
       const label = `${MONTH_SHORT[tableMonth - 1]} → ${MONTH_SHORT[tableMonth]}`;
       if (prev === null || curr === null) {
-        return `<td class="right">
+        return `<td class="compare-col">
           <div class="evolution-cell empty">
             <div class="evolution-main"><span class="evolution-delta">—</span></div>
             <div class="evolution-note">${label}: sem base</div>
@@ -636,7 +636,7 @@ function renderTable() {
       const cls = delta > 0 ? 'up' : delta < 0 ? 'down' : 'same';
       const deltaLabel = delta > 0 ? `+${delta}` : String(delta);
       const status = delta > 0 ? 'Melhorou' : delta < 0 ? 'Diminuiu' : 'Sem alteração';
-      return `<td class="right">
+      return `<td class="compare-col">
         <div class="evolution-cell ${cls}">
           <div class="evolution-main">
             <span class="evolution-delta">${deltaLabel}</span>

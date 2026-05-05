@@ -380,6 +380,7 @@ thead th {
   white-space: nowrap;
 }
 thead th.right { text-align: right; }
+thead th.compare-col { text-align: center; }
 
 tbody tr {
   border-bottom: 1px solid var(--border);
@@ -393,6 +394,7 @@ tbody td {
   font-size: 13px;
 }
 tbody td.right { text-align: right; }
+tbody td.compare-col { text-align: center; }
 tbody td.driver-name {
   font-weight: 500;
   max-width: 220px;
@@ -421,7 +423,7 @@ tbody td.driver-name {
 .evolution-cell {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 5px;
   min-width: 132px;
 }
