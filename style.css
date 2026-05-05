@@ -381,6 +381,11 @@ thead th {
 }
 thead th.right { text-align: right; }
 thead th.compare-col { text-align: center; }
+thead th.compare-col,
+thead th.compare-month-col {
+  padding-left: 8px;
+  padding-right: 8px;
+}
 
 tbody tr {
   border-bottom: 1px solid var(--border);
@@ -395,6 +400,11 @@ tbody td {
 }
 tbody td.right { text-align: right; }
 tbody td.compare-col { text-align: center; }
+tbody td.compare-col,
+tbody td.compare-month-col {
+  padding-left: 8px;
+  padding-right: 8px;
+}
 tbody td.driver-name {
   font-weight: 500;
   max-width: 220px;
@@ -425,12 +435,12 @@ tbody td.driver-name {
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  min-width: 132px;
+  min-width: 104px;
 }
 .evolution-main {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 .evolution-delta {
   min-width: 48px;
@@ -461,7 +471,7 @@ tbody td.driver-name {
 }
 .evolution-track {
   position: relative;
-  width: 92px;
+  width: 70px;
   height: 6px;
   background: var(--border);
   border-radius: 3px;
@@ -804,6 +814,9 @@ tbody td.driver-name {
   align-items: flex-end;
   gap: 2px;
   min-width: 90px;
+}
+.month-cell-compact {
+  min-width: 72px;
 }
 .month-km-sub {
   font-size: 10px;

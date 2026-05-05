@@ -357,7 +357,7 @@ function renderTableHeader(hasGestores) {
       <th class="right" onclick="sortBy('km')">Km Total</th>`
     : `${tableMonth > 0 ? `<th class="right" onclick="sortBy('${MONTH_KEYS[tableMonth - 1]}')">${MONTHS[tableMonth - 1]}</th>
       <th class="compare-col" onclick="sortBy('tableTrend')">Comparativo</th>` : ''}
-      <th class="right" onclick="sortBy('${MONTH_KEYS[tableMonth]}')">${MONTHS[tableMonth]}</th>
+      <th class="right compare-month-col" onclick="sortBy('${MONTH_KEYS[tableMonth]}')">${MONTHS[tableMonth]}</th>
       <th class="right" onclick="sortBy('tableKm')">Km ${MONTH_SHORT[tableMonth]}</th>`;
 
   document.getElementById('tableHeaderRow').innerHTML = `
@@ -601,10 +601,12 @@ function renderTable() {
       }).join(' ');
     };
 
-    const monthCellHtml = (s, km, op) => {
-      if (s === null && !op) return `<td class="right"><div class="month-cell"><span style="font-size:10px;color:var(--muted)">Sem movimentação</span></div></td>`;
+    const monthCellHtml = (s, km, op, compact = false) => {
+      const tdClass = compact ? 'right compare-month-col' : 'right';
+      const cellClass = compact ? 'month-cell month-cell-compact' : 'month-cell';
+      if (s === null && !op) return `<td class="${tdClass}"><div class="${cellClass}"><span style="font-size:10px;color:var(--muted)">Sem movimentação</span></div></td>`;
       const kmStr = km ? km.toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '';
-      return `<td class="right"><div class="month-cell">
+      return `<td class="${tdClass}"><div class="${cellClass}">
         ${s !== null ? `<span class="month-score" style="color:${scoreColor(s)};background:${scoreColor(s)}22">${s}</span>` : '<span class="month-score ms-null">—</span>'}
         ${kmStr ? `<span class="month-km-sub">${kmStr}</span>` : ''}
         ${op ? `<div style="margin-top:3px">${opTagsHtml(op)}</div>` : ''}
@@ -655,9 +657,9 @@ function renderTable() {
         <td class="right"><span class="score-pill ${scoreClass(ms)}">${ms !== null ? ms : '—'}</span></td>
         <td class="right">${trendHtml}</td>
         <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${d.kmTotal ? d.kmTotal.toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>`
-      : `${tableMonth > 0 ? `${monthCellHtml(d.scores[tableMonth - 1], d.kms[tableMonth - 1], d.ops[tableMonth - 1])}
+      : `${tableMonth > 0 ? `${monthCellHtml(d.scores[tableMonth - 1], d.kms[tableMonth - 1], d.ops[tableMonth - 1], true)}
         ${comparisonHtml()}` : ''}
-        ${monthCellHtml(d.scores[tableMonth], d.kms[tableMonth], d.ops[tableMonth])}
+        ${monthCellHtml(d.scores[tableMonth], d.kms[tableMonth], d.ops[tableMonth], true)}
         <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${tableKm(d) ? tableKm(d).toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>`;
 
     return `<tr onclick="openModal('${d.name.replace(/'/g,"\\'")}')">
