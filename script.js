@@ -347,7 +347,7 @@ function comparisonDelta(driver) {
 
 function renderTableHeader(hasGestores) {
   const monthHeaders = MONTH_KEYS.map((key, i) =>
-    `<th class="right" onclick="sortBy('${key}')">${MONTHS[i]}</th>`
+    `<th class="right month-col" onclick="sortBy('${key}')">${MONTHS[i]}</th>`
   ).join('');
 
   const selectedMonthHeaders = tableMonth === 'all'
@@ -602,7 +602,7 @@ function renderTable() {
     };
 
     const monthCellHtml = (s, km, op, compact = false) => {
-      const tdClass = compact ? 'right compare-month-col' : 'right';
+      const tdClass = compact ? 'right compare-month-col' : 'right month-col';
       const cellClass = compact ? 'month-cell month-cell-compact' : 'month-cell';
       if (s === null && !op) return `<td class="${tdClass}"><div class="${cellClass}"><span style="font-size:10px;color:var(--muted)">Sem movimentação</span></div></td>`;
       const kmStr = km ? km.toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '';

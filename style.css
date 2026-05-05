@@ -382,6 +382,14 @@ thead th {
 thead th.right { text-align: right; }
 thead th.compare-col { text-align: center; }
 thead th.compare-month-col { text-align: center; }
+thead th.month-col { text-align: center; }
+thead th.month-col,
+tbody td.month-col {
+  width: 118px;
+  min-width: 118px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
 thead th.compare-col,
 thead th.compare-month-col {
   padding-left: 8px;
@@ -401,6 +409,7 @@ tbody td {
 }
 tbody td.right { text-align: right; }
 tbody td.compare-col { text-align: center; }
+tbody td.month-col { text-align: center; }
 tbody td.compare-col,
 tbody td.compare-month-col {
   padding-left: 8px;
@@ -815,7 +824,7 @@ tbody td.driver-name {
 .month-cell {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 2px;
   min-width: 90px;
 }
