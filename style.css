@@ -405,6 +405,9 @@ tbody td.compare-month-col {
   padding-left: 8px;
   padding-right: 8px;
 }
+tbody td.compare-month-col {
+  text-align: center;
+}
 tbody td.driver-name {
   font-weight: 500;
   max-width: 220px;
@@ -816,6 +819,7 @@ tbody td.driver-name {
   min-width: 90px;
 }
 .month-cell-compact {
+  align-items: center;
   min-width: 72px;
 }
 .month-km-sub {
