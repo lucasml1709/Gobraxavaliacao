@@ -355,7 +355,8 @@ function renderTableHeader(hasGestores) {
       <th class="right" onclick="sortBy('avg')">Média</th>
       <th class="right" onclick="sortBy('trend')">Tendência</th>
       <th class="right" onclick="sortBy('km')">Km Total</th>`
-    : `<th class="right" onclick="sortBy('${MONTH_KEYS[tableMonth]}')">${MONTHS[tableMonth]}</th>
+    : `${tableMonth > 0 ? `<th class="right" onclick="sortBy('${MONTH_KEYS[tableMonth - 1]}')">${MONTHS[tableMonth - 1]}</th>` : ''}
+      <th class="right" onclick="sortBy('${MONTH_KEYS[tableMonth]}')">${MONTHS[tableMonth]}</th>
       <th class="right" onclick="sortBy('tableTrend')">Comparativo</th>
       <th class="right" onclick="sortBy('tableKm')">Km ${MONTH_SHORT[tableMonth]}</th>`;
 
@@ -654,7 +655,8 @@ function renderTable() {
         <td class="right"><span class="score-pill ${scoreClass(ms)}">${ms !== null ? ms : '—'}</span></td>
         <td class="right">${trendHtml}</td>
         <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${d.kmTotal ? d.kmTotal.toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>`
-      : `${monthCellHtml(d.scores[tableMonth], d.kms[tableMonth], d.ops[tableMonth])}
+      : `${tableMonth > 0 ? monthCellHtml(d.scores[tableMonth - 1], d.kms[tableMonth - 1], d.ops[tableMonth - 1]) : ''}
+        ${monthCellHtml(d.scores[tableMonth], d.kms[tableMonth], d.ops[tableMonth])}
         ${comparisonHtml()}
         <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${tableKm(d) ? tableKm(d).toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>`;
 
