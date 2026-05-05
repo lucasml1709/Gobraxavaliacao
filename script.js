@@ -355,7 +355,7 @@ function renderTableHeader(hasGestores) {
       <th class="right" onclick="sortBy('avg')">Média</th>
       <th class="right" onclick="sortBy('trend')">Tendência</th>
       <th class="right" onclick="sortBy('km')">Km Total</th>`
-    : `${tableMonth > 0 ? `<th class="right" onclick="sortBy('${MONTH_KEYS[tableMonth - 1]}')">${MONTHS[tableMonth - 1]}</th>
+    : `${tableMonth > 0 ? `<th class="right compare-month-col" onclick="sortBy('${MONTH_KEYS[tableMonth - 1]}')">${MONTHS[tableMonth - 1]}</th>
       <th class="compare-col" onclick="sortBy('tableTrend')">Comparativo</th>` : ''}
       <th class="right compare-month-col" onclick="sortBy('${MONTH_KEYS[tableMonth]}')">${MONTHS[tableMonth]}</th>
       <th class="right" onclick="sortBy('tableKm')">Km ${MONTH_SHORT[tableMonth]}</th>`;
