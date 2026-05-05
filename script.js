@@ -355,9 +355,9 @@ function renderTableHeader(hasGestores) {
       <th class="right" onclick="sortBy('avg')">Média</th>
       <th class="right" onclick="sortBy('trend')">Tendência</th>
       <th class="right" onclick="sortBy('km')">Km Total</th>`
-    : `${tableMonth > 0 ? `<th class="right compare-month-col" onclick="sortBy('${MONTH_KEYS[tableMonth - 1]}')">${MONTHS[tableMonth - 1]}</th>
+    : `${tableMonth > 0 ? `<th class="right month-compare-head" onclick="sortBy('${MONTH_KEYS[tableMonth - 1]}')">${MONTHS[tableMonth - 1]}</th>
       <th class="compare-col" onclick="sortBy('tableTrend')">Comparativo</th>` : ''}
-      <th class="right compare-month-col" onclick="sortBy('${MONTH_KEYS[tableMonth]}')">${MONTHS[tableMonth]}</th>
+      <th class="right month-compare-head" onclick="sortBy('${MONTH_KEYS[tableMonth]}')">${MONTHS[tableMonth]}</th>
       <th class="right" onclick="sortBy('tableKm')">Km ${MONTH_SHORT[tableMonth]}</th>`;
 
   document.getElementById('tableHeaderRow').innerHTML = `
@@ -602,7 +602,7 @@ function renderTable() {
     };
 
     const monthCellHtml = (s, km, op, compact = false) => {
-      const tdClass = compact ? 'right compare-month-col' : 'right month-col';
+      const tdClass = compact ? 'right month-compare-cell' : 'right month-col';
       const cellClass = compact ? 'month-cell month-cell-compact' : 'month-cell';
       if (s === null && !op) return `<td class="${tdClass}"><div class="${cellClass}"><span style="font-size:10px;color:var(--muted)">Sem movimentação</span></div></td>`;
       const kmStr = km ? km.toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '';
