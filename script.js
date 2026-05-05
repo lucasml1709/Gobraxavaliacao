@@ -44,6 +44,7 @@ const MONTHS = ['Janeiro', 'Fevereiro', 'Março', 'Abril'];
 const MONTH_SHORT = ['Jan', 'Fev', 'Mar', 'Abr'];
 const MONTH_KEYS = ['jan', 'fev', 'mar', 'abr'];
 const RANKING_MIN_KM = 1500;
+const WORST_MAX_SCORE = 81;
 
 function processDrivers(data) {
   return data.map(r => {
@@ -778,7 +779,7 @@ function renderWorst20() {
     candidates = ALL_DRIVERS
       .filter(d => {
         const opOk = currentWorstOp === 'all' ? true : d.ops.some(op => op && op.includes(currentWorstOp));
-        return d.avg !== null && d.avg < 80 && d.kmTotal > 1500 && opOk;
+        return d.avg !== null && d.avg < WORST_MAX_SCORE && d.kmTotal > 1500 && opOk;
       })
       .sort((a, b) => a.avg - b.avg)
       .slice(0, 20)
@@ -790,7 +791,7 @@ function renderWorst20() {
         const km = d.kms[mi];
         const op = d.ops[mi];
         const opOk = currentWorstOp === 'all' ? true : (op && op.includes(currentWorstOp));
-        return s !== null && s < 80 && km > 1500 && opOk;
+        return s !== null && s < WORST_MAX_SCORE && km > 1500 && opOk;
       })
       .sort((a, b) => a.scores[mi] - b.scores[mi])
       .slice(0, 20)
@@ -800,10 +801,10 @@ function renderWorst20() {
   // Update subtitle
   const monthLabel = mi === 'all' ? 'todos os meses' : MONTHS[mi];
   const opLabel = currentWorstOp === 'all' ? 'todas as operações' : currentWorstOp;
-  document.getElementById('worstSubtitle').textContent = `· Nota inferior a 80 e mínimo 1.500 km rodados · ${monthLabel} · ${opLabel}`;
+  document.getElementById('worstSubtitle').textContent = `· Nota abaixo de ${WORST_MAX_SCORE} e mínimo 1.500 km rodados · ${monthLabel} · ${opLabel}`;
 
   if (!candidates.length) {
-    grid.innerHTML = `<div class="worst-empty">🎉 Nenhum motorista com nota &lt; 80 e mais de 1.500 km neste filtro.</div>`;
+    grid.innerHTML = `<div class="worst-empty">🎉 Nenhum motorista com nota abaixo de ${WORST_MAX_SCORE} e mais de 1.500 km neste filtro.</div>`;
     return;
   }
 
