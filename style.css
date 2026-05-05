@@ -381,6 +381,7 @@ thead th {
 }
 thead th.right { text-align: right; }
 thead th.compare-col { text-align: center; }
+thead th.compare-month-col { text-align: center; }
 thead th.compare-col,
 thead th.compare-month-col {
   padding-left: 8px;
