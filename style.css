@@ -389,21 +389,21 @@ thead th.month-compare-head { text-align: center; }
 thead th.month-col { text-align: center; }
 table.compare-mode thead th.month-compare-head,
 table.compare-mode tbody td.month-compare-cell {
-  width: 92px;
-  min-width: 92px;
-  max-width: 92px;
+  width: 106px;
+  min-width: 106px;
+  max-width: 106px;
 }
 table.compare-mode thead th.compare-col,
 table.compare-mode tbody td.compare-col {
-  width: 116px;
-  min-width: 116px;
-  max-width: 116px;
+  width: 128px;
+  min-width: 128px;
+  max-width: 128px;
 }
 table.compare-mode thead th:last-child,
 table.compare-mode tbody td:last-child {
-  width: 110px;
-  min-width: 110px;
-  max-width: 110px;
+  width: 118px;
+  min-width: 118px;
+  max-width: 118px;
 }
 thead th.month-col,
 tbody td.month-col {
