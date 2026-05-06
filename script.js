@@ -347,6 +347,9 @@ function comparisonDelta(driver) {
 }
 
 function renderTableHeader(hasGestores) {
+  const table = document.getElementById('tableHeaderRow').closest('table');
+  table.classList.toggle('compare-mode', tableMonth !== 'all');
+
   const monthHeaders = MONTH_KEYS.map((key, i) =>
     `<th class="right month-col" onclick="sortBy('${key}')">${MONTHS[i]}</th>`
   ).join('');

@@ -366,6 +366,10 @@ main { padding: 24px 32px; }
 .table-wrap { overflow-x: auto; max-height: 420px; overflow-y: auto; }
 
 table { width: 100%; border-collapse: collapse; }
+table.compare-mode {
+  table-layout: fixed;
+  min-width: 760px;
+}
 thead { position: sticky; top: 0; z-index: 2; }
 
 thead tr { background: var(--surface2); }
@@ -383,6 +387,24 @@ thead th.right { text-align: right; }
 thead th.compare-col { text-align: center; }
 thead th.month-compare-head { text-align: center; }
 thead th.month-col { text-align: center; }
+table.compare-mode thead th.month-compare-head,
+table.compare-mode tbody td.month-compare-cell {
+  width: 92px;
+  min-width: 92px;
+  max-width: 92px;
+}
+table.compare-mode thead th.compare-col,
+table.compare-mode tbody td.compare-col {
+  width: 116px;
+  min-width: 116px;
+  max-width: 116px;
+}
+table.compare-mode thead th:last-child,
+table.compare-mode tbody td:last-child {
+  width: 110px;
+  min-width: 110px;
+  max-width: 110px;
+}
 thead th.month-col,
 tbody td.month-col {
   width: 118px;
