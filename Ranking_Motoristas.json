@@ -1,0 +1,6586 @@
+{
+  "resumo": {
+    "total_motoristas": 822,
+    "total_km_geral": 15395780.26,
+    "media_geral_nota": 87.68,
+    "periodo": "Janeiro a Abril"
+  },
+  "motoristas": [
+    {
+      "posicao": 1,
+      "nome": "DENIVAL JESUS DOS SANTOS",
+      "total_pontuacao": 3562,
+      "total_km": 35798.84,
+      "media_nota": 99.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 2,
+      "nome": "EDNALDO DA CONCEICAO",
+      "total_pontuacao": 3556,
+      "total_km": 36531.49,
+      "media_nota": 98.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 3,
+      "nome": "OLAIR WESTPHAL",
+      "total_pontuacao": 3549,
+      "total_km": 37772.7,
+      "media_nota": 97.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 4,
+      "nome": "LUZINALDO SALES DE OLIVEIRA",
+      "total_pontuacao": 3537,
+      "total_km": 36295.06,
+      "media_nota": 98.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 5,
+      "nome": "ANTONIO BALBINO DA SILVA",
+      "total_pontuacao": 3488,
+      "total_km": 35436.71,
+      "media_nota": 97.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 6,
+      "nome": "JUSCELINO SANTOS SOUZA",
+      "total_pontuacao": 3470,
+      "total_km": 34788.22,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 7,
+      "nome": "LEANDRO DE SOUZA TAVARES",
+      "total_pontuacao": 3462,
+      "total_km": 33569.76,
+      "media_nota": 97.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 8,
+      "nome": "ADILSON NOBRE COSTA",
+      "total_pontuacao": 3445,
+      "total_km": 31866.13,
+      "media_nota": 99.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 9,
+      "nome": "JADEIR DE OLIVEIRA FELIX",
+      "total_pontuacao": 3443,
+      "total_km": 34315.94,
+      "media_nota": 95.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 10,
+      "nome": "EDVANDRO DOS SANTOS REIS",
+      "total_pontuacao": 3422,
+      "total_km": 33452.02,
+      "media_nota": 96.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 11,
+      "nome": "GECENILTO DE SOUSA OLIVEIRA",
+      "total_pontuacao": 3420,
+      "total_km": 33725.96,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 12,
+      "nome": "ALESSANDRO MARTINS DOS SANTOS",
+      "total_pontuacao": 3419,
+      "total_km": 33929.08,
+      "media_nota": 95.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 13,
+      "nome": "ADALTO DA SILVA OLIVEIRA",
+      "total_pontuacao": 3415,
+      "total_km": 34495.29,
+      "media_nota": 95.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 14,
+      "nome": "LEONILDO JOSE DA SILVA",
+      "total_pontuacao": 3412,
+      "total_km": 34152.54,
+      "media_nota": 95.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 15,
+      "nome": "ADILSON NOBRE SIMOURA",
+      "total_pontuacao": 3407,
+      "total_km": 35094.24,
+      "media_nota": 94.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 16,
+      "nome": "JAILTON OLIVEIRA DE ASSIS",
+      "total_pontuacao": 3404,
+      "total_km": 36300.29,
+      "media_nota": 93.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 17,
+      "nome": "ADVINO FRANCISCO CALDEIRA JUNIOR",
+      "total_pontuacao": 3403,
+      "total_km": 29561.78,
+      "media_nota": 99.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 18,
+      "nome": "FERNANDO VIEIRA RIOS",
+      "total_pontuacao": 3401,
+      "total_km": 31467.35,
+      "media_nota": 97.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 19,
+      "nome": "JOALDO SILVA DE SOUZA",
+      "total_pontuacao": 3395,
+      "total_km": 37374.5,
+      "media_nota": 91.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 20,
+      "nome": "ANTONIO MARCOS ANHOLETI HOFFMANN",
+      "total_pontuacao": 3394,
+      "total_km": 33408.63,
+      "media_nota": 95.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 21,
+      "nome": "CARLOS ANDRE SILVA SANTOS",
+      "total_pontuacao": 3391,
+      "total_km": 34469.69,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 22,
+      "nome": "CELISVALDO BATISTA DOS SANTOS",
+      "total_pontuacao": 3388,
+      "total_km": 37762.29,
+      "media_nota": 91.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 23,
+      "nome": "JOSE ROQUE BREDA",
+      "total_pontuacao": 3386,
+      "total_km": 39264.34,
+      "media_nota": 90.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 24,
+      "nome": "WILTON BATISTA MATOS",
+      "total_pontuacao": 3386,
+      "total_km": 31164.08,
+      "media_nota": 97.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 25,
+      "nome": "GENIVALDO PINHEIRO DE OLIVEIRA",
+      "total_pontuacao": 3385,
+      "total_km": 33072.74,
+      "media_nota": 95.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 26,
+      "nome": "IZAQUE FRANCISCO FERREIRA",
+      "total_pontuacao": 3385,
+      "total_km": 30243.58,
+      "media_nota": 98.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 27,
+      "nome": "FABIO COSTA DIAS",
+      "total_pontuacao": 3374,
+      "total_km": 31485.48,
+      "media_nota": 97.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 28,
+      "nome": "RONY DA SILVA GOMES",
+      "total_pontuacao": 3374,
+      "total_km": 35266.86,
+      "media_nota": 93.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 29,
+      "nome": "GENIVALDO MATOS DA SILVA",
+      "total_pontuacao": 3372,
+      "total_km": 31419.17,
+      "media_nota": 96.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 30,
+      "nome": "JOANILO MARCOS DA SILVA SANTOS",
+      "total_pontuacao": 3370,
+      "total_km": 31762.14,
+      "media_nota": 95.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 31,
+      "nome": "DAVID SIMOES PINHEIRO",
+      "total_pontuacao": 3370,
+      "total_km": 34198.89,
+      "media_nota": 93.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 32,
+      "nome": "JOSE AUGUSTO DO NASCIMENTO",
+      "total_pontuacao": 3366,
+      "total_km": 29951.27,
+      "media_nota": 97.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 33,
+      "nome": "SILVANO DE JESUS RAMIREZ",
+      "total_pontuacao": 3361,
+      "total_km": 29486.94,
+      "media_nota": 98.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 34,
+      "nome": "WILTON REZENDE DAVID",
+      "total_pontuacao": 3361,
+      "total_km": 32867.92,
+      "media_nota": 94.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 35,
+      "nome": "MARCIO ANTONIO PAGOTO FREITAS",
+      "total_pontuacao": 3360,
+      "total_km": 29058.75,
+      "media_nota": 98.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 36,
+      "nome": "MARCIO FERREIRA GREMASCO",
+      "total_pontuacao": 3357,
+      "total_km": 35049.48,
+      "media_nota": 93.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 37,
+      "nome": "AVERALDO ALVES BARBOSA FILHO",
+      "total_pontuacao": 3353,
+      "total_km": 30240.25,
+      "media_nota": 96.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 38,
+      "nome": "MARCELO ALMEIDA DE PAULA",
+      "total_pontuacao": 3350,
+      "total_km": 33655.16,
+      "media_nota": 93.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 39,
+      "nome": "SEBASTIAO EDESIO DE SOUZA",
+      "total_pontuacao": 3346,
+      "total_km": 29978.96,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 40,
+      "nome": "JOSE HILTON MESSIAS DA SILVA",
+      "total_pontuacao": 3345,
+      "total_km": 27039.01,
+      "media_nota": 98.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 41,
+      "nome": "SEBASTIAO BRAZ LANNES MARTINS",
+      "total_pontuacao": 3340,
+      "total_km": 34031.94,
+      "media_nota": 93.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 42,
+      "nome": "WALTER XAVIER DA SILVA",
+      "total_pontuacao": 3338,
+      "total_km": 33242.28,
+      "media_nota": 93.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 43,
+      "nome": "PAULO SERGIO SILVA DOS ANJOS",
+      "total_pontuacao": 3333,
+      "total_km": 30281.87,
+      "media_nota": 96.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 44,
+      "nome": "VIDAL FERNANDES DE LIMA JUNIOR",
+      "total_pontuacao": 3332,
+      "total_km": 32486.81,
+      "media_nota": 94.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 45,
+      "nome": "TARCISIO MASCARENHAS DA SILVA",
+      "total_pontuacao": 3332,
+      "total_km": 29670.86,
+      "media_nota": 97.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 46,
+      "nome": "AURIVALDO DA SILVA COSTA",
+      "total_pontuacao": 3331,
+      "total_km": 31104.77,
+      "media_nota": 95.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 47,
+      "nome": "MARCOS VINICIUS PEREIRA",
+      "total_pontuacao": 3330,
+      "total_km": 33763.06,
+      "media_nota": 92.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 48,
+      "nome": "KLEBERSONN ROBERTO DE JESUS SILVA",
+      "total_pontuacao": 3324,
+      "total_km": 32178.06,
+      "media_nota": 93.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 49,
+      "nome": "ISAC TAVARES DA SILVA",
+      "total_pontuacao": 3318,
+      "total_km": 29206.6,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 50,
+      "nome": "MARTIM FRANCISCO MACHADO DA COSTA",
+      "total_pontuacao": 3315,
+      "total_km": 26477.55,
+      "media_nota": 98.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 51,
+      "nome": "ODAIR JOSE VIEIRA DOS SANTOS",
+      "total_pontuacao": 3314,
+      "total_km": 30174.19,
+      "media_nota": 96.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 52,
+      "nome": "PEDRO PAULO SILVA",
+      "total_pontuacao": 3313,
+      "total_km": 29632.24,
+      "media_nota": 96.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 53,
+      "nome": "JOSE GOMES DA SILVA JUNIOR",
+      "total_pontuacao": 3313,
+      "total_km": 29079.7,
+      "media_nota": 96.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 54,
+      "nome": "ABIMAEL NUNES DE OLIVEIRA",
+      "total_pontuacao": 3312,
+      "total_km": 28145.31,
+      "media_nota": 97.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 55,
+      "nome": "ADENILSON MARTINS PEREIRA",
+      "total_pontuacao": 3312,
+      "total_km": 25952.78,
+      "media_nota": 98.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 56,
+      "nome": "JANDERSON FERREIRA COSTA",
+      "total_pontuacao": 3312,
+      "total_km": 30183.46,
+      "media_nota": 94.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 57,
+      "nome": "MARCOS ANTONIO DA SILVA",
+      "total_pontuacao": 3311,
+      "total_km": 29988.01,
+      "media_nota": 95.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 58,
+      "nome": "MAXUEL BENTO DOS SANTOS",
+      "total_pontuacao": 3310,
+      "total_km": 31008.14,
+      "media_nota": 94.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 59,
+      "nome": "JAILTON JOVENCIO",
+      "total_pontuacao": 3308,
+      "total_km": 34469.63,
+      "media_nota": 91.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 60,
+      "nome": "DARIO GOMES DE SOUZA",
+      "total_pontuacao": 3307,
+      "total_km": 32447.48,
+      "media_nota": 93.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 61,
+      "nome": "MARIVAM SILVA SANTOS",
+      "total_pontuacao": 3303,
+      "total_km": 32476.81,
+      "media_nota": 92.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 62,
+      "nome": "SERGIO LUIZ COELHO",
+      "total_pontuacao": 3302,
+      "total_km": 27799.71,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 63,
+      "nome": "JOSE MARCIEL DA SILVA",
+      "total_pontuacao": 3300,
+      "total_km": 30385.54,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 64,
+      "nome": "JEORGE LEMOS SANTOS",
+      "total_pontuacao": 3300,
+      "total_km": 33608.13,
+      "media_nota": 91.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 65,
+      "nome": "EDILSON CELINO",
+      "total_pontuacao": 3295,
+      "total_km": 34049.49,
+      "media_nota": 91.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 66,
+      "nome": "EDISON DOS SANTOS REIS",
+      "total_pontuacao": 3293,
+      "total_km": 33003.54,
+      "media_nota": 92.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 67,
+      "nome": "LUCIO SANTIAGO SANTOS",
+      "total_pontuacao": 3293,
+      "total_km": 29591.41,
+      "media_nota": 95.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 68,
+      "nome": "EDMILSON DE SANTANA CONCEICAO",
+      "total_pontuacao": 3288,
+      "total_km": 24907.74,
+      "media_nota": 99.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 69,
+      "nome": "PAULO CESAR DE MENEZES",
+      "total_pontuacao": 3288,
+      "total_km": 28555.34,
+      "media_nota": 95.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 70,
+      "nome": "RICARDO LUCIANO DOS ANJOS",
+      "total_pontuacao": 3287,
+      "total_km": 27915.09,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 71,
+      "nome": "RONALDO DA LUZ PEREIRA",
+      "total_pontuacao": 3285,
+      "total_km": 30826.17,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 72,
+      "nome": "FERNANDO DE ASSIS CAMPOS",
+      "total_pontuacao": 3282,
+      "total_km": 27827.1,
+      "media_nota": 97.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 73,
+      "nome": "RAFAEL VEIGA AMBROZIO",
+      "total_pontuacao": 3280,
+      "total_km": 30948.17,
+      "media_nota": 93.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 74,
+      "nome": "JAIR SPEROTO FILHO",
+      "total_pontuacao": 3278,
+      "total_km": 27593.74,
+      "media_nota": 97.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 75,
+      "nome": "MARCELO MEDEIROS FERREIRA",
+      "total_pontuacao": 3276,
+      "total_km": 30577.96,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 76,
+      "nome": "JEAN NASCIMENTO DE OLIVEIRA",
+      "total_pontuacao": 3276,
+      "total_km": 27020.16,
+      "media_nota": 97.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 77,
+      "nome": "JARIO ALBINO COSWOSK",
+      "total_pontuacao": 3275,
+      "total_km": 29654.27,
+      "media_nota": 94.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 78,
+      "nome": "ADILSON JOSE SCALZER",
+      "total_pontuacao": 3274,
+      "total_km": 45142.0,
+      "media_nota": 81.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 79,
+      "nome": "VIDALIO GOMES DO NASCIMENTO",
+      "total_pontuacao": 3269,
+      "total_km": 28868.11,
+      "media_nota": 95.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 80,
+      "nome": "ANTONIO MOREIRA DA CONCEICAO",
+      "total_pontuacao": 3266,
+      "total_km": 28255.32,
+      "media_nota": 94.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 81,
+      "nome": "JOSE RAIMUNDO NOGUEIRA DA SILVA",
+      "total_pontuacao": 3264,
+      "total_km": 28947.94,
+      "media_nota": 95.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 82,
+      "nome": "SILVANO RODRIGUES DA SILVA",
+      "total_pontuacao": 3263,
+      "total_km": 25118.72,
+      "media_nota": 98.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 83,
+      "nome": "LUCIVALDO OLIVEIRA SANTOS",
+      "total_pontuacao": 3263,
+      "total_km": 31629.9,
+      "media_nota": 91.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 84,
+      "nome": "MARCELO RODRIGUES DE SOUZA",
+      "total_pontuacao": 3262,
+      "total_km": 27170.22,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 85,
+      "nome": "THIAGO DA SILVA MAIA PIMENTEL",
+      "total_pontuacao": 3258,
+      "total_km": 25374.27,
+      "media_nota": 97.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 86,
+      "nome": "EDNILSON RAMOS DA SILVA",
+      "total_pontuacao": 3256,
+      "total_km": 26546.0,
+      "media_nota": 97.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 87,
+      "nome": "VALDETE SOUZA DE OLIVEIRA",
+      "total_pontuacao": 3250,
+      "total_km": 28016.77,
+      "media_nota": 94.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 88,
+      "nome": "CLAUDIO MARCIO DOS SANTOS ALVES",
+      "total_pontuacao": 3249,
+      "total_km": 25540.11,
+      "media_nota": 97.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 89,
+      "nome": "LEANDRO GRIGORIO DOS SANTOS",
+      "total_pontuacao": 3248,
+      "total_km": 29159.83,
+      "media_nota": 93.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 90,
+      "nome": "EDSON DE JESUS LIMA",
+      "total_pontuacao": 3247,
+      "total_km": 25950.31,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 91,
+      "nome": "GIBSON BARBOSA MATA",
+      "total_pontuacao": 3244,
+      "total_km": 35327.8,
+      "media_nota": 87.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 92,
+      "nome": "ANTONIO MARCOS PEREIRA",
+      "total_pontuacao": 3243,
+      "total_km": 26580.35,
+      "media_nota": 96.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 93,
+      "nome": "AMELIO PINTO DA SILVA",
+      "total_pontuacao": 3242,
+      "total_km": 27125.08,
+      "media_nota": 95.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 94,
+      "nome": "WANDERSON OLIVEIRA DE ALMEIDA",
+      "total_pontuacao": 3237,
+      "total_km": 27028.34,
+      "media_nota": 95.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 95,
+      "nome": "CARLOS ALBERTO DOS SANTOS",
+      "total_pontuacao": 3237,
+      "total_km": 25516.71,
+      "media_nota": 96.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 96,
+      "nome": "JORGE LUIZ MATOS DE SOUZA",
+      "total_pontuacao": 3235,
+      "total_km": 28037.71,
+      "media_nota": 94.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 97,
+      "nome": "ELIACIBE BARBOSA DE LIMA",
+      "total_pontuacao": 3231,
+      "total_km": 27296.7,
+      "media_nota": 96.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 98,
+      "nome": "RODRIGO VIEIRA DE LIMA",
+      "total_pontuacao": 3227,
+      "total_km": 26591.54,
+      "media_nota": 95.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 99,
+      "nome": "RICARDO DE CENA ROCHA",
+      "total_pontuacao": 3219,
+      "total_km": 26569.58,
+      "media_nota": 95.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 100,
+      "nome": "JOSIVAL GOMES DA SILVA",
+      "total_pontuacao": 3216,
+      "total_km": 25978.1,
+      "media_nota": 96.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 101,
+      "nome": "EDINALDO DA SILVA",
+      "total_pontuacao": 3216,
+      "total_km": 26649.38,
+      "media_nota": 95.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 102,
+      "nome": "JOSEMAR RANGEL PINTO",
+      "total_pontuacao": 3212,
+      "total_km": 29275.26,
+      "media_nota": 92.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 103,
+      "nome": "ADRIANO MOURA DE NOVAIS",
+      "total_pontuacao": 3211,
+      "total_km": 23491.77,
+      "media_nota": 97.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 104,
+      "nome": "ALBERICIO ALVES DE SOUZA",
+      "total_pontuacao": 3208,
+      "total_km": 23503.79,
+      "media_nota": 98.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 105,
+      "nome": "FRANCISCO SANTANA",
+      "total_pontuacao": 3207,
+      "total_km": 25487.11,
+      "media_nota": 95.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 106,
+      "nome": "CARLOS ALBERTO ALVES DA SILVA",
+      "total_pontuacao": 3206,
+      "total_km": 24513.0,
+      "media_nota": 96.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 107,
+      "nome": "UELTON JESUS NASCIMENTO",
+      "total_pontuacao": 3204,
+      "total_km": 28015.49,
+      "media_nota": 93.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 108,
+      "nome": "ADICLECIO SILVA DOS SANTOS",
+      "total_pontuacao": 3203,
+      "total_km": 24684.65,
+      "media_nota": 96.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 109,
+      "nome": "RUBENS BARROS SILVA",
+      "total_pontuacao": 3203,
+      "total_km": 30477.91,
+      "media_nota": 90.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 110,
+      "nome": "WESCLEI MILER",
+      "total_pontuacao": 3201,
+      "total_km": 26546.74,
+      "media_nota": 95.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 111,
+      "nome": "PAULO ROBERTO DE SOUZA BARBOZA",
+      "total_pontuacao": 3199,
+      "total_km": 36190.12,
+      "media_nota": 86.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 112,
+      "nome": "VAGNER DA HORA DETRANO",
+      "total_pontuacao": 3195,
+      "total_km": 27253.17,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 113,
+      "nome": "JERFSON RIBEIRO SANTOS",
+      "total_pontuacao": 3192,
+      "total_km": 27573.69,
+      "media_nota": 93.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 114,
+      "nome": "CLAUDIO RODRIGUES DOS SANTOS",
+      "total_pontuacao": 3191,
+      "total_km": 30128.86,
+      "media_nota": 90.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 115,
+      "nome": "RONISON RAMALHETE",
+      "total_pontuacao": 3190,
+      "total_km": 26946.17,
+      "media_nota": 94.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 116,
+      "nome": "EMERSON EDUARDO MARINS DUARTE",
+      "total_pontuacao": 3184,
+      "total_km": 30883.78,
+      "media_nota": 89.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 117,
+      "nome": "JORGE ALBERTO MOITINHO SOARES",
+      "total_pontuacao": 3181,
+      "total_km": 24608.54,
+      "media_nota": 95.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 118,
+      "nome": "LAURO LIMA DOS SANTOS",
+      "total_pontuacao": 3181,
+      "total_km": 24310.48,
+      "media_nota": 96.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 119,
+      "nome": "FABIO ANJOS DA SILVA",
+      "total_pontuacao": 3178,
+      "total_km": 24248.91,
+      "media_nota": 95.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 120,
+      "nome": "CELIO SALINO DE OLIVEIRA",
+      "total_pontuacao": 3178,
+      "total_km": 29773.74,
+      "media_nota": 90.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 121,
+      "nome": "MARCOS PAULO PACHECO DOS SANTOS",
+      "total_pontuacao": 3176,
+      "total_km": 26479.37,
+      "media_nota": 93.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 122,
+      "nome": "MARCOS DE OLIVEIRA DOMINGOS",
+      "total_pontuacao": 3174,
+      "total_km": 22938.02,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 123,
+      "nome": "LUIS CLAUDIO BLUNCK BATISTA",
+      "total_pontuacao": 3171,
+      "total_km": 29530.78,
+      "media_nota": 90.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 124,
+      "nome": "ALBERTO PEDRO DELBONI",
+      "total_pontuacao": 3171,
+      "total_km": 25945.7,
+      "media_nota": 93.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 125,
+      "nome": "UELINTON LOPES DE BRITO",
+      "total_pontuacao": 3171,
+      "total_km": 23634.34,
+      "media_nota": 96.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 126,
+      "nome": "GIVAM TEIXEIRA DA SILVA",
+      "total_pontuacao": 3168,
+      "total_km": 22198.75,
+      "media_nota": 96.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 127,
+      "nome": "JONAS CARARA",
+      "total_pontuacao": 3167,
+      "total_km": 28985.13,
+      "media_nota": 91.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 128,
+      "nome": "MARCUS VINICIUS MIRANDA DE SOUZA",
+      "total_pontuacao": 3167,
+      "total_km": 30531.04,
+      "media_nota": 89.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 129,
+      "nome": "DELAMIR CORREA DA SILVA",
+      "total_pontuacao": 3167,
+      "total_km": 25031.46,
+      "media_nota": 94.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 130,
+      "nome": "JORGE DE FREITAS",
+      "total_pontuacao": 3162,
+      "total_km": 25478.75,
+      "media_nota": 94.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 131,
+      "nome": "ROOSELVET PEREIRA DE SANTANA JUNIOR",
+      "total_pontuacao": 3162,
+      "total_km": 26538.17,
+      "media_nota": 93.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 132,
+      "nome": "JOSE EDIVAN ALVES DO AMOR DIVINO",
+      "total_pontuacao": 3162,
+      "total_km": 28268.0,
+      "media_nota": 91.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 133,
+      "nome": "ALEXANDRE CORREIA ARAUJO",
+      "total_pontuacao": 3161,
+      "total_km": 30976.28,
+      "media_nota": 88.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 134,
+      "nome": "GILBERTO FELISBERTO DOS REIS",
+      "total_pontuacao": 3161,
+      "total_km": 24886.88,
+      "media_nota": 94.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 135,
+      "nome": "FRANCISCO FABIO PEREIRA DA SILVA",
+      "total_pontuacao": 3161,
+      "total_km": 25015.02,
+      "media_nota": 95.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 136,
+      "nome": "NOILTON PEREIRA DE ASSUNCAO JUNIOR",
+      "total_pontuacao": 3159,
+      "total_km": 23009.77,
+      "media_nota": 95.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 137,
+      "nome": "ROGELDES OLIVEIRA REIS",
+      "total_pontuacao": 3157,
+      "total_km": 26624.7,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 138,
+      "nome": "ODAIR JOSE DA COSTA",
+      "total_pontuacao": 3151,
+      "total_km": 26945.68,
+      "media_nota": 92.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 139,
+      "nome": "INAMAN JOSE DA SILVA",
+      "total_pontuacao": 3149,
+      "total_km": 30317.79,
+      "media_nota": 89.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 140,
+      "nome": "GIVANILDO SOARES CARDOSO",
+      "total_pontuacao": 3144,
+      "total_km": 25238.03,
+      "media_nota": 93.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 141,
+      "nome": "FLAVIO SANTOS DE JESUS",
+      "total_pontuacao": 3143,
+      "total_km": 27246.21,
+      "media_nota": 91.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 142,
+      "nome": "SAMUEL NUNES FERREIRA",
+      "total_pontuacao": 3139,
+      "total_km": 23974.54,
+      "media_nota": 95.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 143,
+      "nome": "UELINGTON DA SILVA BATISTA",
+      "total_pontuacao": 3132,
+      "total_km": 27211.96,
+      "media_nota": 91.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 144,
+      "nome": "IVONALDO OLIVEIRA DE ASSIS",
+      "total_pontuacao": 3131,
+      "total_km": 23873.36,
+      "media_nota": 94.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 145,
+      "nome": "UBIRACI CARDOSO",
+      "total_pontuacao": 3131,
+      "total_km": 26450.57,
+      "media_nota": 91.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 146,
+      "nome": "ANDERSON AMORIM CORREA",
+      "total_pontuacao": 3130,
+      "total_km": 26435.67,
+      "media_nota": 92.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 147,
+      "nome": "GEILSON DOS SANTOS MIRANDA",
+      "total_pontuacao": 3130,
+      "total_km": 23900.99,
+      "media_nota": 94.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 148,
+      "nome": "FABIO OLIVEIRA DOS SANTOS",
+      "total_pontuacao": 3124,
+      "total_km": 20187.36,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 149,
+      "nome": "TARCISIO MOREIRA ALVES",
+      "total_pontuacao": 3124,
+      "total_km": 26780.34,
+      "media_nota": 91.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 150,
+      "nome": "RODRIGO EFGEM DE SOUZA RUSSIM",
+      "total_pontuacao": 3122,
+      "total_km": 24935.19,
+      "media_nota": 92.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 151,
+      "nome": "PEDRO CARREIRO",
+      "total_pontuacao": 3120,
+      "total_km": 23298.73,
+      "media_nota": 95.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 152,
+      "nome": "ELIOMAR DIAS DE JESUS",
+      "total_pontuacao": 3118,
+      "total_km": 23161.75,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 153,
+      "nome": "GUILICERIO RODRIGUES SANTOS",
+      "total_pontuacao": 3117,
+      "total_km": 24607.08,
+      "media_nota": 93.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 154,
+      "nome": "GIEDILANIO VIDAL DE ALMEIDA SOUZA",
+      "total_pontuacao": 3117,
+      "total_km": 27961.45,
+      "media_nota": 91.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 155,
+      "nome": "LUCAS OLIVEIRA COSTA",
+      "total_pontuacao": 3116,
+      "total_km": 29472.2,
+      "media_nota": 88.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 156,
+      "nome": "AILTON DOS SANTOS RIBEIRO",
+      "total_pontuacao": 3116,
+      "total_km": 24495.05,
+      "media_nota": 93.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 157,
+      "nome": "ISAQUEU BATISTA CORREIA",
+      "total_pontuacao": 3112,
+      "total_km": 27230.02,
+      "media_nota": 91.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 158,
+      "nome": "CLAUDIONOR APARECIDO FERNANDES",
+      "total_pontuacao": 3112,
+      "total_km": 27319.36,
+      "media_nota": 90.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 159,
+      "nome": "ERIS DA SILVA PAULA",
+      "total_pontuacao": 3112,
+      "total_km": 23932.75,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 160,
+      "nome": "PAULO VICENTE FERREIRA FILHO",
+      "total_pontuacao": 3111,
+      "total_km": 25255.46,
+      "media_nota": 91.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 161,
+      "nome": "JEREMIAS OLIVEIRA CARDOSO",
+      "total_pontuacao": 3108,
+      "total_km": 24560.48,
+      "media_nota": 93.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 162,
+      "nome": "ALBERTO LAGDEN PINHEIRO",
+      "total_pontuacao": 3107,
+      "total_km": 24155.34,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 163,
+      "nome": "NELSON JOSE DIAS DOS SANTOS",
+      "total_pontuacao": 3107,
+      "total_km": 26639.64,
+      "media_nota": 91.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 164,
+      "nome": "ELIEUTON LOPES ALVES",
+      "total_pontuacao": 3107,
+      "total_km": 21174.36,
+      "media_nota": 96.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 165,
+      "nome": "JOSMIM RIBEIRO DE SOUZA",
+      "total_pontuacao": 3101,
+      "total_km": 34878.4,
+      "media_nota": 82.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 166,
+      "nome": "NEILTON TEIXEIRA DAS MERCES",
+      "total_pontuacao": 3100,
+      "total_km": 23281.74,
+      "media_nota": 94.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 167,
+      "nome": "JOSE ROBERTO SIMOURA GUIMARAES",
+      "total_pontuacao": 3099,
+      "total_km": 27990.06,
+      "media_nota": 89.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 168,
+      "nome": "JOSE AILTON DA COSTA",
+      "total_pontuacao": 3099,
+      "total_km": 28167.93,
+      "media_nota": 90.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 169,
+      "nome": "VANDERLEI DE LIMA LEAL",
+      "total_pontuacao": 3099,
+      "total_km": 20989.1,
+      "media_nota": 96.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 170,
+      "nome": "THEREZO VALERIO PINTO",
+      "total_pontuacao": 3098,
+      "total_km": 25437.82,
+      "media_nota": 93.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 171,
+      "nome": "DEVAIR ANSELMO DA SILVA",
+      "total_pontuacao": 3098,
+      "total_km": 23815.54,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 172,
+      "nome": "INACIO ALVES DE SOUZA",
+      "total_pontuacao": 3098,
+      "total_km": 23446.42,
+      "media_nota": 93.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 173,
+      "nome": "JEAN CARLOS OAKES",
+      "total_pontuacao": 3096,
+      "total_km": 23725.48,
+      "media_nota": 93.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 174,
+      "nome": "ANTONIO CARLOS DA SILVA SANTOS",
+      "total_pontuacao": 3094,
+      "total_km": 32645.03,
+      "media_nota": 85.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 175,
+      "nome": "WENDER RODRIGUES",
+      "total_pontuacao": 3094,
+      "total_km": 22489.99,
+      "media_nota": 94.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 176,
+      "nome": "FABIO HENRIQUE DA SILVA",
+      "total_pontuacao": 3092,
+      "total_km": 34078.65,
+      "media_nota": 83.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 177,
+      "nome": "WAGNER NAVARRO NEVES",
+      "total_pontuacao": 3091,
+      "total_km": 28017.59,
+      "media_nota": 89.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 178,
+      "nome": "VALDECI FERREIRA DE ANDRADE",
+      "total_pontuacao": 3088,
+      "total_km": 22512.36,
+      "media_nota": 94.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 179,
+      "nome": "ADAO BERGER DA SILVA",
+      "total_pontuacao": 3086,
+      "total_km": 20777.26,
+      "media_nota": 96.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 180,
+      "nome": "FABRICIO BAIA AMANCIO",
+      "total_pontuacao": 3086,
+      "total_km": 26882.0,
+      "media_nota": 90.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 181,
+      "nome": "JOSE PEREIRA",
+      "total_pontuacao": 3085,
+      "total_km": 22758.46,
+      "media_nota": 94.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 182,
+      "nome": "JANDEILSON SANTOS PINHEIRO",
+      "total_pontuacao": 3083,
+      "total_km": 25528.63,
+      "media_nota": 90.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 183,
+      "nome": "MACIEL LOPES CUSTODIO",
+      "total_pontuacao": 3082,
+      "total_km": 23599.54,
+      "media_nota": 92.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 184,
+      "nome": "RAFAEL GOMES LIMA",
+      "total_pontuacao": 3081,
+      "total_km": 26831.49,
+      "media_nota": 90.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 185,
+      "nome": "VALDIR SANTOS LIMA",
+      "total_pontuacao": 3079,
+      "total_km": 31694.94,
+      "media_nota": 86.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 186,
+      "nome": "AUCY FRANCISCO DA SILVA",
+      "total_pontuacao": 3079,
+      "total_km": 30273.44,
+      "media_nota": 86.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 187,
+      "nome": "VANDI LUIZ DE LANES",
+      "total_pontuacao": 3079,
+      "total_km": 29970.42,
+      "media_nota": 86.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 188,
+      "nome": "JAILTON ALVES DA SILVA",
+      "total_pontuacao": 3079,
+      "total_km": 25707.16,
+      "media_nota": 90.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 189,
+      "nome": "ANDERSON SABINO CANDIDO",
+      "total_pontuacao": 3078,
+      "total_km": 21449.31,
+      "media_nota": 95.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 190,
+      "nome": "DAVID PINHEIRO LOPES",
+      "total_pontuacao": 3076,
+      "total_km": 27769.27,
+      "media_nota": 88.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 191,
+      "nome": "FABIO SANTOS LORDELLO BELLO",
+      "total_pontuacao": 3075,
+      "total_km": 16456.89,
+      "media_nota": 99.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 192,
+      "nome": "JADIR AZEVEDO PEDROSA",
+      "total_pontuacao": 3074,
+      "total_km": 25342.45,
+      "media_nota": 90.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 193,
+      "nome": "BRUNO FERNANDES PEREIRA",
+      "total_pontuacao": 3074,
+      "total_km": 21649.73,
+      "media_nota": 94.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 194,
+      "nome": "PERICELIO RIBEIRO DA COSTA",
+      "total_pontuacao": 3073,
+      "total_km": 34449.35,
+      "media_nota": 83.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 195,
+      "nome": "OLDAIR JESUS DA SILVA",
+      "total_pontuacao": 3064,
+      "total_km": 25495.46,
+      "media_nota": 90.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 196,
+      "nome": "PAULO CEZAR RIBEIRO",
+      "total_pontuacao": 3061,
+      "total_km": 19445.04,
+      "media_nota": 95.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 197,
+      "nome": "ADILSON DE ALMEIDA REIS",
+      "total_pontuacao": 3060,
+      "total_km": 29063.38,
+      "media_nota": 87.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 198,
+      "nome": "REINALDO SANTOS DE MELO",
+      "total_pontuacao": 3059,
+      "total_km": 29652.97,
+      "media_nota": 86.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 199,
+      "nome": "EMERSON DOS SANTOS DE JESUS",
+      "total_pontuacao": 3059,
+      "total_km": 32588.44,
+      "media_nota": 84.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 200,
+      "nome": "CARLOS VIDAL MACIEL",
+      "total_pontuacao": 3058,
+      "total_km": 24977.47,
+      "media_nota": 90.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 201,
+      "nome": "GILSON JOSE RIBEIRO",
+      "total_pontuacao": 3057,
+      "total_km": 22118.97,
+      "media_nota": 94.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 202,
+      "nome": "ROBSON ALVES MORENO",
+      "total_pontuacao": 3054,
+      "total_km": 32394.34,
+      "media_nota": 84.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 203,
+      "nome": "JOAQUIM ALVES DE BRITO FILHO",
+      "total_pontuacao": 3049,
+      "total_km": 21352.09,
+      "media_nota": 94.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 204,
+      "nome": "ERISVAN DOS SANTOS FARIAS",
+      "total_pontuacao": 3049,
+      "total_km": 25216.0,
+      "media_nota": 89.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 205,
+      "nome": "PAULO ROBERTO LIBARDI",
+      "total_pontuacao": 3049,
+      "total_km": 23827.57,
+      "media_nota": 91.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 206,
+      "nome": "TIMOTEO SILVA SANTANA DOS SANTOS",
+      "total_pontuacao": 3048,
+      "total_km": 26551.02,
+      "media_nota": 88.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 207,
+      "nome": "DIOGENES MACENTI MATIS",
+      "total_pontuacao": 3046,
+      "total_km": 23343.5,
+      "media_nota": 92.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 208,
+      "nome": "JORGE GOMES HOLZAPFEL",
+      "total_pontuacao": 3046,
+      "total_km": 22665.85,
+      "media_nota": 92.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 209,
+      "nome": "FAGNO MATIAS DA COSTA",
+      "total_pontuacao": 3045,
+      "total_km": 29324.47,
+      "media_nota": 87.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 210,
+      "nome": "FABIANO DE SOUZA SANTOS",
+      "total_pontuacao": 3045,
+      "total_km": 20166.12,
+      "media_nota": 95.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 211,
+      "nome": "LUIZ CARLOS MENEZES SILVA",
+      "total_pontuacao": 3044,
+      "total_km": 22349.77,
+      "media_nota": 92.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 212,
+      "nome": "ZAQUEU MARQUES",
+      "total_pontuacao": 3042,
+      "total_km": 24566.81,
+      "media_nota": 91.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 213,
+      "nome": "MAURILIO MEDEIROS DE ALCANTARA",
+      "total_pontuacao": 3042,
+      "total_km": 27563.1,
+      "media_nota": 87.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 214,
+      "nome": "PATRICK MENDES FARIA",
+      "total_pontuacao": 3036,
+      "total_km": 21945.15,
+      "media_nota": 92.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 215,
+      "nome": "LUCIANO SOARES DA SILVA",
+      "total_pontuacao": 3036,
+      "total_km": 27605.61,
+      "media_nota": 87.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 216,
+      "nome": "VANDERLEI COSTA",
+      "total_pontuacao": 3035,
+      "total_km": 22560.26,
+      "media_nota": 92.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 217,
+      "nome": "HERCULES PINHEIRO DA SILVA",
+      "total_pontuacao": 3032,
+      "total_km": 22942.85,
+      "media_nota": 91.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 218,
+      "nome": "GLAUCO VINICIUS VIANA DE SOUZA",
+      "total_pontuacao": 3031,
+      "total_km": 24947.52,
+      "media_nota": 89.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 219,
+      "nome": "JOSE ANDERSON BALBINO BELMOK",
+      "total_pontuacao": 3031,
+      "total_km": 21628.39,
+      "media_nota": 92.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 220,
+      "nome": "WESLEY GOMES DE AGUIAR",
+      "total_pontuacao": 3023,
+      "total_km": 24309.29,
+      "media_nota": 90.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 221,
+      "nome": "TOBIAS DOS SANTOS GOBETI",
+      "total_pontuacao": 3023,
+      "total_km": 22293.94,
+      "media_nota": 92.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 222,
+      "nome": "FRANCISCO ARCANJO LISBOA FILHO",
+      "total_pontuacao": 3022,
+      "total_km": 21407.34,
+      "media_nota": 92.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 223,
+      "nome": "MARCO ANTONIO SANTOS TEIXEIRA",
+      "total_pontuacao": 3021,
+      "total_km": 20713.39,
+      "media_nota": 93.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 224,
+      "nome": "SERGIO ALAN DA SILVA LIMA",
+      "total_pontuacao": 3021,
+      "total_km": 23104.97,
+      "media_nota": 90.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 225,
+      "nome": "MARILDO LUIZ DE JESUS SANTOS",
+      "total_pontuacao": 3019,
+      "total_km": 19610.63,
+      "media_nota": 93.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 226,
+      "nome": "ERONILSON DA SILVA NOBRE",
+      "total_pontuacao": 3016,
+      "total_km": 18465.81,
+      "media_nota": 95.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 227,
+      "nome": "ANTONIO CEZAR PEREIRA SOUZA",
+      "total_pontuacao": 3016,
+      "total_km": 20805.65,
+      "media_nota": 93.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 228,
+      "nome": "ALOISIO DE LIMA CARDOSO",
+      "total_pontuacao": 3016,
+      "total_km": 22270.56,
+      "media_nota": 91.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 229,
+      "nome": "RICARDO MARTINS FERNANDES",
+      "total_pontuacao": 3011,
+      "total_km": 21779.18,
+      "media_nota": 92.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 230,
+      "nome": "DANIEL SANTOS CARVALHO",
+      "total_pontuacao": 3010,
+      "total_km": 27054.05,
+      "media_nota": 86.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 231,
+      "nome": "RODRIGO DE SOUZA COSTA",
+      "total_pontuacao": 3008,
+      "total_km": 16621.31,
+      "media_nota": 96.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 232,
+      "nome": "AILTON JOSE DA SILVA",
+      "total_pontuacao": 3004,
+      "total_km": 25384.75,
+      "media_nota": 88.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 233,
+      "nome": "ADILSON MEDEIROS PASSOS",
+      "total_pontuacao": 3004,
+      "total_km": 25191.91,
+      "media_nota": 88.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 234,
+      "nome": "FLAVIO FERREIRA DE SOUSA",
+      "total_pontuacao": 2999,
+      "total_km": 21703.23,
+      "media_nota": 92.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 235,
+      "nome": "RENILDO ANGELO DA SILVA",
+      "total_pontuacao": 2998,
+      "total_km": 29415.68,
+      "media_nota": 85.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 236,
+      "nome": "JOSE LUCIANO DA SILVA",
+      "total_pontuacao": 2996,
+      "total_km": 27392.9,
+      "media_nota": 86.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 237,
+      "nome": "PAULO CESAR NASCIMENTO",
+      "total_pontuacao": 2994,
+      "total_km": 20244.59,
+      "media_nota": 92.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 238,
+      "nome": "WEBER LIMA KRUSCHEWSKY",
+      "total_pontuacao": 2990,
+      "total_km": 23069.2,
+      "media_nota": 90.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 239,
+      "nome": "WALDECY VIANA DUARTE",
+      "total_pontuacao": 2990,
+      "total_km": 22639.55,
+      "media_nota": 90.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 240,
+      "nome": "GENILTON FERREIRA PRUDENTE",
+      "total_pontuacao": 2990,
+      "total_km": 21743.63,
+      "media_nota": 92.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 241,
+      "nome": "ADENILSON SILVA DOS SANTOS",
+      "total_pontuacao": 2987,
+      "total_km": 21915.32,
+      "media_nota": 90.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 242,
+      "nome": "ZENILTON DE JESUS COSTA",
+      "total_pontuacao": 2984,
+      "total_km": 17451.81,
+      "media_nota": 95.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 243,
+      "nome": "AILTON AGUILAR FERREIRA",
+      "total_pontuacao": 2984,
+      "total_km": 21038.27,
+      "media_nota": 91.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 244,
+      "nome": "ADECIO POLESE",
+      "total_pontuacao": 2979,
+      "total_km": 22468.09,
+      "media_nota": 91.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 245,
+      "nome": "JOSE ADENILSON LIMA DALMOLIN",
+      "total_pontuacao": 2976,
+      "total_km": 26942.84,
+      "media_nota": 85.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 246,
+      "nome": "GILBERTO SILVA CORREIA",
+      "total_pontuacao": 2974,
+      "total_km": 25197.08,
+      "media_nota": 87.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 247,
+      "nome": "ALEX BARROS LEAL",
+      "total_pontuacao": 2973,
+      "total_km": 24733.4,
+      "media_nota": 89.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 248,
+      "nome": "JOSE ROBERTO BEDONI",
+      "total_pontuacao": 2973,
+      "total_km": 23142.92,
+      "media_nota": 89.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 249,
+      "nome": "LINDIVALDO PEREIRA DA SILVA",
+      "total_pontuacao": 2970,
+      "total_km": 19692.29,
+      "media_nota": 92.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 250,
+      "nome": "MARIVALDO DOS SANTOS OLIVEIRA",
+      "total_pontuacao": 2968,
+      "total_km": 24849.47,
+      "media_nota": 87.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 251,
+      "nome": "REGINALDO FARIAS",
+      "total_pontuacao": 2967,
+      "total_km": 21763.73,
+      "media_nota": 90.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 252,
+      "nome": "ERIVAN BENEDITO DOS SANTOS",
+      "total_pontuacao": 2964,
+      "total_km": 17603.5,
+      "media_nota": 93.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 253,
+      "nome": "MARCOS PEREIRA DETTMANN",
+      "total_pontuacao": 2964,
+      "total_km": 19380.74,
+      "media_nota": 92.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 254,
+      "nome": "MARCELO LEANDRO MORAIS COSTA",
+      "total_pontuacao": 2962,
+      "total_km": 21587.12,
+      "media_nota": 89.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 255,
+      "nome": "EDSON MELO DA CUNHA",
+      "total_pontuacao": 2962,
+      "total_km": 15446.47,
+      "media_nota": 95.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 256,
+      "nome": "JUNIO LUIZ MARCHIORI",
+      "total_pontuacao": 2958,
+      "total_km": 35530.62,
+      "media_nota": 76.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 257,
+      "nome": "MARCOS RIBEIRO ARAUJO",
+      "total_pontuacao": 2955,
+      "total_km": 30269.15,
+      "media_nota": 82.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 258,
+      "nome": "JOSE BRAZ RANGEL PASSOS",
+      "total_pontuacao": 2955,
+      "total_km": 16737.34,
+      "media_nota": 94.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 259,
+      "nome": "JOAO BATISTA BUENO BRAGA",
+      "total_pontuacao": 2954,
+      "total_km": 28217.3,
+      "media_nota": 84.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 260,
+      "nome": "EVANDRO PAGOTO FREITAS",
+      "total_pontuacao": 2953,
+      "total_km": 16933.83,
+      "media_nota": 94.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 261,
+      "nome": "JOSE ROBERTO ANDRADE ALVES",
+      "total_pontuacao": 2951,
+      "total_km": 22451.58,
+      "media_nota": 89.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 262,
+      "nome": "DEVALDO PEREIRA PORTO",
+      "total_pontuacao": 2950,
+      "total_km": 27225.69,
+      "media_nota": 83.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 263,
+      "nome": "JEFFERSON DE OLIVEIRA MARCELINO",
+      "total_pontuacao": 2949,
+      "total_km": 20335.56,
+      "media_nota": 90.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 264,
+      "nome": "FELIPE ALVES RODRIGUES",
+      "total_pontuacao": 2948,
+      "total_km": 19709.6,
+      "media_nota": 91.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 265,
+      "nome": "VILSON ELIAS DE MENDONCA",
+      "total_pontuacao": 2947,
+      "total_km": 26306.06,
+      "media_nota": 85.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 266,
+      "nome": "GERMANO RIBEIRO DA SILVA",
+      "total_pontuacao": 2946,
+      "total_km": 14122.23,
+      "media_nota": 96.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 267,
+      "nome": "MARCOS ALVES DE MORAIS",
+      "total_pontuacao": 2946,
+      "total_km": 23641.33,
+      "media_nota": 87.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 268,
+      "nome": "DENIVALDO RAIMUNDO DOS SANTOS",
+      "total_pontuacao": 2945,
+      "total_km": 22120.22,
+      "media_nota": 89.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 269,
+      "nome": "FRANCISCO MARCELIO DA SILVA",
+      "total_pontuacao": 2944,
+      "total_km": 29329.91,
+      "media_nota": 82.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 270,
+      "nome": "GEREMIAS DE ARAUJO PIMENTEL",
+      "total_pontuacao": 2943,
+      "total_km": 20481.7,
+      "media_nota": 91.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 271,
+      "nome": "NELSIMARIO LOPES DE AMORA",
+      "total_pontuacao": 2941,
+      "total_km": 21954.98,
+      "media_nota": 88.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 272,
+      "nome": "BENEDITO DOS SANTOS",
+      "total_pontuacao": 2940,
+      "total_km": 20927.19,
+      "media_nota": 89.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 273,
+      "nome": "TYRONE ALMEIDA",
+      "total_pontuacao": 2938,
+      "total_km": 20427.79,
+      "media_nota": 90.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 274,
+      "nome": "TIAGO ASCENDINO DE MEDEIROS",
+      "total_pontuacao": 2937,
+      "total_km": 26463.52,
+      "media_nota": 85.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 275,
+      "nome": "ANTONIO CARLOS LUCAS BRANDAO",
+      "total_pontuacao": 2933,
+      "total_km": 20357.88,
+      "media_nota": 90.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 276,
+      "nome": "CARLOS LUIS BRITO SILVA",
+      "total_pontuacao": 2931,
+      "total_km": 19029.61,
+      "media_nota": 91.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 277,
+      "nome": "PAULO ROBERTO PEREIRA",
+      "total_pontuacao": 2930,
+      "total_km": 21473.83,
+      "media_nota": 89.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 278,
+      "nome": "ELTON COSTA SIMOES",
+      "total_pontuacao": 2929,
+      "total_km": 17093.45,
+      "media_nota": 93.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 279,
+      "nome": "CARLOS ROBERTO OAKIS",
+      "total_pontuacao": 2926,
+      "total_km": 21260.2,
+      "media_nota": 89.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 280,
+      "nome": "CARLOS HENRIQUE RIBEIRO SILVA",
+      "total_pontuacao": 2924,
+      "total_km": 18292.81,
+      "media_nota": 91.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 281,
+      "nome": "ADALTO CAMARGO PEIXOTO",
+      "total_pontuacao": 2923,
+      "total_km": 22881.44,
+      "media_nota": 87.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 282,
+      "nome": "GLALCEIR MARRE",
+      "total_pontuacao": 2920,
+      "total_km": 21197.56,
+      "media_nota": 90.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 283,
+      "nome": "FERNANDO JUNIO MELGACO",
+      "total_pontuacao": 2917,
+      "total_km": 18215.58,
+      "media_nota": 92.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 284,
+      "nome": "SERGIO ROSA DOS SANTOS",
+      "total_pontuacao": 2916,
+      "total_km": 16692.76,
+      "media_nota": 93.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 285,
+      "nome": "SERGIO MARTINS DE ACIPRESTE",
+      "total_pontuacao": 2914,
+      "total_km": 20707.65,
+      "media_nota": 89.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 286,
+      "nome": "REGINALDO RODRIGUES",
+      "total_pontuacao": 2911,
+      "total_km": 26465.3,
+      "media_nota": 84.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 287,
+      "nome": "ALEX BRANDORFF VICENTIM",
+      "total_pontuacao": 2910,
+      "total_km": 26675.05,
+      "media_nota": 84.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 288,
+      "nome": "CRISTIANO RODOLFO DA FONSECA",
+      "total_pontuacao": 2910,
+      "total_km": 20266.67,
+      "media_nota": 89.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 289,
+      "nome": "EDSON MARTINS VALERIANO",
+      "total_pontuacao": 2905,
+      "total_km": 27714.2,
+      "media_nota": 83.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 290,
+      "nome": "JOSIAS VALLE ANDRADE",
+      "total_pontuacao": 2904,
+      "total_km": 24140.51,
+      "media_nota": 85.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 291,
+      "nome": "ANTONIO DELFINO",
+      "total_pontuacao": 2903,
+      "total_km": 25398.86,
+      "media_nota": 83.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 292,
+      "nome": "JOEL SALU DA SILVA",
+      "total_pontuacao": 2902,
+      "total_km": 17112.84,
+      "media_nota": 91.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 293,
+      "nome": "CARLOS SILVINO DE JESUS",
+      "total_pontuacao": 2902,
+      "total_km": 17744.35,
+      "media_nota": 91.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 294,
+      "nome": "LEVINDO AUGUSTO CARVALHO",
+      "total_pontuacao": 2902,
+      "total_km": 19362.81,
+      "media_nota": 90.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 295,
+      "nome": "JOAO PEREIRA DA SILVA",
+      "total_pontuacao": 2901,
+      "total_km": 26062.61,
+      "media_nota": 84.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 296,
+      "nome": "GILMAR JOSE DA COSTA",
+      "total_pontuacao": 2899,
+      "total_km": 14842.29,
+      "media_nota": 93.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 297,
+      "nome": "BENEDITO SENI MELO",
+      "total_pontuacao": 2894,
+      "total_km": 22853.45,
+      "media_nota": 87.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 298,
+      "nome": "LUCIANO BARBOZA CRUZ",
+      "total_pontuacao": 2894,
+      "total_km": 20396.34,
+      "media_nota": 88.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 299,
+      "nome": "EDINALDO CORDEIRO NOVAIS",
+      "total_pontuacao": 2893,
+      "total_km": 39327.29,
+      "media_nota": 71.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 300,
+      "nome": "LODUVICO FEZER NETO",
+      "total_pontuacao": 2892,
+      "total_km": 29522.37,
+      "media_nota": 79.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 301,
+      "nome": "RICARDO BRASIL GIMENES",
+      "total_pontuacao": 2889,
+      "total_km": 25103.96,
+      "media_nota": 84.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 302,
+      "nome": "JUCELIO DE JESUS MAIA",
+      "total_pontuacao": 2889,
+      "total_km": 24449.87,
+      "media_nota": 85.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 303,
+      "nome": "RONALDO MARTINS DE PAIVA",
+      "total_pontuacao": 2883,
+      "total_km": 20131.26,
+      "media_nota": 88.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 304,
+      "nome": "ALEXANDRE RANGEL GOMES",
+      "total_pontuacao": 2883,
+      "total_km": 15010.32,
+      "media_nota": 93.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 305,
+      "nome": "SIRVAL CORDEIRO DE SOUZA",
+      "total_pontuacao": 2882,
+      "total_km": 22580.08,
+      "media_nota": 87.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 306,
+      "nome": "ANTONIO JORGE ALVES NOVAIS",
+      "total_pontuacao": 2879,
+      "total_km": 19076.96,
+      "media_nota": 90.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 307,
+      "nome": "VALMIR PORTO DA SILVA SANTOS",
+      "total_pontuacao": 2878,
+      "total_km": 16108.58,
+      "media_nota": 92.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 308,
+      "nome": "SEVERINO DIAS DO NASCIMENTO JUNIOR",
+      "total_pontuacao": 2878,
+      "total_km": 30052.36,
+      "media_nota": 79.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 309,
+      "nome": "JOSE WILLIAM JOSE DOS ANJOS",
+      "total_pontuacao": 2877,
+      "total_km": 26455.58,
+      "media_nota": 83.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 310,
+      "nome": "MARIO EVARISTO DA COSTA",
+      "total_pontuacao": 2875,
+      "total_km": 13426.65,
+      "media_nota": 93.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 311,
+      "nome": "ADRIANO NASCENTE DE AZEVEDO",
+      "total_pontuacao": 2873,
+      "total_km": 18251.83,
+      "media_nota": 90.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 312,
+      "nome": "LEDNEY DOS SANTOS DE ANDRADE",
+      "total_pontuacao": 2871,
+      "total_km": 19549.15,
+      "media_nota": 88.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 313,
+      "nome": "DENIS ALVES CANDIDO",
+      "total_pontuacao": 2861,
+      "total_km": 26062.85,
+      "media_nota": 81.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 314,
+      "nome": "WILTON EUGENIO DOS SANTOS",
+      "total_pontuacao": 2861,
+      "total_km": 25740.89,
+      "media_nota": 82.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 315,
+      "nome": "MARCIO SIMPLICIO DA SILVA",
+      "total_pontuacao": 2858,
+      "total_km": 24682.0,
+      "media_nota": 83.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 316,
+      "nome": "JULIO SERGIO DE SOUZA",
+      "total_pontuacao": 2857,
+      "total_km": 20644.24,
+      "media_nota": 87.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 317,
+      "nome": "JOSE CARLOS DE JESUS CONCEICAO",
+      "total_pontuacao": 2856,
+      "total_km": 22799.91,
+      "media_nota": 86.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 318,
+      "nome": "ORLANDO NETO DA SILVA",
+      "total_pontuacao": 2855,
+      "total_km": 26320.73,
+      "media_nota": 83.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 319,
+      "nome": "HELENICIO JOSE GUALBERTO OGGIONI",
+      "total_pontuacao": 2855,
+      "total_km": 17548.42,
+      "media_nota": 90.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 320,
+      "nome": "JOCIMAR GOMES DA CRUZ",
+      "total_pontuacao": 2853,
+      "total_km": 16343.99,
+      "media_nota": 90.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 321,
+      "nome": "JOSE PEREIRA DA SILVA",
+      "total_pontuacao": 2850,
+      "total_km": 20106.27,
+      "media_nota": 87.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 322,
+      "nome": "MAURO SERGIO DOS SANTOS",
+      "total_pontuacao": 2849,
+      "total_km": 22899.97,
+      "media_nota": 85.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 323,
+      "nome": "OVERLANDIO FLORES REIS",
+      "total_pontuacao": 2846,
+      "total_km": 18079.05,
+      "media_nota": 89.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 324,
+      "nome": "ELIAS DOS SANTOS AZEVEDO",
+      "total_pontuacao": 2846,
+      "total_km": 24713.26,
+      "media_nota": 83.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 325,
+      "nome": "EDSON AUGUSTO DE OLIVEIRA",
+      "total_pontuacao": 2845,
+      "total_km": 21481.75,
+      "media_nota": 86.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 326,
+      "nome": "MARCO ANTONIO SCAQUETTI",
+      "total_pontuacao": 2845,
+      "total_km": 14464.93,
+      "media_nota": 92.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 327,
+      "nome": "MARCELO SORIO",
+      "total_pontuacao": 2844,
+      "total_km": 16497.91,
+      "media_nota": 90.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 328,
+      "nome": "MARILSON DE PAULA",
+      "total_pontuacao": 2844,
+      "total_km": 17940.85,
+      "media_nota": 89.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 329,
+      "nome": "ANTONIO MARCOS DOMINGUES FERREIRA",
+      "total_pontuacao": 2830,
+      "total_km": 15516.7,
+      "media_nota": 91.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 330,
+      "nome": "GILDASIO SILVA DE OLIVEIRA",
+      "total_pontuacao": 2828,
+      "total_km": 24110.47,
+      "media_nota": 83.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 331,
+      "nome": "JORGE ULISSES MACEDO COELHO",
+      "total_pontuacao": 2827,
+      "total_km": 14857.88,
+      "media_nota": 91.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 332,
+      "nome": "JOAO CARLOS DE ASSUNCAO",
+      "total_pontuacao": 2824,
+      "total_km": 25318.68,
+      "media_nota": 81.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 333,
+      "nome": "VAGNO SANTOS LIMA",
+      "total_pontuacao": 2823,
+      "total_km": 18986.04,
+      "media_nota": 87.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 334,
+      "nome": "CLAUDIO AUGUSTO DOS SANTOS",
+      "total_pontuacao": 2823,
+      "total_km": 19700.66,
+      "media_nota": 87.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 335,
+      "nome": "DOGLAS DE LIMA",
+      "total_pontuacao": 2823,
+      "total_km": 18442.42,
+      "media_nota": 87.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 336,
+      "nome": "JOSE ELIANO SANTANA DE ASSIS",
+      "total_pontuacao": 2821,
+      "total_km": 15885.67,
+      "media_nota": 89.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 337,
+      "nome": "MATUZALEM CORRENTE GOMES",
+      "total_pontuacao": 2821,
+      "total_km": 22158.37,
+      "media_nota": 84.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 338,
+      "nome": "ANTONIO DORGIVAL LIMA FIALHO",
+      "total_pontuacao": 2820,
+      "total_km": 19341.57,
+      "media_nota": 87.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 339,
+      "nome": "CLEBER ALVES DE OLIVEIRA",
+      "total_pontuacao": 2809,
+      "total_km": 17436.66,
+      "media_nota": 88.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 340,
+      "nome": "JOSE RICARDO COELHO DA SILVA",
+      "total_pontuacao": 2808,
+      "total_km": 19072.61,
+      "media_nota": 86.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 341,
+      "nome": "JONILSO PAGANINI",
+      "total_pontuacao": 2806,
+      "total_km": 21954.33,
+      "media_nota": 84.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 342,
+      "nome": "THIENE CHAGAS FERREIRA",
+      "total_pontuacao": 2801,
+      "total_km": 17891.46,
+      "media_nota": 86.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 343,
+      "nome": "JOSIMAR MARQUES FERREIRA",
+      "total_pontuacao": 2801,
+      "total_km": 23951.32,
+      "media_nota": 82.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 344,
+      "nome": "AMARO SERGIO RIBEIRO DOS SANTOS",
+      "total_pontuacao": 2800,
+      "total_km": 18073.26,
+      "media_nota": 88.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 345,
+      "nome": "EDMILSON SILVA FREITAS",
+      "total_pontuacao": 2793,
+      "total_km": 19424.01,
+      "media_nota": 86.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 346,
+      "nome": "AGNALDO FRANKLIN MARQUES",
+      "total_pontuacao": 2784,
+      "total_km": 17505.26,
+      "media_nota": 87.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 347,
+      "nome": "ALEQUES COSTA SILVA",
+      "total_pontuacao": 2779,
+      "total_km": 19108.89,
+      "media_nota": 86.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 348,
+      "nome": "SERGIO GOMES DE MELO",
+      "total_pontuacao": 2779,
+      "total_km": 23395.27,
+      "media_nota": 81.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 349,
+      "nome": "ALEXSANDRO SILVA BISPO",
+      "total_pontuacao": 2777,
+      "total_km": 18425.48,
+      "media_nota": 86.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 350,
+      "nome": "ADMILSON MARTINS DE MELO",
+      "total_pontuacao": 2775,
+      "total_km": 18104.74,
+      "media_nota": 86.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 351,
+      "nome": "EDIMAR GOMES DA SILVA",
+      "total_pontuacao": 2772,
+      "total_km": 19317.03,
+      "media_nota": 84.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 352,
+      "nome": "ADRIANO NASCIMENTO PASSOS",
+      "total_pontuacao": 2771,
+      "total_km": 13770.48,
+      "media_nota": 90.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 353,
+      "nome": "ISAAC QUIRINO DOS SANTOS",
+      "total_pontuacao": 2768,
+      "total_km": 19111.28,
+      "media_nota": 84.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 354,
+      "nome": "MARCELO CAMPOS",
+      "total_pontuacao": 2755,
+      "total_km": 21365.76,
+      "media_nota": 82.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 355,
+      "nome": "RENAN SANTOS SOUZA",
+      "total_pontuacao": 2753,
+      "total_km": 25180.32,
+      "media_nota": 80.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 356,
+      "nome": "RODRIGO SOARES ANDREAT",
+      "total_pontuacao": 2742,
+      "total_km": 20100.37,
+      "media_nota": 83.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 357,
+      "nome": "PAULO TIBURTINO DOS SANTOS",
+      "total_pontuacao": 2741,
+      "total_km": 17031.37,
+      "media_nota": 86.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 358,
+      "nome": "LUIZ CARLOS DE SOUZA",
+      "total_pontuacao": 2739,
+      "total_km": 15858.85,
+      "media_nota": 87.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 359,
+      "nome": "RODRIGO PANCIERI STOCO",
+      "total_pontuacao": 2735,
+      "total_km": 30275.54,
+      "media_nota": 99.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 360,
+      "nome": "ROBERTO SEVERINO DA SILVA",
+      "total_pontuacao": 2731,
+      "total_km": 21003.09,
+      "media_nota": 82.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 361,
+      "nome": "ILARIO JOSE DOS SANTOS",
+      "total_pontuacao": 2728,
+      "total_km": 15566.86,
+      "media_nota": 87.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 362,
+      "nome": "NATANAEL MIRANDA VARGAS",
+      "total_pontuacao": 2725,
+      "total_km": 16986.7,
+      "media_nota": 86.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 363,
+      "nome": "VANDERSON ZANIBONI DIAS",
+      "total_pontuacao": 2724,
+      "total_km": 16727.13,
+      "media_nota": 85.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 364,
+      "nome": "SERGIO TOZZI MOREIRA",
+      "total_pontuacao": 2722,
+      "total_km": 21402.81,
+      "media_nota": 81.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 365,
+      "nome": "LEOMAR SILVA GOMES",
+      "total_pontuacao": 2718,
+      "total_km": 13902.42,
+      "media_nota": 88.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 366,
+      "nome": "RONILSON DE SOUZA SILVA",
+      "total_pontuacao": 2717,
+      "total_km": 19495.08,
+      "media_nota": 83.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 367,
+      "nome": "JOSENILSON JACINTO COSTA",
+      "total_pontuacao": 2717,
+      "total_km": 21184.99,
+      "media_nota": 82.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 368,
+      "nome": "JAILTON DE OLIVEIRA DOS SANTOS",
+      "total_pontuacao": 2716,
+      "total_km": 20241.75,
+      "media_nota": 83.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 369,
+      "nome": "ARISVALDO PASSOS DOS SANTOS",
+      "total_pontuacao": 2713,
+      "total_km": 10174.87,
+      "media_nota": 91.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 370,
+      "nome": "EMANOEL FERREIRA PACCHIELLA",
+      "total_pontuacao": 2711,
+      "total_km": 17372.02,
+      "media_nota": 85.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 371,
+      "nome": "ALDEMIR COSTA DA SILVA",
+      "total_pontuacao": 2708,
+      "total_km": 21559.28,
+      "media_nota": 80.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 372,
+      "nome": "MARCELO AVANCE MAROTO",
+      "total_pontuacao": 2706,
+      "total_km": 13988.43,
+      "media_nota": 87.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 373,
+      "nome": "GLICIO DO NASCIMENTO LIMA",
+      "total_pontuacao": 2698,
+      "total_km": 16620.5,
+      "media_nota": 84.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 374,
+      "nome": "JORGE HUMBERTO DA SILVA XAVIER",
+      "total_pontuacao": 2698,
+      "total_km": 22268.42,
+      "media_nota": 79.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 375,
+      "nome": "WASHINGTON ROBERTO LIMA",
+      "total_pontuacao": 2698,
+      "total_km": 22711.99,
+      "media_nota": 80.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 376,
+      "nome": "LUIZ EVANDRO DE SOUZA",
+      "total_pontuacao": 2697,
+      "total_km": 27289.5,
+      "media_nota": 76.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 377,
+      "nome": "JOSE APARECIDO CALEGARI PEREIRA",
+      "total_pontuacao": 2697,
+      "total_km": 25730.99,
+      "media_nota": 76.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 378,
+      "nome": "DIOGO MELHORIM MACHADO",
+      "total_pontuacao": 2696,
+      "total_km": 22050.2,
+      "media_nota": 81.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 379,
+      "nome": "MUCIO NASCIMENTO RAMOS",
+      "total_pontuacao": 2690,
+      "total_km": 19031.84,
+      "media_nota": 81.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 380,
+      "nome": "AYARE OLIVEIRA SOUZA",
+      "total_pontuacao": 2685,
+      "total_km": 25474.77,
+      "media_nota": 76.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 381,
+      "nome": "OVERLAN JOSE DA SILVA TOTOLA",
+      "total_pontuacao": 2680,
+      "total_km": 15829.24,
+      "media_nota": 85.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 382,
+      "nome": "LUCIANO FERREIRA COSTA",
+      "total_pontuacao": 2675,
+      "total_km": 21860.57,
+      "media_nota": 79.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 383,
+      "nome": "PEDRO DE JESUS FEZER",
+      "total_pontuacao": 2675,
+      "total_km": 15799.12,
+      "media_nota": 85.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 384,
+      "nome": "ADRIANO FREITAS CORREA",
+      "total_pontuacao": 2674,
+      "total_km": 26234.96,
+      "media_nota": 75.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 385,
+      "nome": "ZAEL DE JESUS SANTOS",
+      "total_pontuacao": 2673,
+      "total_km": 17887.48,
+      "media_nota": 83.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 386,
+      "nome": "ANDERSON ALESSANDRO LEITE MOREIRA",
+      "total_pontuacao": 2669,
+      "total_km": 12848.85,
+      "media_nota": 87.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 387,
+      "nome": "ANDRE DIAS GAMA NERES",
+      "total_pontuacao": 2659,
+      "total_km": 18933.82,
+      "media_nota": 82.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 388,
+      "nome": "JONAS GONCALVES DE SOUZA",
+      "total_pontuacao": 2658,
+      "total_km": 12176.43,
+      "media_nota": 87.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 389,
+      "nome": "ROMARIO FEITOSA",
+      "total_pontuacao": 2649,
+      "total_km": 21642.99,
+      "media_nota": 79.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 390,
+      "nome": "RYAN LOBO SANTOS",
+      "total_pontuacao": 2644,
+      "total_km": 22568.6,
+      "media_nota": 77.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 391,
+      "nome": "VAGNER SANTOS MENDES",
+      "total_pontuacao": 2634,
+      "total_km": 25375.4,
+      "media_nota": 97.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 392,
+      "nome": "NISLEI BRAVIM SOUZA",
+      "total_pontuacao": 2626,
+      "total_km": 17003.53,
+      "media_nota": 82.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 393,
+      "nome": "NILTON CARLOS DOS SANTOS",
+      "total_pontuacao": 2624,
+      "total_km": 15209.07,
+      "media_nota": 84.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 394,
+      "nome": "JOSE VALTER BIANCARDI",
+      "total_pontuacao": 2622,
+      "total_km": 20840.12,
+      "media_nota": 78.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 395,
+      "nome": "JOAO ROCHA BRANDÃO",
+      "total_pontuacao": 2614,
+      "total_km": 19905.08,
+      "media_nota": 79.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 396,
+      "nome": "LUCIANO COSTA RIBEIRO",
+      "total_pontuacao": 2605,
+      "total_km": 24083.39,
+      "media_nota": 97.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 397,
+      "nome": "ARNALDO ALVES MUNIZ FILHO",
+      "total_pontuacao": 2602,
+      "total_km": 19060.71,
+      "media_nota": 79.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 398,
+      "nome": "JEREMIAS DOS SANTOS PEREIRA",
+      "total_pontuacao": 2600,
+      "total_km": 30429.65,
+      "media_nota": 69.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 399,
+      "nome": "SEBASTIAO DE JESUS BRITO",
+      "total_pontuacao": 2600,
+      "total_km": 22724.09,
+      "media_nota": 76.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 400,
+      "nome": "MARCIO DE JESUS FERREIRA",
+      "total_pontuacao": 2587,
+      "total_km": 15652.37,
+      "media_nota": 81.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 401,
+      "nome": "EDNALDO DANTAS SANTANA",
+      "total_pontuacao": 2584,
+      "total_km": 29752.14,
+      "media_nota": 69.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 402,
+      "nome": "JUCELINO ALVES CORREIA",
+      "total_pontuacao": 2579,
+      "total_km": 26853.05,
+      "media_nota": 96.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 403,
+      "nome": "IVANILDO BARBOSA DE ANDRADE",
+      "total_pontuacao": 2577,
+      "total_km": 15747.81,
+      "media_nota": 81.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 404,
+      "nome": "NILTON CESAR SANTOS",
+      "total_pontuacao": 2574,
+      "total_km": 25254.44,
+      "media_nota": 96.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 405,
+      "nome": "ROBERTO LUIZ OLIVEIRA SANTOS",
+      "total_pontuacao": 2571,
+      "total_km": 17030.01,
+      "media_nota": 80.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 406,
+      "nome": "IRIO CATARINO LEAO FILHO",
+      "total_pontuacao": 2571,
+      "total_km": 6024.51,
+      "media_nota": 90.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 407,
+      "nome": "JERONIMO FRANCISCO DE ARAUJO NETO",
+      "total_pontuacao": 2570,
+      "total_km": 23008.7,
+      "media_nota": 99.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 408,
+      "nome": "JAIRO ARAUJO DA SILVA",
+      "total_pontuacao": 2561,
+      "total_km": 13917.92,
+      "media_nota": 82.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 409,
+      "nome": "WAGNER GERALDO GOMES LIMA",
+      "total_pontuacao": 2560,
+      "total_km": 14263.94,
+      "media_nota": 82.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 410,
+      "nome": "MARCOS ANTONIO RODRIGUES DA SILVA",
+      "total_pontuacao": 2558,
+      "total_km": 25917.32,
+      "media_nota": 95.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 411,
+      "nome": "SAMUEL BARBOSA DA SILVA",
+      "total_pontuacao": 2556,
+      "total_km": 12212.14,
+      "media_nota": 83.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 412,
+      "nome": "WANDERGLEYSON PERUGGIA",
+      "total_pontuacao": 2550,
+      "total_km": 24311.53,
+      "media_nota": 94.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 413,
+      "nome": "JOELMIR DOS SANTOS LIMA",
+      "total_pontuacao": 2549,
+      "total_km": 24406.61,
+      "media_nota": 94.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 414,
+      "nome": "EDSON PLACIDES BERNARDO",
+      "total_pontuacao": 2548,
+      "total_km": 18406.2,
+      "media_nota": 79.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 415,
+      "nome": "EDSON LOPES DE AMORIM",
+      "total_pontuacao": 2541,
+      "total_km": 16362.33,
+      "media_nota": 79.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 416,
+      "nome": "GUTEMBERG SANTANA DOS SANTOS",
+      "total_pontuacao": 2540,
+      "total_km": 25295.39,
+      "media_nota": 94.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 417,
+      "nome": "EVANDRO PAULA TRAVESANI",
+      "total_pontuacao": 2533,
+      "total_km": 25739.36,
+      "media_nota": 71.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 418,
+      "nome": "MARCELO LUIZ DA SILVA VIEIRA",
+      "total_pontuacao": 2532,
+      "total_km": 25801.39,
+      "media_nota": 92.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 419,
+      "nome": "DENILDO VIDAL DE SOUZA",
+      "total_pontuacao": 2530,
+      "total_km": 24948.07,
+      "media_nota": 72.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 420,
+      "nome": "JOAO MARINHO ALVES DA SILVA",
+      "total_pontuacao": 2530,
+      "total_km": 22535.9,
+      "media_nota": 74.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 421,
+      "nome": "AMERITON SANTOS DIAS",
+      "total_pontuacao": 2528,
+      "total_km": 23685.13,
+      "media_nota": 97.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 422,
+      "nome": "VANDERLEI CORREIA LOUREIRO",
+      "total_pontuacao": 2528,
+      "total_km": 17589.6,
+      "media_nota": 78.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 423,
+      "nome": "LUCAS DANIEL DA ROCHA",
+      "total_pontuacao": 2524,
+      "total_km": 24287.4,
+      "media_nota": 72.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 424,
+      "nome": "JOSE HENRIQUE DOS SANTOS",
+      "total_pontuacao": 2523,
+      "total_km": 20393.68,
+      "media_nota": 75.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 425,
+      "nome": "JOAO BATISTA DE OLIVEIRA",
+      "total_pontuacao": 2520,
+      "total_km": 30853.19,
+      "media_nota": 64.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 426,
+      "nome": "ANTONIO CESAR CONCEICAO ESTEVAO",
+      "total_pontuacao": 2516,
+      "total_km": 25165.88,
+      "media_nota": 92.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 427,
+      "nome": "ABEL PEREIRA BORGES",
+      "total_pontuacao": 2515,
+      "total_km": 24704.99,
+      "media_nota": 96.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 428,
+      "nome": "VALDEMIR JOAO MATIAS PONTES",
+      "total_pontuacao": 2513,
+      "total_km": 15789.36,
+      "media_nota": 79.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 429,
+      "nome": "ROSALVO DA CRUZ SILVA",
+      "total_pontuacao": 2509,
+      "total_km": 24659.51,
+      "media_nota": 92.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 430,
+      "nome": "GILVAN DOS SANTOS",
+      "total_pontuacao": 2508,
+      "total_km": 26119.61,
+      "media_nota": 93.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 431,
+      "nome": "ADILSON RAMOS SOARES",
+      "total_pontuacao": 2508,
+      "total_km": 27138.63,
+      "media_nota": 92.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 432,
+      "nome": "EDILSON MOREIRA ALVES",
+      "total_pontuacao": 2504,
+      "total_km": 28545.75,
+      "media_nota": 90.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 433,
+      "nome": "JOSE HUMBERTO PEREIRA DOS SANTOS",
+      "total_pontuacao": 2502,
+      "total_km": 23412.09,
+      "media_nota": 71.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 434,
+      "nome": "CLEBERT SILVA",
+      "total_pontuacao": 2501,
+      "total_km": 13199.08,
+      "media_nota": 80.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 435,
+      "nome": "ELCIMAR GOMES DOS SANTOS",
+      "total_pontuacao": 2488,
+      "total_km": 21896.55,
+      "media_nota": 72.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 436,
+      "nome": "ANILTON RIBEIRO DOS SANTOS SOUZA",
+      "total_pontuacao": 2484,
+      "total_km": 20289.04,
+      "media_nota": 96.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 437,
+      "nome": "JOSE ANTONIO OSS",
+      "total_pontuacao": 2483,
+      "total_km": 20065.7,
+      "media_nota": 98.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 438,
+      "nome": "ALMIR FLAUSINO DA SILVA",
+      "total_pontuacao": 2482,
+      "total_km": 8313.29,
+      "media_nota": 84.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 439,
+      "nome": "ATAULFO LUIZ DA SILVA",
+      "total_pontuacao": 2478,
+      "total_km": 20103.07,
+      "media_nota": 74.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 440,
+      "nome": "MANOEL FRANCISCO DA CRUZ",
+      "total_pontuacao": 2476,
+      "total_km": 21135.1,
+      "media_nota": 94.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 441,
+      "nome": "MARCOS CONCEICAO DE SOUZA",
+      "total_pontuacao": 2474,
+      "total_km": 17517.06,
+      "media_nota": 75.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 442,
+      "nome": "EDALMO NUNES PEREIRA",
+      "total_pontuacao": 2469,
+      "total_km": 23436.04,
+      "media_nota": 96.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 443,
+      "nome": "ELISEU DAS GRACAS DE OLIVEIRA",
+      "total_pontuacao": 2469,
+      "total_km": 20224.68,
+      "media_nota": 98.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 444,
+      "nome": "AMAILDO ALVES PEREIRA",
+      "total_pontuacao": 2469,
+      "total_km": 17930.47,
+      "media_nota": 76.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 445,
+      "nome": "ADERVAL JUNIOR LIMA DE LIRA",
+      "total_pontuacao": 2464,
+      "total_km": 11023.23,
+      "media_nota": 81.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 446,
+      "nome": "WILIAN AMARAL ALVES",
+      "total_pontuacao": 2458,
+      "total_km": 24517.32,
+      "media_nota": 93.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 447,
+      "nome": "ANCELMO DE ALMEIDA DA SILVA",
+      "total_pontuacao": 2456,
+      "total_km": 28433.86,
+      "media_nota": 88.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 448,
+      "nome": "MARCELO DOS SANTOS SIQUEIRA",
+      "total_pontuacao": 2454,
+      "total_km": 17874.17,
+      "media_nota": 73.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 449,
+      "nome": "ALDECY PEREIRA DA SILVA",
+      "total_pontuacao": 2446,
+      "total_km": 21572.51,
+      "media_nota": 94.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 450,
+      "nome": "FLAVIO CARNEIRO",
+      "total_pontuacao": 2443,
+      "total_km": 22144.96,
+      "media_nota": 94.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 451,
+      "nome": "ALAN SOUZA DA SILVA",
+      "total_pontuacao": 2443,
+      "total_km": 18251.93,
+      "media_nota": 96.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 452,
+      "nome": "FABIO JOSE MELLO SODRE",
+      "total_pontuacao": 2442,
+      "total_km": 19813.93,
+      "media_nota": 96.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 453,
+      "nome": "JOSE LUIZ FERREIRA FILHO",
+      "total_pontuacao": 2437,
+      "total_km": 21694.21,
+      "media_nota": 94.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 454,
+      "nome": "PAULO RAMOS BARROSO",
+      "total_pontuacao": 2431,
+      "total_km": 22064.68,
+      "media_nota": 91.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 455,
+      "nome": "ALAIR MARTINS DE ALMEIDA",
+      "total_pontuacao": 2428,
+      "total_km": 20836.12,
+      "media_nota": 92.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 456,
+      "nome": "DANIELSO FREITAS DOS SANTOS",
+      "total_pontuacao": 2421,
+      "total_km": 11843.0,
+      "media_nota": 79.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 457,
+      "nome": "WANDERLEI APARECIDO DA SILVA",
+      "total_pontuacao": 2419,
+      "total_km": 25334.36,
+      "media_nota": 90.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 458,
+      "nome": "FRANCISCO ADRIANO DA SILVA",
+      "total_pontuacao": 2418,
+      "total_km": 20548.54,
+      "media_nota": 94.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 459,
+      "nome": "LUCIANO SANTOS DO NASCIMENTO",
+      "total_pontuacao": 2416,
+      "total_km": 16272.86,
+      "media_nota": 73.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 460,
+      "nome": "JOSE AFONSO MARTINS DA SILVEIRA",
+      "total_pontuacao": 2416,
+      "total_km": 24148.21,
+      "media_nota": 91.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 461,
+      "nome": "FLAVIO ROSAS DO NASCIMENTO",
+      "total_pontuacao": 2415,
+      "total_km": 22152.8,
+      "media_nota": 93.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 462,
+      "nome": "RUBEM DOS SANTOS LIMA",
+      "total_pontuacao": 2414,
+      "total_km": 24153.94,
+      "media_nota": 90.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 463,
+      "nome": "ADEILSON DOS SANTOS PEREIRA",
+      "total_pontuacao": 2412,
+      "total_km": 20560.85,
+      "media_nota": 94.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 464,
+      "nome": "JOSE GUIOMAR FERREIRA",
+      "total_pontuacao": 2409,
+      "total_km": 18593.86,
+      "media_nota": 72.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 465,
+      "nome": "HUMBERTO VIEIRA LIMA",
+      "total_pontuacao": 2405,
+      "total_km": 21465.34,
+      "media_nota": 93.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 466,
+      "nome": "GEZIEL FERREIRA DE OLIVEIRA",
+      "total_pontuacao": 2395,
+      "total_km": 18279.5,
+      "media_nota": 97.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 467,
+      "nome": "WAGNER JULIANO TAMIASSO DA SILVA",
+      "total_pontuacao": 2393,
+      "total_km": 15842.73,
+      "media_nota": 96.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 468,
+      "nome": "GILBERTO RODRIGUES",
+      "total_pontuacao": 2393,
+      "total_km": 31332.07,
+      "media_nota": 81.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 469,
+      "nome": "WALTER DOS REIS SILVA",
+      "total_pontuacao": 2391,
+      "total_km": 22638.36,
+      "media_nota": 68.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 470,
+      "nome": "MOACIR DE MELO",
+      "total_pontuacao": 2386,
+      "total_km": 16789.52,
+      "media_nota": 73.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 471,
+      "nome": "LUANA DE SOUZA SILVA",
+      "total_pontuacao": 2383,
+      "total_km": 18482.77,
+      "media_nota": 93.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 472,
+      "nome": "VANDERLEY BISPO DOS SANTOS",
+      "total_pontuacao": 2381,
+      "total_km": 15082.65,
+      "media_nota": 96.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 473,
+      "nome": "ARGEU MAGNO PINHEIRO",
+      "total_pontuacao": 2379,
+      "total_km": 17672.72,
+      "media_nota": 94.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 474,
+      "nome": "MARCIO VERLY FERREIRA",
+      "total_pontuacao": 2379,
+      "total_km": 23343.13,
+      "media_nota": 89.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 475,
+      "nome": "MARCIO RICARDO DE CARVALHO",
+      "total_pontuacao": 2376,
+      "total_km": 17935.92,
+      "media_nota": 95.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 476,
+      "nome": "GILSON CARLOS BROMMENSCHENKEL",
+      "total_pontuacao": 2372,
+      "total_km": 16634.58,
+      "media_nota": 94.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 477,
+      "nome": "ANTONIO DALTO DE JESUS IZIDORIO",
+      "total_pontuacao": 2372,
+      "total_km": 15735.02,
+      "media_nota": 95.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 478,
+      "nome": "TIAGO ANTUNES DO NASCIMENTO",
+      "total_pontuacao": 2371,
+      "total_km": 11039.26,
+      "media_nota": 79.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 479,
+      "nome": "ARNALDO TABORDA MOREIRA",
+      "total_pontuacao": 2365,
+      "total_km": 11799.66,
+      "media_nota": 77.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 480,
+      "nome": "CACILDO SOUZA DE CARVALHO",
+      "total_pontuacao": 2361,
+      "total_km": 20397.23,
+      "media_nota": 68.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 481,
+      "nome": "JAILSON TOLEDO DOS SANTOS",
+      "total_pontuacao": 2359,
+      "total_km": 17645.5,
+      "media_nota": 92.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 482,
+      "nome": "AMARO SEVERINO DOS SANTOS FILHO",
+      "total_pontuacao": 2356,
+      "total_km": 23831.18,
+      "media_nota": 65.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 483,
+      "nome": "EZEQUIAS GONCALVES DA ROCHA",
+      "total_pontuacao": 2354,
+      "total_km": 14751.33,
+      "media_nota": 96.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 484,
+      "nome": "ARLINDO DE LIMA",
+      "total_pontuacao": 2342,
+      "total_km": 19939.2,
+      "media_nota": 92.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 485,
+      "nome": "ANDRE MAURICIO MATHES PEREIRA",
+      "total_pontuacao": 2341,
+      "total_km": 5207.73,
+      "media_nota": 82.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 486,
+      "nome": "SEBASTIAO BATISTA FILHO",
+      "total_pontuacao": 2340,
+      "total_km": 21059.9,
+      "media_nota": 67.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 487,
+      "nome": "JOSE ROMILSON DO CARMO",
+      "total_pontuacao": 2340,
+      "total_km": 15719.39,
+      "media_nota": 94.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 488,
+      "nome": "MARCOS VINICIUS DA SILVA",
+      "total_pontuacao": 2337,
+      "total_km": 15453.76,
+      "media_nota": 94.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 489,
+      "nome": "JOSE ROBERTO SANTOS SILVA",
+      "total_pontuacao": 2334,
+      "total_km": 15034.35,
+      "media_nota": 97.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 490,
+      "nome": "SERGIO LUIZ RIBEIRO",
+      "total_pontuacao": 2331,
+      "total_km": 21770.83,
+      "media_nota": 87.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 491,
+      "nome": "JAMILTON BOLSONI",
+      "total_pontuacao": 2327,
+      "total_km": 23804.61,
+      "media_nota": 87.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 492,
+      "nome": "PATRIK RIBEIRO SANTANA",
+      "total_pontuacao": 2326,
+      "total_km": 15518.87,
+      "media_nota": 72.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 493,
+      "nome": "MAURO MOURA ALVES",
+      "total_pontuacao": 2326,
+      "total_km": 19574.81,
+      "media_nota": 91.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 494,
+      "nome": "CARLOS MAGNO OLIVEIRA DE ALMEIDA",
+      "total_pontuacao": 2324,
+      "total_km": 17159.11,
+      "media_nota": 91.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 495,
+      "nome": "LAIO ANDERSON SOUTO VIANA",
+      "total_pontuacao": 2320,
+      "total_km": 18809.14,
+      "media_nota": 68.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 496,
+      "nome": "ALEXSANDRO ALVES FERREIRA",
+      "total_pontuacao": 2319,
+      "total_km": 11948.78,
+      "media_nota": 74.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 497,
+      "nome": "MARCIEL DE FREITAS PACHECO",
+      "total_pontuacao": 2319,
+      "total_km": 20401.55,
+      "media_nota": 88.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 498,
+      "nome": "ANTONIO RIBEIRO COSTA",
+      "total_pontuacao": 2309,
+      "total_km": 18472.06,
+      "media_nota": 68.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 499,
+      "nome": "FABIO DE JESUS QUEIROZ",
+      "total_pontuacao": 2308,
+      "total_km": 17423.9,
+      "media_nota": 70.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 500,
+      "nome": "JOSE ALBAN ALVES DOS SANTOS",
+      "total_pontuacao": 2305,
+      "total_km": 28898.64,
+      "media_nota": 59.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 501,
+      "nome": "LUIS CLAUDIO BARBOSA FLOR",
+      "total_pontuacao": 2302,
+      "total_km": 18282.99,
+      "media_nota": 89.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 502,
+      "nome": "JOSE MAURO DE FREITAS MASSENA",
+      "total_pontuacao": 2295,
+      "total_km": 21910.26,
+      "media_nota": 88.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 503,
+      "nome": "FLAVIO RUBENS DOS SANTOS",
+      "total_pontuacao": 2294,
+      "total_km": 11296.27,
+      "media_nota": 97.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 504,
+      "nome": "JONAS PEDRONI",
+      "total_pontuacao": 2294,
+      "total_km": 19670.04,
+      "media_nota": 90.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 505,
+      "nome": "GILSON ROCHA DE JESUS",
+      "total_pontuacao": 2292,
+      "total_km": 13994.63,
+      "media_nota": 72.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 506,
+      "nome": "PAULO SERGIO MACHADO DA SILVA",
+      "total_pontuacao": 2289,
+      "total_km": 16860.9,
+      "media_nota": 90.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 507,
+      "nome": "PAULO CESAR TAVARES BARCELOS",
+      "total_pontuacao": 2288,
+      "total_km": 20430.74,
+      "media_nota": 86.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 508,
+      "nome": "LEONEL PINTO FIGUEIREDO",
+      "total_pontuacao": 2288,
+      "total_km": 19307.19,
+      "media_nota": 67.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 509,
+      "nome": "RODRIGO AVILA ALMEIDA BASTOS",
+      "total_pontuacao": 2287,
+      "total_km": 16228.72,
+      "media_nota": 91.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 510,
+      "nome": "VALTER DE SOUZA LIMA",
+      "total_pontuacao": 2285,
+      "total_km": 16106.22,
+      "media_nota": 91.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 511,
+      "nome": "GILSON GONCALVES DOS SANTOS",
+      "total_pontuacao": 2278,
+      "total_km": 13934.18,
+      "media_nota": 71.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 512,
+      "nome": "ANDRE DE OLIVEIRA SILVA",
+      "total_pontuacao": 2274,
+      "total_km": 14503.32,
+      "media_nota": 96.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 513,
+      "nome": "CARLOS ALBERTO SALDANHA",
+      "total_pontuacao": 2272,
+      "total_km": 15298.54,
+      "media_nota": 94.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 514,
+      "nome": "MOACIR JANE DE OLIVEIRA",
+      "total_pontuacao": 2271,
+      "total_km": 17434.87,
+      "media_nota": 92.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 515,
+      "nome": "CLEIDIANO DO CARMO SANTOS DA SILVA",
+      "total_pontuacao": 2268,
+      "total_km": 18999.89,
+      "media_nota": 87.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 516,
+      "nome": "ALTAIR RENATO MARTINS DE OLIVEIRA",
+      "total_pontuacao": 2266,
+      "total_km": 19499.72,
+      "media_nota": 86.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 517,
+      "nome": "PAULO SERGIO DIAS DE MENEZES",
+      "total_pontuacao": 2264,
+      "total_km": 14994.83,
+      "media_nota": 91.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 518,
+      "nome": "REGINALDO LYRIO PEREIRA",
+      "total_pontuacao": 2263,
+      "total_km": 14676.23,
+      "media_nota": 91.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 519,
+      "nome": "ALFREDO ANTONIO DE ANGELIS",
+      "total_pontuacao": 2260,
+      "total_km": 13333.7,
+      "media_nota": 95.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 520,
+      "nome": "JOSE CARLOS DA SILVA VIEIRA",
+      "total_pontuacao": 2257,
+      "total_km": 11264.85,
+      "media_nota": 95.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 521,
+      "nome": "ANDRE BATISTA PINTO",
+      "total_pontuacao": 2256,
+      "total_km": 14240.97,
+      "media_nota": 91.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 522,
+      "nome": "PAULO HENRIQUE CERQUEIRA",
+      "total_pontuacao": 2256,
+      "total_km": 13825.21,
+      "media_nota": 95.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 523,
+      "nome": "MARCOS ANTONIO DOS SANTOS",
+      "total_pontuacao": 2254,
+      "total_km": 16078.63,
+      "media_nota": 93.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 524,
+      "nome": "VAGNO DE JESUS CORREA",
+      "total_pontuacao": 2254,
+      "total_km": 14082.55,
+      "media_nota": 95.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 525,
+      "nome": "JOSAFA MAMEDE JUNIOR",
+      "total_pontuacao": 2253,
+      "total_km": 11314.34,
+      "media_nota": 95.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 526,
+      "nome": "RAFAEL SOUZA DOS SANTOS",
+      "total_pontuacao": 2250,
+      "total_km": 18038.43,
+      "media_nota": 89.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 527,
+      "nome": "ALEXANDRE CABRAL FERREIRA",
+      "total_pontuacao": 2249,
+      "total_km": 22959.94,
+      "media_nota": 62.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 528,
+      "nome": "ITAMAR ERIK RAMOS RIBEIRO",
+      "total_pontuacao": 2248,
+      "total_km": 18506.6,
+      "media_nota": 86.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 529,
+      "nome": "GILBERTO FRADE PEREIRA",
+      "total_pontuacao": 2247,
+      "total_km": 17236.4,
+      "media_nota": 88.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 530,
+      "nome": "MARCIO DOS SANTOS",
+      "total_pontuacao": 2246,
+      "total_km": 17038.08,
+      "media_nota": 88.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 531,
+      "nome": "LUCIO DA SILVA MAIA",
+      "total_pontuacao": 2244,
+      "total_km": 15274.76,
+      "media_nota": 93.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 532,
+      "nome": "SEBASTIAO BEZERRA",
+      "total_pontuacao": 2242,
+      "total_km": 16170.33,
+      "media_nota": 68.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 533,
+      "nome": "DAMIAO DOS SANTOS",
+      "total_pontuacao": 2241,
+      "total_km": 12775.32,
+      "media_nota": 96.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 534,
+      "nome": "JOSE GONCALVES DA ROCHA",
+      "total_pontuacao": 2240,
+      "total_km": 10865.29,
+      "media_nota": 98.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 535,
+      "nome": "REYNALDO DA SILVA RIBEIRO",
+      "total_pontuacao": 2237,
+      "total_km": 17046.87,
+      "media_nota": 88.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 536,
+      "nome": "MARCUS VINICIUS SOUZA GOMES",
+      "total_pontuacao": 2234,
+      "total_km": 21338.4,
+      "media_nota": 82.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 537,
+      "nome": "JOSE ADRIANO DA SILVA FEIJO",
+      "total_pontuacao": 2230,
+      "total_km": 15219.09,
+      "media_nota": 89.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 538,
+      "nome": "LUCAS SANTOS REIS",
+      "total_pontuacao": 2230,
+      "total_km": 13035.02,
+      "media_nota": 91.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 539,
+      "nome": "LUIZ CARLOS DOS SANTOS",
+      "total_pontuacao": 2224,
+      "total_km": 17431.81,
+      "media_nota": 90.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 540,
+      "nome": "WILLIAM RODRIGUES DOS SANTOS",
+      "total_pontuacao": 2220,
+      "total_km": 16357.27,
+      "media_nota": 87.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 541,
+      "nome": "MARTINHO DE SOUZA ANUNCIO",
+      "total_pontuacao": 2219,
+      "total_km": 23116.58,
+      "media_nota": 80.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 542,
+      "nome": "EUGENIO DE SENA",
+      "total_pontuacao": 2219,
+      "total_km": 16597.13,
+      "media_nota": 87.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 543,
+      "nome": "JAIR DA SILVA SOARES",
+      "total_pontuacao": 2216,
+      "total_km": 19256.87,
+      "media_nota": 86.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 544,
+      "nome": "ELIAS MANUEL SOUSA DA SILVA",
+      "total_pontuacao": 2214,
+      "total_km": 1780.38,
+      "media_nota": 80.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 545,
+      "nome": "ZENILTON DA SILVA LOYOLA",
+      "total_pontuacao": 2213,
+      "total_km": 20747.68,
+      "media_nota": 85.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 546,
+      "nome": "LAECIO FLEGLER",
+      "total_pontuacao": 2212,
+      "total_km": 16824.02,
+      "media_nota": 89.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 547,
+      "nome": "EDSON SOARES RODRIGUES",
+      "total_pontuacao": 2211,
+      "total_km": 14426.59,
+      "media_nota": 89.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 548,
+      "nome": "MARCOS AURELIO VIEIRA CRATZ",
+      "total_pontuacao": 2211,
+      "total_km": 15368.92,
+      "media_nota": 88.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 549,
+      "nome": "TARSIS GONCALVES DE SOUZA",
+      "total_pontuacao": 2209,
+      "total_km": 12033.79,
+      "media_nota": 95.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 550,
+      "nome": "GEONES ROBERTO DE SOUZA SANTOS",
+      "total_pontuacao": 2208,
+      "total_km": 11933.59,
+      "media_nota": 93.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 551,
+      "nome": "MARCOS ROBERTO MOREIRA",
+      "total_pontuacao": 2203,
+      "total_km": 13359.47,
+      "media_nota": 90.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 552,
+      "nome": "GILVANEIDE GOMES LEITE",
+      "total_pontuacao": 2201,
+      "total_km": 11963.44,
+      "media_nota": 92.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 553,
+      "nome": "MAIKNELLI SOUZA NUNES",
+      "total_pontuacao": 2196,
+      "total_km": 12883.7,
+      "media_nota": 93.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 554,
+      "nome": "EDICARLOS GUEDES DO NASCIMENTO",
+      "total_pontuacao": 2193,
+      "total_km": 14147.65,
+      "media_nota": 69.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 555,
+      "nome": "ELENILTON BARBOSA",
+      "total_pontuacao": 2192,
+      "total_km": 11411.52,
+      "media_nota": 92.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 556,
+      "nome": "BRUNO LEONARDO BORGES DE AQUINO",
+      "total_pontuacao": 2191,
+      "total_km": 8742.18,
+      "media_nota": 94.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 557,
+      "nome": "MARCIO ALVES MARTINS",
+      "total_pontuacao": 2190,
+      "total_km": 15757.34,
+      "media_nota": 87.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 558,
+      "nome": "EZEQUIEL GONGO ANDRADE",
+      "total_pontuacao": 2178,
+      "total_km": 10786.05,
+      "media_nota": 95.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 559,
+      "nome": "MARCOS EVANDRO DE AGUIAR SANTOS",
+      "total_pontuacao": 2174,
+      "total_km": 14278.48,
+      "media_nota": 88.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 560,
+      "nome": "ITAMAR FERREIRA DE SOUZA MORAES",
+      "total_pontuacao": 2168,
+      "total_km": 16061.13,
+      "media_nota": 85.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 561,
+      "nome": "IDALINO ZEQUINI",
+      "total_pontuacao": 2164,
+      "total_km": 12419.9,
+      "media_nota": 89.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 562,
+      "nome": "JOSE MESSIAS MARTINS GODENCIO",
+      "total_pontuacao": 2162,
+      "total_km": 21707.9,
+      "media_nota": 79.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 563,
+      "nome": "LUCIANO DOS SANTOS CARVALHO",
+      "total_pontuacao": 2161,
+      "total_km": 13098.86,
+      "media_nota": 68.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 564,
+      "nome": "ADRIANO MEDEIROS CHAGAS",
+      "total_pontuacao": 2157,
+      "total_km": 11080.33,
+      "media_nota": 90.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 565,
+      "nome": "JOSEMAR TRINDADE DA ROCHA",
+      "total_pontuacao": 2154,
+      "total_km": 10705.53,
+      "media_nota": 90.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 566,
+      "nome": "ITALO TADEU MANOEL DE MELO",
+      "total_pontuacao": 2151,
+      "total_km": 17963.47,
+      "media_nota": 63.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 567,
+      "nome": "NILSON DE JESUS FEZER",
+      "total_pontuacao": 2150,
+      "total_km": 17248.73,
+      "media_nota": 83.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 568,
+      "nome": "GELIANO SALVADOR",
+      "total_pontuacao": 2143,
+      "total_km": 19697.68,
+      "media_nota": 80.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 569,
+      "nome": "HENRIQUE SANTANA BUG",
+      "total_pontuacao": 2138,
+      "total_km": 11725.71,
+      "media_nota": 89.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 570,
+      "nome": "SERGIO ALVES MOULAZ",
+      "total_pontuacao": 2138,
+      "total_km": 13281.99,
+      "media_nota": 90.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 571,
+      "nome": "LUIZ VASCONCELOS ARAUJO",
+      "total_pontuacao": 2135,
+      "total_km": 16472.94,
+      "media_nota": 83.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 572,
+      "nome": "MARCELO PEREIRA DOS SANTOS",
+      "total_pontuacao": 2134,
+      "total_km": 16803.92,
+      "media_nota": 64.0,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 573,
+      "nome": "MARCELO GOMES DE SOUZA",
+      "total_pontuacao": 2134,
+      "total_km": 23149.06,
+      "media_nota": 77.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 574,
+      "nome": "SERGIO MURILO LEAL",
+      "total_pontuacao": 2133,
+      "total_km": 10109.94,
+      "media_nota": 94.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 575,
+      "nome": "LAURENTINO ROCHA GUEDES",
+      "total_pontuacao": 2126,
+      "total_km": 11215.3,
+      "media_nota": 69.25,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 576,
+      "nome": "GILBERTO BOLDT",
+      "total_pontuacao": 2124,
+      "total_km": 11392.08,
+      "media_nota": 88.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 577,
+      "nome": "ADRIANO DAS GRACAS DOS SANTOS",
+      "total_pontuacao": 2123,
+      "total_km": 18121.8,
+      "media_nota": 61.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 578,
+      "nome": "ALOISIO HENRIQUE DA COSTA",
+      "total_pontuacao": 2115,
+      "total_km": 12061.07,
+      "media_nota": 90.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 579,
+      "nome": "WELLINGTON SOARES DE SOUZA",
+      "total_pontuacao": 2115,
+      "total_km": 10344.42,
+      "media_nota": 92.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 580,
+      "nome": "LOUZIMAR BELARMINO",
+      "total_pontuacao": 2115,
+      "total_km": 10015.3,
+      "media_nota": 89.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 581,
+      "nome": "JADSON ALMEIDA RAMOS",
+      "total_pontuacao": 2113,
+      "total_km": 19018.73,
+      "media_nota": 80.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 582,
+      "nome": "ADALBERTO FERREIRA MENDES",
+      "total_pontuacao": 2107,
+      "total_km": 20740.22,
+      "media_nota": 77.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 583,
+      "nome": "JAYME CAETANO DA SILVA",
+      "total_pontuacao": 2101,
+      "total_km": 11012.47,
+      "media_nota": 88.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 584,
+      "nome": "DELVANI GOMES DO NASCIMENTO",
+      "total_pontuacao": 2099,
+      "total_km": 12421.83,
+      "media_nota": 86.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 585,
+      "nome": "JADSON BRONZE DOS SANTOS",
+      "total_pontuacao": 2097,
+      "total_km": 9505.34,
+      "media_nota": 93.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 586,
+      "nome": "MARCELO DA COSTA",
+      "total_pontuacao": 2097,
+      "total_km": 20145.33,
+      "media_nota": 79.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 587,
+      "nome": "BENITO PERILIO DIAS",
+      "total_pontuacao": 2093,
+      "total_km": 6883.07,
+      "media_nota": 92.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 588,
+      "nome": "ALESSANDRO NEVES GOMES",
+      "total_pontuacao": 2089,
+      "total_km": 14068.51,
+      "media_nota": 84.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 589,
+      "nome": "JOSE CLEITON RODRIGUES DE MATOS",
+      "total_pontuacao": 2083,
+      "total_km": 14397.38,
+      "media_nota": 87.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 590,
+      "nome": "GIVANILDO DE OLIVEIRA CAJUEIRO",
+      "total_pontuacao": 2081,
+      "total_km": 19357.81,
+      "media_nota": 80.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 591,
+      "nome": "WASHINGTON LUIZ CHELONI TRINDADE",
+      "total_pontuacao": 2081,
+      "total_km": 15963.89,
+      "media_nota": 81.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 592,
+      "nome": "LUCIANO MAMEDE DURAES",
+      "total_pontuacao": 2080,
+      "total_km": 9736.08,
+      "media_nota": 91.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 593,
+      "nome": "EVANDRO APARECIDO DE FARIA",
+      "total_pontuacao": 2078,
+      "total_km": 12649.37,
+      "media_nota": 85.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 594,
+      "nome": "CELSO DE OLIVEIRA RIBEIRO",
+      "total_pontuacao": 2072,
+      "total_km": 14871.88,
+      "media_nota": 85.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 595,
+      "nome": "AMARILDO FARIA POLITO",
+      "total_pontuacao": 2071,
+      "total_km": 11142.03,
+      "media_nota": 86.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 596,
+      "nome": "ELDER SANT ANA FAVERO",
+      "total_pontuacao": 2069,
+      "total_km": 13826.55,
+      "media_nota": 83.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 597,
+      "nome": "VANDERLEI GONCALVES DE LIMA",
+      "total_pontuacao": 2056,
+      "total_km": 9603.53,
+      "media_nota": 87.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 598,
+      "nome": "SERGIO DA ROCHA BARRETO",
+      "total_pontuacao": 2051,
+      "total_km": 9495.25,
+      "media_nota": 87.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 599,
+      "nome": "EDER GALDINO DIAS",
+      "total_pontuacao": 2050,
+      "total_km": 9758.43,
+      "media_nota": 87.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 600,
+      "nome": "EDISON ARAUJO",
+      "total_pontuacao": 2049,
+      "total_km": 8175.85,
+      "media_nota": 88.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 601,
+      "nome": "WILSON CIRILO DE MIRANDA",
+      "total_pontuacao": 2049,
+      "total_km": 9592.68,
+      "media_nota": 90.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 602,
+      "nome": "MICHEL PINHEIRO DE OLIVEIRA",
+      "total_pontuacao": 2039,
+      "total_km": 13229.91,
+      "media_nota": 82.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 603,
+      "nome": "ROGERIO SILVA CARDOSO",
+      "total_pontuacao": 2038,
+      "total_km": 12892.22,
+      "media_nota": 83.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 604,
+      "nome": "RICARDO CANDIDO MAIA",
+      "total_pontuacao": 2025,
+      "total_km": 14587.08,
+      "media_nota": 82.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 605,
+      "nome": "MARCELO REINALDO DE SALES",
+      "total_pontuacao": 2025,
+      "total_km": 13774.34,
+      "media_nota": 81.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 606,
+      "nome": "JOSE WASHINGTON SANTOS ALVES",
+      "total_pontuacao": 2020,
+      "total_km": 12832.51,
+      "media_nota": 82.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 607,
+      "nome": "FELICIANO JOSE DA SILVA",
+      "total_pontuacao": 2017,
+      "total_km": 25176.12,
+      "media_nota": 68.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 608,
+      "nome": "MANOEL SALVADOR FERREIRA DA CRUZ",
+      "total_pontuacao": 2014,
+      "total_km": 15599.07,
+      "media_nota": 81.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 609,
+      "nome": "ANTONIO LUIS DA SILVA",
+      "total_pontuacao": 2010,
+      "total_km": 7698.57,
+      "media_nota": 87.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 610,
+      "nome": "JOSE ADILSON CARLESSO NUNES",
+      "total_pontuacao": 2008,
+      "total_km": 18001.87,
+      "media_nota": 76.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 611,
+      "nome": "COSMO JOSE DOS SANTOS",
+      "total_pontuacao": 2007,
+      "total_km": 15344.42,
+      "media_nota": 79.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 612,
+      "nome": "ALBERTO DARLISSON SANTANA",
+      "total_pontuacao": 2003,
+      "total_km": 6251.73,
+      "media_nota": 92.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 613,
+      "nome": "LUIS CARLOS MOTA DOS SANTOS FILHO",
+      "total_pontuacao": 2003,
+      "total_km": 18844.32,
+      "media_nota": 78.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 614,
+      "nome": "CELIO RIBEIRO DE OLIVEIRA",
+      "total_pontuacao": 1999,
+      "total_km": 14801.7,
+      "media_nota": 82.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 615,
+      "nome": "FERNANDO MACEDO RODRIGUES",
+      "total_pontuacao": 1980,
+      "total_km": 8204.85,
+      "media_nota": 89.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 616,
+      "nome": "MILTON FRANCISCO FLEGLER",
+      "total_pontuacao": 1974,
+      "total_km": 2388.14,
+      "media_nota": 70.75,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 617,
+      "nome": "WALLACE DE LIMA FERREIRA",
+      "total_pontuacao": 1971,
+      "total_km": 16204.1,
+      "media_nota": 80.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 618,
+      "nome": "RUBENS DE LIMA",
+      "total_pontuacao": 1945,
+      "total_km": 14208.19,
+      "media_nota": 78.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 619,
+      "nome": "SEVERINO DOS RAMOS ALVES DA SILVA",
+      "total_pontuacao": 1943,
+      "total_km": 12309.77,
+      "media_nota": 79.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 620,
+      "nome": "ANILTON LIMA DOS SANTOS",
+      "total_pontuacao": 1941,
+      "total_km": 11957.54,
+      "media_nota": 82.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 621,
+      "nome": "ROGERIO FERREIRA GOMES",
+      "total_pontuacao": 1939,
+      "total_km": 9490.88,
+      "media_nota": 82.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 622,
+      "nome": "REGINALDO OLIVEIRA DE SOUZA",
+      "total_pontuacao": 1930,
+      "total_km": 16114.52,
+      "media_nota": 74.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 623,
+      "nome": "EDUARDO DA SILVA",
+      "total_pontuacao": 1925,
+      "total_km": 14163.88,
+      "media_nota": 78.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 624,
+      "nome": "JOSE MAYCON TEIXEIRA",
+      "total_pontuacao": 1919,
+      "total_km": 15121.53,
+      "media_nota": 75.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 625,
+      "nome": "LUIZ CARLOS DE OLIVEIRA ROSA",
+      "total_pontuacao": 1918,
+      "total_km": 18919.0,
+      "media_nota": 73.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 626,
+      "nome": "EDIGAR MARINS DUARTE",
+      "total_pontuacao": 1918,
+      "total_km": 17756.03,
+      "media_nota": 71.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 627,
+      "nome": "LUIZ PAULO DE SOUZA RODRIGUES",
+      "total_pontuacao": 1914,
+      "total_km": 12310.54,
+      "media_nota": 77.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 628,
+      "nome": "MARCOS PEREIRA CARDOSO",
+      "total_pontuacao": 1904,
+      "total_km": 10699.08,
+      "media_nota": 81.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 629,
+      "nome": "CICERO SANTOS DA SILVA",
+      "total_pontuacao": 1897,
+      "total_km": 5520.25,
+      "media_nota": 84.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 630,
+      "nome": "CARLOS AUGUSTO AGUIAR DA SILVA",
+      "total_pontuacao": 1888,
+      "total_km": 9330.92,
+      "media_nota": 79.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 631,
+      "nome": "LUCIANO ARAUJO DE AMARAL",
+      "total_pontuacao": 1884,
+      "total_km": 11484.59,
+      "media_nota": 77.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 632,
+      "nome": "LUIZ ANTONIO MACEDO DE CARVALHO",
+      "total_pontuacao": 1883,
+      "total_km": 13028.13,
+      "media_nota": 77.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 633,
+      "nome": "MARCOS ROBERTO DE JESUS",
+      "total_pontuacao": 1882,
+      "total_km": 8374.04,
+      "media_nota": 80.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 634,
+      "nome": "ELIAZ ENOCH DA SILVA",
+      "total_pontuacao": 1873,
+      "total_km": 22210.98,
+      "media_nota": 68.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 635,
+      "nome": "JESUE MIRANDA DE ARAUJO",
+      "total_pontuacao": 1872,
+      "total_km": 8705.33,
+      "media_nota": 83.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 636,
+      "nome": "WENIS FERREIRA",
+      "total_pontuacao": 1866,
+      "total_km": 8316.55,
+      "media_nota": 83.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 637,
+      "nome": "GILVAN DO NASCIMENTO OLIVEIRA",
+      "total_pontuacao": 1842,
+      "total_km": 17848.41,
+      "media_nota": 68.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 638,
+      "nome": "SERGIO BABISK",
+      "total_pontuacao": 1803,
+      "total_km": 9581.64,
+      "media_nota": 57.5,
+      "meses_participados": 4
+    },
+    {
+      "posicao": 639,
+      "nome": "ROSEMAR SOUZA DA SILVA",
+      "total_pontuacao": 1798,
+      "total_km": 11429.27,
+      "media_nota": 73.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 640,
+      "nome": "OLAVO REIS BARBOSA FILHO",
+      "total_pontuacao": 1786,
+      "total_km": 15542.66,
+      "media_nota": 68.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 641,
+      "nome": "SANDRO VINICIUS CARDOSO DE SA",
+      "total_pontuacao": 1772,
+      "total_km": 10381.63,
+      "media_nota": 74.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 642,
+      "nome": "ALTEIR ZANELATO CARVALHO",
+      "total_pontuacao": 1768,
+      "total_km": 19813.38,
+      "media_nota": 96.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 643,
+      "nome": "MARCO ANTONIO ANDRADE MENDES",
+      "total_pontuacao": 1765,
+      "total_km": 11916.52,
+      "media_nota": 74.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 644,
+      "nome": "CLENILTON DOS SANTOS DANTAS",
+      "total_pontuacao": 1750,
+      "total_km": 19128.81,
+      "media_nota": 62.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 645,
+      "nome": "BRUNO GIRO SOUZA",
+      "total_pontuacao": 1744,
+      "total_km": 7077.16,
+      "media_nota": 78.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 646,
+      "nome": "WELDER GOMES CORREIA",
+      "total_pontuacao": 1741,
+      "total_km": 14097.81,
+      "media_nota": 70.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 647,
+      "nome": "OSVALDO DA SILVA CABRAL FILHO",
+      "total_pontuacao": 1741,
+      "total_km": 20754.46,
+      "media_nota": 93.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 648,
+      "nome": "ANDRE LUIS MIRANDA LIMA",
+      "total_pontuacao": 1723,
+      "total_km": 12154.0,
+      "media_nota": 68.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 649,
+      "nome": "MAICO VINICIUS GAMA SANTOS",
+      "total_pontuacao": 1696,
+      "total_km": 14893.85,
+      "media_nota": 96.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 650,
+      "nome": "ROSIMAR GUIMARAES DOS SANTOS",
+      "total_pontuacao": 1692,
+      "total_km": 15076.04,
+      "media_nota": 95.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 651,
+      "nome": "HEBERT SILVA DE FREITAS",
+      "total_pontuacao": 1685,
+      "total_km": 11425.82,
+      "media_nota": 67.67,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 652,
+      "nome": "MEIRISVANDO RODRIGUES DOS REIS",
+      "total_pontuacao": 1675,
+      "total_km": 7490.47,
+      "media_nota": 73.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 653,
+      "nome": "ROBERTHE RAMOS FEITOSA",
+      "total_pontuacao": 1673,
+      "total_km": 15826.83,
+      "media_nota": 93.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 654,
+      "nome": "LUIS SANTOS ALVES",
+      "total_pontuacao": 1659,
+      "total_km": 11833.32,
+      "media_nota": 98.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 655,
+      "nome": "MARCELO DARE DE OLIVEIRA",
+      "total_pontuacao": 1656,
+      "total_km": 13489.66,
+      "media_nota": 95.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 656,
+      "nome": "ADILSON FERREIRA DOS SANTOS",
+      "total_pontuacao": 1634,
+      "total_km": 15699.66,
+      "media_nota": 93.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 657,
+      "nome": "MONICA DOS SANTOS SILVA",
+      "total_pontuacao": 1633,
+      "total_km": 12274.14,
+      "media_nota": 64.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 658,
+      "nome": "ALTAIR CAMARGO PEIXOTO",
+      "total_pontuacao": 1633,
+      "total_km": 11956.3,
+      "media_nota": 97.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 659,
+      "nome": "JOSE CICERO DOS SANTOS",
+      "total_pontuacao": 1621,
+      "total_km": 12675.65,
+      "media_nota": 94.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 660,
+      "nome": "WEDERSON CONCEICAO SOUZA",
+      "total_pontuacao": 1618,
+      "total_km": 14698.51,
+      "media_nota": 91.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 661,
+      "nome": "JOAO JOEL DE LIMA",
+      "total_pontuacao": 1614,
+      "total_km": 14001.38,
+      "media_nota": 92.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 662,
+      "nome": "DAVI DE JESUS DOS SANTOS",
+      "total_pontuacao": 1600,
+      "total_km": 11512.94,
+      "media_nota": 95.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 663,
+      "nome": "LUIZ CARLOS GONCALVES LOURENCO",
+      "total_pontuacao": 1591,
+      "total_km": 10660.18,
+      "media_nota": 95.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 664,
+      "nome": "JESRAEL SOUZA LOBO NASCIMENTO",
+      "total_pontuacao": 1584,
+      "total_km": 11776.42,
+      "media_nota": 93.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 665,
+      "nome": "ALEX DA ROCHA GAMA",
+      "total_pontuacao": 1584,
+      "total_km": 11110.93,
+      "media_nota": 94.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 666,
+      "nome": "GABRIEL OLIVEIRA DE SOUZA",
+      "total_pontuacao": 1579,
+      "total_km": 12045.9,
+      "media_nota": 92.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 667,
+      "nome": "MARCELO PEREIRA DANIEL",
+      "total_pontuacao": 1572,
+      "total_km": 9816.88,
+      "media_nota": 95.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 668,
+      "nome": "SILVIO LUIZ MELO DE SOUZA",
+      "total_pontuacao": 1569,
+      "total_km": 9562.1,
+      "media_nota": 96.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 669,
+      "nome": "OZEAS MENDES DA SILVA",
+      "total_pontuacao": 1562,
+      "total_km": 10639.96,
+      "media_nota": 93.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 670,
+      "nome": "HELIO SIMOES DA SILVA",
+      "total_pontuacao": 1561,
+      "total_km": 11826.21,
+      "media_nota": 91.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 671,
+      "nome": "DEILDO DA CONCEICAO BARBOSA JUNIOR",
+      "total_pontuacao": 1551,
+      "total_km": 15479.01,
+      "media_nota": 85.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 672,
+      "nome": "CARLOS ALBERTO DO NASCIMENTO CHELES",
+      "total_pontuacao": 1550,
+      "total_km": 10956.56,
+      "media_nota": 92.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 673,
+      "nome": "RENILDO BARBOSA DE NOVAIS",
+      "total_pontuacao": 1546,
+      "total_km": 8037.98,
+      "media_nota": 97.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 674,
+      "nome": "ROBSON DA SILVA",
+      "total_pontuacao": 1542,
+      "total_km": 9301.72,
+      "media_nota": 94.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 675,
+      "nome": "VALDELINO NASCIMENTO DA SILVA",
+      "total_pontuacao": 1538,
+      "total_km": 9749.87,
+      "media_nota": 93.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 676,
+      "nome": "ADRIANO GIRO SOUZA",
+      "total_pontuacao": 1533,
+      "total_km": 13676.61,
+      "media_nota": 87.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 677,
+      "nome": "RAIMUNDO NONATO DA SILVA",
+      "total_pontuacao": 1529,
+      "total_km": 15164.73,
+      "media_nota": 84.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 678,
+      "nome": "MARCO ANTONIO FRIZERA",
+      "total_pontuacao": 1524,
+      "total_km": 10952.72,
+      "media_nota": 90.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 679,
+      "nome": "UBIRACY BITTENCOURT LOPES",
+      "total_pontuacao": 1523,
+      "total_km": 12969.47,
+      "media_nota": 87.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 680,
+      "nome": "ADAO PAULO DA SILVA",
+      "total_pontuacao": 1497,
+      "total_km": 12440.93,
+      "media_nota": 58.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 681,
+      "nome": "GERALDO MAGELA FERREIRA",
+      "total_pontuacao": 1494,
+      "total_km": 9502.9,
+      "media_nota": 90.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 682,
+      "nome": "LUCIANO VIEIRA PESSOA",
+      "total_pontuacao": 1494,
+      "total_km": 14451.47,
+      "media_nota": 55.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 683,
+      "nome": "VALTER JOSE DA SILVA",
+      "total_pontuacao": 1491,
+      "total_km": 8055.76,
+      "media_nota": 92.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 684,
+      "nome": "JOSIMAR GOMES DA COSTA",
+      "total_pontuacao": 1491,
+      "total_km": 13930.11,
+      "media_nota": 83.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 685,
+      "nome": "THIAGO DE SOUZA SILVA",
+      "total_pontuacao": 1485,
+      "total_km": 9174.66,
+      "media_nota": 90.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 686,
+      "nome": "RONDINELIO ALVES DE OLIVEIRA",
+      "total_pontuacao": 1485,
+      "total_km": 7183.33,
+      "media_nota": 93.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 687,
+      "nome": "ALEANDRO SANTOS ANDRADE",
+      "total_pontuacao": 1484,
+      "total_km": 10614.28,
+      "media_nota": 88.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 688,
+      "nome": "DOMINGOS MATEUS TIBERIO FILHO",
+      "total_pontuacao": 1478,
+      "total_km": 8956.61,
+      "media_nota": 91.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 689,
+      "nome": "VALCYR DA VICTORIA",
+      "total_pontuacao": 1476,
+      "total_km": 9484.4,
+      "media_nota": 89.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 690,
+      "nome": "CLAUDINEI DA SILVA DE SOUSA",
+      "total_pontuacao": 1476,
+      "total_km": 14187.29,
+      "media_nota": 82.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 691,
+      "nome": "JULIO CESAR ABREU",
+      "total_pontuacao": 1475,
+      "total_km": 10126.34,
+      "media_nota": 88.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 692,
+      "nome": "JADI RIBEIRO DA SILVA",
+      "total_pontuacao": 1473,
+      "total_km": 12803.14,
+      "media_nota": 56.0,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 693,
+      "nome": "RAFAEL MIRANDA DA SILVA",
+      "total_pontuacao": 1470,
+      "total_km": 4877.49,
+      "media_nota": 96.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 694,
+      "nome": "CARLOS VAGNER DA SILVA CORREA",
+      "total_pontuacao": 1469,
+      "total_km": 9566.11,
+      "media_nota": 88.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 695,
+      "nome": "DIEGO RODRIGUES CRUZ",
+      "total_pontuacao": 1468,
+      "total_km": 10402.44,
+      "media_nota": 87.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 696,
+      "nome": "REGINALDO DE OLIVEIRA",
+      "total_pontuacao": 1465,
+      "total_km": 8388.59,
+      "media_nota": 90.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 697,
+      "nome": "LUCIA NASCIMENTO VIANA",
+      "total_pontuacao": 1462,
+      "total_km": 10318.26,
+      "media_nota": 87.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 698,
+      "nome": "MESSIAS DE ASSIS GOMES",
+      "total_pontuacao": 1456,
+      "total_km": 9349.16,
+      "media_nota": 88.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 699,
+      "nome": "MOISES VIRICIO DE OLIVEIRA",
+      "total_pontuacao": 1455,
+      "total_km": 9135.55,
+      "media_nota": 89.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 700,
+      "nome": "ANTONIO JOBSON SANTOS DA GUARDA",
+      "total_pontuacao": 1450,
+      "total_km": 10363.19,
+      "media_nota": 86.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 701,
+      "nome": "ANGELO DESIDERIO DOS SANTOS",
+      "total_pontuacao": 1447,
+      "total_km": 9202.24,
+      "media_nota": 88.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 702,
+      "nome": "ARILSON DAS DORES PAES",
+      "total_pontuacao": 1445,
+      "total_km": 10549.33,
+      "media_nota": 85.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 703,
+      "nome": "HUAN DO ROSARIO PINHEIRO",
+      "total_pontuacao": 1443,
+      "total_km": 14352.79,
+      "media_nota": 79.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 704,
+      "nome": "JOCIMARA PEREIRA",
+      "total_pontuacao": 1439,
+      "total_km": 5667.16,
+      "media_nota": 93.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 705,
+      "nome": "MARCIO JOSE CRUZ DOS SANTOS",
+      "total_pontuacao": 1427,
+      "total_km": 10891.66,
+      "media_nota": 84.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 706,
+      "nome": "MAURICIO ANTONIO PEREIRA DA SILVA",
+      "total_pontuacao": 1421,
+      "total_km": 12430.8,
+      "media_nota": 82.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 707,
+      "nome": "DAVISON DOS SANTOS BOMFIM",
+      "total_pontuacao": 1418,
+      "total_km": 12014.93,
+      "media_nota": 81.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 708,
+      "nome": "CARLOS EDUARDO MERLIM RIBEIRO",
+      "total_pontuacao": 1413,
+      "total_km": 8827.93,
+      "media_nota": 86.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 709,
+      "nome": "OTONIEL FERNANDES LANES",
+      "total_pontuacao": 1398,
+      "total_km": 9761.93,
+      "media_nota": 83.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 710,
+      "nome": "JAILSON ROQUE BATISTA",
+      "total_pontuacao": 1397,
+      "total_km": 6937.18,
+      "media_nota": 93.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 711,
+      "nome": "RAFAEL AUGUSTO SANTOS DE OLIVEIRA",
+      "total_pontuacao": 1396,
+      "total_km": 7760.48,
+      "media_nota": 87.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 712,
+      "nome": "EDENILSON LUIZ DA SILVA",
+      "total_pontuacao": 1391,
+      "total_km": 7567.33,
+      "media_nota": 87.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 713,
+      "nome": "ANTONIO SEGUNDO DE LIMA",
+      "total_pontuacao": 1390,
+      "total_km": 6936.64,
+      "media_nota": 88.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 714,
+      "nome": "FABIO DE CARVALHO COSTA",
+      "total_pontuacao": 1385,
+      "total_km": 7353.99,
+      "media_nota": 86.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 715,
+      "nome": "FLAVIO AMBROSINA JUNIOR",
+      "total_pontuacao": 1385,
+      "total_km": 8522.43,
+      "media_nota": 85.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 716,
+      "nome": "EDISON DOS SANTOS DIAS",
+      "total_pontuacao": 1383,
+      "total_km": 4565.97,
+      "media_nota": 91.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 717,
+      "nome": "RUBERVANIA DE MATOS SANTOS",
+      "total_pontuacao": 1379,
+      "total_km": 11814.37,
+      "media_nota": 78.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 718,
+      "nome": "VALDOMIRO FRANCA DOS SANTOS",
+      "total_pontuacao": 1378,
+      "total_km": 7798.8,
+      "media_nota": 85.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 719,
+      "nome": "RONALDO DA SILVA KOHLER",
+      "total_pontuacao": 1373,
+      "total_km": 10433.67,
+      "media_nota": 80.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 720,
+      "nome": "ELZO CARVALHO DE OLIVEIRA",
+      "total_pontuacao": 1371,
+      "total_km": 6425.95,
+      "media_nota": 92.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 721,
+      "nome": "ADERMANDO GARCIA DA SILVA",
+      "total_pontuacao": 1365,
+      "total_km": 10050.24,
+      "media_nota": 81.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 722,
+      "nome": "MARCIANO LEOTERIO BRESSAMINI",
+      "total_pontuacao": 1364,
+      "total_km": 5952.49,
+      "media_nota": 87.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 723,
+      "nome": "BARTOLOMEU WELIGTON SANTOS CRUZ",
+      "total_pontuacao": 1364,
+      "total_km": 11903.22,
+      "media_nota": 77.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 724,
+      "nome": "RODRIGO SANTOS DOS REIS",
+      "total_pontuacao": 1354,
+      "total_km": 8663.32,
+      "media_nota": 82.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 725,
+      "nome": "EDVALDO BORGES RIBEIRO",
+      "total_pontuacao": 1352,
+      "total_km": 9297.29,
+      "media_nota": 81.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 726,
+      "nome": "DIVINO JOSE CEZARIO",
+      "total_pontuacao": 1351,
+      "total_km": 7495.84,
+      "media_nota": 84.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 727,
+      "nome": "CARLOS MAGNO DE SOUZA CARNEIRO",
+      "total_pontuacao": 1348,
+      "total_km": 5860.26,
+      "media_nota": 86.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 728,
+      "nome": "MARCILIO DOS SANTOS FRANCA",
+      "total_pontuacao": 1345,
+      "total_km": 6694.44,
+      "media_nota": 59.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 729,
+      "nome": "VALCI GUILHERME ROBERTO",
+      "total_pontuacao": 1344,
+      "total_km": 7264.26,
+      "media_nota": 83.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 730,
+      "nome": "JULIANO NARDACI RODRIGUES",
+      "total_pontuacao": 1342,
+      "total_km": 9388.63,
+      "media_nota": 80.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 731,
+      "nome": "PAULO CESAR DIAS LIRA",
+      "total_pontuacao": 1341,
+      "total_km": 9466.9,
+      "media_nota": 80.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 732,
+      "nome": "HUEDERSON MENEZES DE PAULA CAETANO",
+      "total_pontuacao": 1333,
+      "total_km": 8974.45,
+      "media_nota": 80.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 733,
+      "nome": "ELIANDRO DOS SANTOS SILVA",
+      "total_pontuacao": 1319,
+      "total_km": 7542.94,
+      "media_nota": 81.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 734,
+      "nome": "HUMBERTO NUNES PINHEIRO",
+      "total_pontuacao": 1318,
+      "total_km": 11974.73,
+      "media_nota": 74.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 735,
+      "nome": "VINICIUS BASTOS SANTOS DE MOURA",
+      "total_pontuacao": 1316,
+      "total_km": 9048.26,
+      "media_nota": 78.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 736,
+      "nome": "ELIAS MACHADO DE MORAIS",
+      "total_pontuacao": 1307,
+      "total_km": 5588.18,
+      "media_nota": 84.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 737,
+      "nome": "JOSE FRANCISCO ALVES",
+      "total_pontuacao": 1304,
+      "total_km": 3627.96,
+      "media_nota": 87.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 738,
+      "nome": "EZEQUIEL MONGIN SILVA",
+      "total_pontuacao": 1302,
+      "total_km": 8909.21,
+      "media_nota": 78.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 739,
+      "nome": "JOSE INOCENCIO SOARES DE MENEZES",
+      "total_pontuacao": 1301,
+      "total_km": 7924.9,
+      "media_nota": 79.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 740,
+      "nome": "MARCIO ROCHA DE MENEZES",
+      "total_pontuacao": 1299,
+      "total_km": 8022.43,
+      "media_nota": 79.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 741,
+      "nome": "GIRLANDIO FERREIRA DE OLIVEIRA",
+      "total_pontuacao": 1299,
+      "total_km": 8452.0,
+      "media_nota": 78.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 742,
+      "nome": "FABIO LANGA LAPA",
+      "total_pontuacao": 1298,
+      "total_km": 8433.84,
+      "media_nota": 78.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 743,
+      "nome": "EDUARDO JOSE DE JESUS MOREIRA",
+      "total_pontuacao": 1298,
+      "total_km": 5454.63,
+      "media_nota": 83.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 744,
+      "nome": "ALEXANDRE SAMPAIO POSSIDONIO",
+      "total_pontuacao": 1296,
+      "total_km": 7526.51,
+      "media_nota": 80.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 745,
+      "nome": "AMARILDO GONCALVES COSTA",
+      "total_pontuacao": 1291,
+      "total_km": 7211.82,
+      "media_nota": 84.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 746,
+      "nome": "JORGE RIBEIRO JUNIOR",
+      "total_pontuacao": 1291,
+      "total_km": 10093.29,
+      "media_nota": 78.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 747,
+      "nome": "ANILSON BATISTA RIBEIRO",
+      "total_pontuacao": 1287,
+      "total_km": 8068.53,
+      "media_nota": 78.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 748,
+      "nome": "ROBERTO ARAUJO DE LIMA",
+      "total_pontuacao": 1287,
+      "total_km": 8978.39,
+      "media_nota": 77.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 749,
+      "nome": "CELIO DE OLIVEIRA MARTINS",
+      "total_pontuacao": 1284,
+      "total_km": 4775.48,
+      "media_nota": 83.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 750,
+      "nome": "LUCIO DA SILVA VIEIRA",
+      "total_pontuacao": 1281,
+      "total_km": 9169.48,
+      "media_nota": 76.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 751,
+      "nome": "ROGELDSON OLIVEIRA REIS",
+      "total_pontuacao": 1263,
+      "total_km": 5965.01,
+      "media_nota": 86.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 752,
+      "nome": "FELIPE CALDAS EVARISTO",
+      "total_pontuacao": 1259,
+      "total_km": 11550.87,
+      "media_nota": 71.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 753,
+      "nome": "HELCIO ROCHA FERRAZ",
+      "total_pontuacao": 1258,
+      "total_km": 1394.88,
+      "media_nota": 87.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 754,
+      "nome": "NILSON VERLINGER DOS SANTOS JUNIOR",
+      "total_pontuacao": 1246,
+      "total_km": 3661.46,
+      "media_nota": 88.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 755,
+      "nome": "WILBER DE BESSA DA SILVA",
+      "total_pontuacao": 1242,
+      "total_km": 8100.14,
+      "media_nota": 75.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 756,
+      "nome": "EDMAR ALVES DOS SANTOS",
+      "total_pontuacao": 1242,
+      "total_km": 3448.25,
+      "media_nota": 83.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 757,
+      "nome": "RAIMUNDO DE SOUSA SILVA",
+      "total_pontuacao": 1233,
+      "total_km": 5571.86,
+      "media_nota": 84.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 758,
+      "nome": "ALLYSSON OURIQUES FEITOSA",
+      "total_pontuacao": 1226,
+      "total_km": 5207.78,
+      "media_nota": 79.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 759,
+      "nome": "ROBERTO CARLOS FERREIRA GREMASCO",
+      "total_pontuacao": 1207,
+      "total_km": 6375.73,
+      "media_nota": 80.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 760,
+      "nome": "CLAUDIO GEANY BRANDAO DOS SANTOS",
+      "total_pontuacao": 1205,
+      "total_km": 8592.1,
+      "media_nota": 71.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 761,
+      "nome": "VILSON QUIRINO DOS SANTOS",
+      "total_pontuacao": 1201,
+      "total_km": 3940.56,
+      "media_nota": 84.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 762,
+      "nome": "CARLOS LEONARDO MUNIZ DA SILVA",
+      "total_pontuacao": 1199,
+      "total_km": 7729.45,
+      "media_nota": 72.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 763,
+      "nome": "WAGNER DE OLIVEIRA BARBOSA",
+      "total_pontuacao": 1183,
+      "total_km": 6458.89,
+      "media_nota": 73.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 764,
+      "nome": "JOSE RENILDO DE BRITO",
+      "total_pontuacao": 1165,
+      "total_km": 8352.89,
+      "media_nota": 46.33,
+      "meses_participados": 3
+    },
+    {
+      "posicao": 765,
+      "nome": "REINALDO JOVIANO DUARTE",
+      "total_pontuacao": 1159,
+      "total_km": 4659.38,
+      "media_nota": 75.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 766,
+      "nome": "COLEMAR SOARES DE MORAES",
+      "total_pontuacao": 1124,
+      "total_km": 8427.31,
+      "media_nota": 66.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 767,
+      "nome": "JOCELIO SANTOS DA SILVA",
+      "total_pontuacao": 1090,
+      "total_km": 4821.27,
+      "media_nota": 73.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 768,
+      "nome": "JOSE MACIEL SANTOS",
+      "total_pontuacao": 1072,
+      "total_km": 669.74,
+      "media_nota": 81.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 769,
+      "nome": "JONAS DE JESUS SOUZA",
+      "total_pontuacao": 1051,
+      "total_km": 10605.49,
+      "media_nota": 57.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 770,
+      "nome": "CARLOS EDUARDO SANTANA",
+      "total_pontuacao": 1036,
+      "total_km": 4992.16,
+      "media_nota": 69.0,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 771,
+      "nome": "DIEGO ANDRE FERNANDES DE ANDRADE",
+      "total_pontuacao": 998,
+      "total_km": 4912.34,
+      "media_nota": 63.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 772,
+      "nome": "ROGERIO MARINHO",
+      "total_pontuacao": 911,
+      "total_km": 6086.51,
+      "media_nota": 54.5,
+      "meses_participados": 2
+    },
+    {
+      "posicao": 773,
+      "nome": "LUCIO DE OLIVEIRA",
+      "total_pontuacao": 856,
+      "total_km": 7480.49,
+      "media_nota": 96.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 774,
+      "nome": "AGOSTINHO CARLOS PEIXOTO DE LACERDA",
+      "total_pontuacao": 810,
+      "total_km": 6751.24,
+      "media_nota": 92.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 775,
+      "nome": "SEVERINO ELENILDO DOS SANTOS SOUZA",
+      "total_pontuacao": 775,
+      "total_km": 3630.78,
+      "media_nota": 98.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 776,
+      "nome": "EDILMAR VIEIRA DA SILVA",
+      "total_pontuacao": 767,
+      "total_km": 3601.11,
+      "media_nota": 97.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 777,
+      "nome": "JOSE NILTON DE MORAES",
+      "total_pontuacao": 759,
+      "total_km": 6259.25,
+      "media_nota": 97.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 778,
+      "nome": "AGUINALDO PEREIRA",
+      "total_pontuacao": 754,
+      "total_km": 5889.27,
+      "media_nota": 87.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 779,
+      "nome": "CARLOS ALBERTO N DO ESPIRITO SANTO",
+      "total_pontuacao": 753,
+      "total_km": 5007.67,
+      "media_nota": 90.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 780,
+      "nome": "GABRIEL ESTEVES FERNANDES",
+      "total_pontuacao": 723,
+      "total_km": 1794.73,
+      "media_nota": 97.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 781,
+      "nome": "JOSIAS BARROS DO ESPIRITO SANTO",
+      "total_pontuacao": 716,
+      "total_km": 4634.09,
+      "media_nota": 86.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 782,
+      "nome": "JULIMAR NASCIMENTO DE SOUZA",
+      "total_pontuacao": 712,
+      "total_km": 5609.52,
+      "media_nota": 82.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 783,
+      "nome": "WESLEI ALVES",
+      "total_pontuacao": 706,
+      "total_km": 2530.54,
+      "media_nota": 92.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 784,
+      "nome": "ADEVALDO DE CARVALHO FARIA",
+      "total_pontuacao": 703,
+      "total_km": 123.17,
+      "media_nota": 100.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 785,
+      "nome": "PAULO CARDOSO DE OLIVEIRA",
+      "total_pontuacao": 698,
+      "total_km": 5067.65,
+      "media_nota": 82.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 786,
+      "nome": "JEAN CARLOS DA SILVA",
+      "total_pontuacao": 686,
+      "total_km": 5562.6,
+      "media_nota": 88.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 787,
+      "nome": "ELISEU FERREIRA DE OLIVEIRA",
+      "total_pontuacao": 681,
+      "total_km": 1806.0,
+      "media_nota": 91.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 788,
+      "nome": "GILVALDO CERQUEIRA",
+      "total_pontuacao": 674,
+      "total_km": 2652.02,
+      "media_nota": 88.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 789,
+      "nome": "ADEMARIO MENDES SANTOS VIANA",
+      "total_pontuacao": 663,
+      "total_km": 5699.45,
+      "media_nota": 77.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 790,
+      "nome": "MARCELINO PEREIRA DA SILVA",
+      "total_pontuacao": 655,
+      "total_km": 457.86,
+      "media_nota": 92.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 791,
+      "nome": "JOAO TAVARES DE LIMA",
+      "total_pontuacao": 654,
+      "total_km": 132.17,
+      "media_nota": 93.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 792,
+      "nome": "WELLINGTON BARBOSA DA SILVA",
+      "total_pontuacao": 651,
+      "total_km": 1124.81,
+      "media_nota": 89.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 793,
+      "nome": "VALDICLEI DAS NEVES SOUZA",
+      "total_pontuacao": 650,
+      "total_km": 2236.34,
+      "media_nota": 85.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 794,
+      "nome": "CARLOS FERNANDO DA SILVA",
+      "total_pontuacao": 647,
+      "total_km": 3273.26,
+      "media_nota": 81.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 795,
+      "nome": "MURILO FONSECA SANTOS",
+      "total_pontuacao": 646,
+      "total_km": 2679.8,
+      "media_nota": 95.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 796,
+      "nome": "EDIVALDO OLIVEIRA JULIO",
+      "total_pontuacao": 642,
+      "total_km": 500.27,
+      "media_nota": 90.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 797,
+      "nome": "LUIZ CARLOS RODRIGUES LINS",
+      "total_pontuacao": 640,
+      "total_km": 2097.77,
+      "media_nota": 84.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 798,
+      "nome": "RENATO ALVES RANGEL",
+      "total_pontuacao": 637,
+      "total_km": 5135.1,
+      "media_nota": 82.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 799,
+      "nome": "WEDSON OLIVEIRA LOUREIRO",
+      "total_pontuacao": 631,
+      "total_km": 4607.83,
+      "media_nota": 74.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 800,
+      "nome": "MILTON POUBEL DA LUZ",
+      "total_pontuacao": 622,
+      "total_km": 1409.58,
+      "media_nota": 97.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 801,
+      "nome": "GENIVAN LIONE DA FONSECA",
+      "total_pontuacao": 610,
+      "total_km": 1743.6,
+      "media_nota": 81.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 802,
+      "nome": "THIAGO BEZERRA COSTA",
+      "total_pontuacao": 602,
+      "total_km": 576.44,
+      "media_nota": 84.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 803,
+      "nome": "FRANCISCO DE ASSIS SERAFIM DOS SANTOS",
+      "total_pontuacao": 601,
+      "total_km": 452.4,
+      "media_nota": 98.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 804,
+      "nome": "HUBERLON JOSE DA CONCEICAO",
+      "total_pontuacao": 594,
+      "total_km": 2867.48,
+      "media_nota": 76.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 805,
+      "nome": "MARCELO SIQUEIRA DUTRA",
+      "total_pontuacao": 591,
+      "total_km": 1267.74,
+      "media_nota": 80.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 806,
+      "nome": "EDMAR MOREIRA NIZA JUNIOR",
+      "total_pontuacao": 590,
+      "total_km": 2835.08,
+      "media_nota": 85.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 807,
+      "nome": "FERNANDO SOUZA DE DEUS",
+      "total_pontuacao": 590,
+      "total_km": 645.07,
+      "media_nota": 82.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 808,
+      "nome": "BRUNO FERREIRA DE SOUZA",
+      "total_pontuacao": 589,
+      "total_km": 22.39,
+      "media_nota": 84.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 809,
+      "nome": "MAURICIO DA CONCEICAO",
+      "total_pontuacao": 579,
+      "total_km": 1049.81,
+      "media_nota": 79.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 810,
+      "nome": "LEONALDO ZANETTI",
+      "total_pontuacao": 572,
+      "total_km": 1065.16,
+      "media_nota": 78.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 811,
+      "nome": "JULSIMAR DOS SANTOS MORENO",
+      "total_pontuacao": 569,
+      "total_km": 654.18,
+      "media_nota": 79.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 812,
+      "nome": "LEANDRO DA SILVA JACQUES",
+      "total_pontuacao": 561,
+      "total_km": 612.24,
+      "media_nota": 78.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 813,
+      "nome": "DORIEDSON GOMES DA ASSUNCAO",
+      "total_pontuacao": 559,
+      "total_km": 805.27,
+      "media_nota": 77.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 814,
+      "nome": "AMARILDO MARTINS DO NASCIMENTO",
+      "total_pontuacao": 555,
+      "total_km": 70.94,
+      "media_nota": 79.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 815,
+      "nome": "EVANDRO CARLOS CASSOLI LAURETH",
+      "total_pontuacao": 553,
+      "total_km": 2799.47,
+      "media_nota": 79.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 816,
+      "nome": "VALDECY DOS SANTOS MONTEIRO",
+      "total_pontuacao": 514,
+      "total_km": 368.9,
+      "media_nota": 84.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 817,
+      "nome": "ROGERIO XAVIER DO PRADO",
+      "total_pontuacao": 488,
+      "total_km": 2202.88,
+      "media_nota": 62.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 818,
+      "nome": "FRANCISCO DE ASSIS ARAUJO",
+      "total_pontuacao": 481,
+      "total_km": 245.81,
+      "media_nota": 79.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 819,
+      "nome": "EVANILDO CORREIA",
+      "total_pontuacao": 477,
+      "total_km": 90.42,
+      "media_nota": 79.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 820,
+      "nome": "DIEGO DE ALMEIDA RAIMUNDO",
+      "total_pontuacao": 467,
+      "total_km": 1339.02,
+      "media_nota": 62.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 821,
+      "nome": "RAUTER LOUBERT DE CARLI TORRI",
+      "total_pontuacao": 430,
+      "total_km": 1412.32,
+      "media_nota": 65.0,
+      "meses_participados": 1
+    },
+    {
+      "posicao": 822,
+      "nome": "MARCUS JEAN DA CRUZ FIGUEIREDO",
+      "total_pontuacao": 405,
+      "total_km": 109.12,
+      "media_nota": 67.0,
+      "meses_participados": 1
+    }
+  ]
+}
