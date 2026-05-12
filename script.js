@@ -67,36 +67,7 @@ function processDrivers(data) {
   }).filter(d => d.avg !== null);
 }
 
-function processRankingDrivers(ranking) {
-  const rows = Array.isArray(ranking) ? ranking : ranking?.motoristas;
-  if (!Array.isArray(rows)) return [];
-
-  return rows.map(r => ({
-    name: r.nome || r.driver || '',
-    scores: [null, null, null, null],
-    kms: [0, 0, 0, 0],
-    ops: [null, null, null, null],
-    kmTotal: Number(r.total_km ?? r.kmTotal ?? 0),
-    avg: r.media_nota ?? r.avg ?? null,
-    trend: 0,
-    declined: false,
-    improved: false,
-    rankingPosition: r.posicao ?? null,
-    totalScore: r.total_pontuacao ?? null,
-    monthsParticipated: r.meses_participados ?? null,
-    source: 'ranking'
-  })).filter(d => d.name && d.avg !== null);
-}
-
-let ALL_DRIVERS = [];
-let DATA_HAS_MONTHLY = true;
-let RANKING_SUMMARY = null;
-
-function setDriverData(drivers, options = {}) {
-  ALL_DRIVERS = drivers;
-  DATA_HAS_MONTHLY = options.hasMonthly ?? true;
-  RANKING_SUMMARY = options.summary ?? null;
-}
+const ALL_DRIVERS = processDrivers(DRIVER_DATA);
 
 // --- STATE ---------------------------------------------------------------------------
 let currentFilter = 'all';
@@ -111,7 +82,6 @@ let tableMonth = 'all';
 let globalMonth = 'all'; // 'all' or month index from MONTH_KEYS
 
 function setGlobalMonth(month) {
-  if (!DATA_HAS_MONTHLY && month !== 'all') month = 'all';
   globalMonth = month;
   // Reset bin filter whenever month changes
   activeBinFilter = null;
@@ -258,7 +228,6 @@ function setFilter(f) {
 }
 
 function setOp(op) {
-  if (!DATA_HAS_MONTHLY && op !== 'all') op = 'all';
   currentOp = op;
   document.querySelectorAll('#ddOpMenu .dd-item').forEach(el => el.classList.remove('selected'));
   const sel = document.querySelector(`#ddOpMenu .dd-item[data-val="${op}"]`);
@@ -293,7 +262,6 @@ function onSearch() {
 }
 
 function setTableMonth(month) {
-  if (!DATA_HAS_MONTHLY && month !== 'all') month = 'all';
   tableMonth = month;
   sortKey = month === 'all' ? 'avg' : MONTH_KEYS[month];
   sortDir = -1;
@@ -340,9 +308,6 @@ function sortDrivers(drivers) {
       va = tableKm(a);
       vb = tableKm(b);
     }
-    else if (sortKey === 'rankingPosition') { va = a.rankingPosition ?? 999999; vb = b.rankingPosition ?? 999999; }
-    else if (sortKey === 'totalScore') { va = a.totalScore ?? -1; vb = b.totalScore ?? -1; }
-    else if (sortKey === 'monthsParticipated') { va = a.monthsParticipated ?? -1; vb = b.monthsParticipated ?? -1; }
     else if (sortKey === 'trend') { va = a.trend; vb = b.trend; }
     else if (sortKey === 'km') { va = a.kmTotal; vb = b.kmTotal; }
     else { va = a.avg ?? -1; vb = b.avg ?? -1; }
@@ -384,19 +349,6 @@ function comparisonDelta(driver) {
 function renderTableHeader(hasGestores) {
   const table = document.getElementById('tableHeaderRow').closest('table');
   table.classList.toggle('compare-mode', tableMonth !== 'all');
-
-  if (!DATA_HAS_MONTHLY) {
-    document.getElementById('tableHeaderRow').innerHTML = `
-      <th style="width:40px">#</th>
-      <th>Motorista</th>
-      <th class="right" onclick="sortBy('rankingPosition')">Pos.</th>
-      <th class="right" onclick="sortBy('totalScore')">Pontuacao</th>
-      <th class="right" onclick="sortBy('avg')">Media</th>
-      <th class="right" onclick="sortBy('km')">Km Total</th>
-      <th class="right" onclick="sortBy('monthsParticipated')">Meses</th>
-    `;
-    return;
-  }
 
   const monthHeaders = MONTH_KEYS.map((key, i) =>
     `<th class="right month-col" onclick="sortBy('${key}')">${MONTHS[i]}</th>`
@@ -634,28 +586,6 @@ function renderTable() {
   }
   empty.style.display = 'none';
 
-  if (!DATA_HAS_MONTHLY) {
-    tbody.innerHTML = sorted.map((d, i) => {
-      const tableReceivesBonus = receivesBonus(d);
-      const recebeTag = tableReceivesBonus ? `<span class="badge-recebe">recebe</span>` : ``;
-      const kmLabel = d.kmTotal ? d.kmTotal.toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : 'Sem movimentacao';
-      const rankingLabel = d.rankingPosition ?? i + 1;
-      const scoreLabel = d.totalScore !== null ? d.totalScore.toLocaleString('pt-BR') : '-';
-      const monthsLabel = d.monthsParticipated !== null ? d.monthsParticipated : '-';
-
-      return `<tr onclick="openModal('${d.name.replace(/'/g,"\\'")}')">
-        <td style="color:var(--muted);font-size:12px;width:40px">${i+1}</td>
-        <td class="driver-name">${d.name}${recebeTag}</td>
-        <td class="right" style="color:var(--muted);font-size:12px">${rankingLabel}</td>
-        <td class="right" style="font-family:'JetBrains Mono',monospace">${scoreLabel}</td>
-        <td class="right"><span class="score-pill ${scoreClass(d.avg)}">${d.avg}</span></td>
-        <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${kmLabel}</td>
-        <td class="right" style="color:var(--muted);font-size:12px">${monthsLabel}</td>
-      </tr>`;
-    }).join('');
-    return;
-  }
-
   tbody.innerHTML = sorted.map((d, i) => {
     const ms = tableScore(d);
     const tableReceivesBonus = tableMonth === 'all' ? receivesBonus(d) : ms > 80;
@@ -755,48 +685,6 @@ function openModal(name) {
   const recebeColor = receivesBonus(d) ? 'var(--green)' : 'var(--red)';
   document.getElementById('modalSub').innerHTML = `Média: <strong>${d.avg}</strong> pts · ${d.kmTotal.toLocaleString('pt-BR',{maximumFractionDigits:0})} km rodados · <span style="color:${recebeColor};font-weight:600">${recebeStatus}</span>`;
 
-  if (!DATA_HAS_MONTHLY) {
-    const summaryCards = [
-      ['Posicao', d.rankingPosition ?? '-'],
-      ['Pontuacao', d.totalScore !== null ? d.totalScore.toLocaleString('pt-BR') : '-'],
-      ['Media', d.avg],
-      ['Meses', d.monthsParticipated ?? '-']
-    ];
-    document.getElementById('modalMonths').innerHTML = summaryCards.map(([label, value]) => `
-      <div class="modal-month-card">
-        <div class="modal-month-name">${label}</div>
-        <div class="modal-month-score" style="color:${scoreColor(d.avg)}">${value}</div>
-      </div>
-    `).join('');
-
-    if (modalChartRef) modalChartRef.destroy();
-    const ctx = document.getElementById('modalChart');
-    modalChartRef = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Media'],
-        datasets: [{
-          label: 'Nota',
-          data: [d.avg],
-          backgroundColor: scoreColor(d.avg),
-          borderRadius: 4
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          x: { ticks: { color: chartTickColor(), font: { family: 'Barlow', size: 13 } }, grid: { color: chartGridColor() } },
-          y: { min: 0, max: 100, ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } }
-        },
-        plugins: { legend: { display: false } }
-      }
-    });
-
-    document.getElementById('modalOverlay').classList.add('open');
-    return;
-  }
-
   const monthsHtml = MONTHS.map((m, i) => {
     const s  = d.scores[i];
     const km = d.kms[i];
@@ -862,7 +750,6 @@ let currentWorstOp = 'all';
 let currentWorstMonth = 'all';
 
 function setWorstMonth(month) {
-  if (!DATA_HAS_MONTHLY && month !== 'all') month = 'all';
   currentWorstMonth = month;
   document.querySelectorAll('#ddWorstMonthMenu .dd-item').forEach(el => el.classList.remove('selected'));
   const sel = document.querySelector(`#ddWorstMonthMenu .dd-item[data-val="${month}"]`);
@@ -940,51 +827,7 @@ function renderWorst20() {
 }
 
 // --- INIT ----------------------------------------------------------------------------
-function renderApp() {
-  renderKPIs();
-  renderCharts();
-  renderWorst20();
-  renderTable();
-}
-
-function updateDataControls() {
-  document.querySelectorAll('.month-btn, #ddTableMonthBtn, #ddWorstMonthBtn, #ddOpBtn, #ddWorstOpBtn')
-    .forEach(el => {
-      el.disabled = !DATA_HAS_MONTHLY;
-      el.classList.toggle('disabled', !DATA_HAS_MONTHLY);
-      el.title = DATA_HAS_MONTHLY ? '' : 'O ranking consolidado nao possui detalhe mensal ou operacao.';
-    });
-}
-
-async function loadRankingJson() {
-  const files = ['Ranking_Motoristas.json', 'Ranking_Motorista.json'];
-  for (const file of files) {
-    try {
-      const response = await fetch(file, { cache: 'no-store' });
-      if (!response.ok) continue;
-      return await response.json();
-    } catch (err) {
-      return null;
-    }
-  }
-  return null;
-}
-
-async function initApp() {
-  const ranking = await loadRankingJson();
-  const rankingDrivers = processRankingDrivers(ranking);
-
-  if (rankingDrivers.length) {
-    setDriverData(rankingDrivers, { hasMonthly: false, summary: ranking.resumo || null });
-    sortKey = 'rankingPosition';
-    sortDir = -1;
-  } else {
-    const fallbackData = typeof DRIVER_DATA !== 'undefined' ? DRIVER_DATA : [];
-    setDriverData(processDrivers(fallbackData), { hasMonthly: true });
-  }
-
-  updateDataControls();
-  renderApp();
-}
-
-initApp();
+renderKPIs();
+renderCharts();
+renderWorst20();
+renderTable();
