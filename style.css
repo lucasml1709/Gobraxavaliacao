@@ -649,7 +649,7 @@ tbody td.driver-name {
 }
 .op-LATA         { background: rgba(255,107,53,0.15);  color: #ff6b35; border: 1px solid rgba(255,107,53,0.3); }
 .op-SIDER        { background: rgba(124,106,247,0.15); color: #7c6af7; border: 1px solid rgba(124,106,247,0.3); }
-.op-GRANELEIRO   { background: rgba(255,211,42,0.15);  color: #ffd32a; border: 1px solid rgba(255,211,42,0.3); }
+.op-CARGA_SECA   { background: rgba(255,211,42,0.15);  color: #ffd32a; border: 1px solid rgba(255,211,42,0.3); }
 .op-CAÇAMBA      { background: rgba(0,230,118,0.15);   color: #00e676; border: 1px solid rgba(0,230,118,0.3); }
 .op-BAÚ_ALUMINIO { background: rgba(0,184,212,0.15);   color: #00b8d4; border: 1px solid rgba(0,184,212,0.3); }
 .op-CÂMARA_FRIA  { background: rgba(100,180,255,0.15); color: #64b4ff; border: 1px solid rgba(100,180,255,0.3); }
