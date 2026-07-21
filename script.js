@@ -67,7 +67,7 @@ function processDrivers(data) {
   }).filter(d => d.avg !== null);
 }
 
-const ALL_DRIVERS = processDrivers(DRIVER_DATA);
+let ALL_DRIVERS = processDrivers(DRIVER_DATA);
 
 // --- STATE ---------------------------------------------------------------------------
 let currentFilter = 'all';
@@ -369,6 +369,7 @@ function renderTableHeader(hasGestores) {
     <th>Motorista</th>
     ${hasGestores ? '<th id="th-gestor" style="font-size:11px">Gestor</th>' : ''}
     ${selectedMonthHeaders}
+    <th style="width:40px"></th>
   `;
 }
 
@@ -671,6 +672,9 @@ function renderTable() {
       <td class="driver-name">${d.name}${recebeTag}</td>
       ${hasGestores ? `<td style="font-size:12px;color:var(--muted)">${d.gestor || '—'}</td>` : ''}
       ${monthCellsHtml}
+      <td class="right" style="width:40px" onclick="event.stopPropagation()">
+        <button class="delete-row-btn" title="Excluir motorista" onclick="openDeleteModal('${d.name.replace(/'/g,"\\'")}')">✕</button>
+      </td>
     </tr>`;
   }).join('');
 }
@@ -826,8 +830,88 @@ function renderWorst20() {
   `</div>`;
 }
 
+// --- DELETE DRIVER ---------------------------------------------------------------------
+let pendingDeleteName = null;
+
+function openDeleteModal(name) {
+  pendingDeleteName = name;
+  document.getElementById('deleteModalName').textContent = `Excluir ${name}?`;
+  document.getElementById('deletePasswordInput').value = '';
+  document.getElementById('deletePasswordError').style.display = 'none';
+  document.getElementById('deleteModalOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('deletePasswordInput').focus(), 50);
+}
+
+function closeDeleteModal(e) {
+  if (e.target === document.getElementById('deleteModalOverlay')) closeDeleteModalBtn();
+}
+
+function closeDeleteModalBtn() {
+  document.getElementById('deleteModalOverlay').classList.remove('open');
+  pendingDeleteName = null;
+}
+
+async function confirmDeleteDriver() {
+  const input = document.getElementById('deletePasswordInput');
+  const errorEl = document.getElementById('deletePasswordError');
+  const confirmBtn = document.querySelector('.delete-confirm-btn');
+  if (!pendingDeleteName) return;
+
+  errorEl.style.display = 'none';
+  confirmBtn.disabled = true;
+  confirmBtn.textContent = 'Excluindo...';
+
+  try {
+    const resp = await fetch('/api/deleted-drivers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: pendingDeleteName, password: input.value })
+    });
+    const data = await resp.json().catch(() => ({}));
+
+    if (!resp.ok) {
+      errorEl.textContent = data.error || 'Senha incorreta.';
+      errorEl.style.display = 'block';
+      input.value = '';
+      input.focus();
+      return;
+    }
+
+    ALL_DRIVERS = ALL_DRIVERS.filter(d => d.name !== pendingDeleteName);
+    renderKPIs();
+    renderCharts();
+    renderWorst20();
+    renderTable();
+    closeDeleteModalBtn();
+  } catch (err) {
+    errorEl.textContent = 'Erro de conexão. Tente novamente.';
+    errorEl.style.display = 'block';
+  } finally {
+    confirmBtn.disabled = false;
+    confirmBtn.textContent = 'Excluir motorista';
+  }
+}
+
 // --- INIT ----------------------------------------------------------------------------
-renderKPIs();
-renderCharts();
-renderWorst20();
-renderTable();
+async function initDashboard() {
+  try {
+    const resp = await fetch('/api/deleted-drivers');
+    if (resp.ok) {
+      const data = await resp.json();
+      const deletedNames = new Set(data.deleted || []);
+      if (deletedNames.size) {
+        ALL_DRIVERS = ALL_DRIVERS.filter(d => !deletedNames.has(d.name));
+      }
+    }
+  } catch (err) {
+    // If the API/storage isn't set up yet, the dashboard still works normally,
+    // just without persisted deletions.
+    console.warn('Não foi possível carregar motoristas excluídos:', err);
+  }
+  renderKPIs();
+  renderCharts();
+  renderWorst20();
+  renderTable();
+}
+
+initDashboard();

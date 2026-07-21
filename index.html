@@ -173,6 +173,7 @@
             <th class="right" onclick="sortBy('avg')">Média</th>
             <th class="right" onclick="sortBy('trend')">Tendência</th>
             <th class="right" onclick="sortBy('km')">Km Total</th>
+            <th style="width:40px"></th>
           </tr>
         </thead>
         <tbody id="tableBody"></tbody>
@@ -198,6 +199,28 @@
     <div class="modal-months" id="modalMonths"></div>
     <div class="chart-title" style="margin-bottom:12px">Evolução da Nota</div>
     <div class="modal-chart-wrap"><canvas id="modalChart"></canvas></div>
+  </div>
+</div>
+
+<!-- DELETE CONFIRMATION MODAL -->
+<div class="modal-overlay" id="deleteModalOverlay" onclick="closeDeleteModal(event)">
+  <div class="modal delete-modal" id="deleteModalContent">
+    <div class="modal-top">
+      <div>
+        <div class="modal-name" id="deleteModalName" style="color:var(--red)"></div>
+        <div style="font-size:13px;color:var(--muted);margin-top:4px">Esta ação não pode ser desfeita.</div>
+      </div>
+      <button class="modal-close" onclick="closeDeleteModalBtn()">✕</button>
+    </div>
+    <div style="margin-bottom:14px">
+      <label style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:8px">Digite a senha para confirmar a exclusão</label>
+      <input type="password" id="deletePasswordInput" class="delete-password-input" placeholder="Senha" autocomplete="new-password" onkeydown="if(event.key==='Enter')confirmDeleteDriver()">
+      <div id="deletePasswordError" class="delete-password-error" style="display:none">Senha incorreta.</div>
+    </div>
+    <div class="delete-modal-actions">
+      <button class="dd-trigger" onclick="closeDeleteModalBtn()">Cancelar</button>
+      <button class="delete-confirm-btn" onclick="confirmDeleteDriver()">Excluir motorista</button>
+    </div>
   </div>
 </div>
 

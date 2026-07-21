@@ -635,6 +635,69 @@ tbody td.driver-name {
 
 .modal-chart-wrap { height: 180px; position: relative; }
 
+/* --- DELETE DRIVER ------------------------------------------------------------------ */
+.delete-row-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.delete-row-btn:hover {
+  border-color: var(--red);
+  color: var(--red);
+  background: rgba(255,71,87,0.1);
+}
+
+.delete-modal { width: 400px; }
+
+.delete-password-input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 2px;
+  outline: none;
+}
+.delete-password-input:focus { border-color: var(--red); }
+
+.delete-password-error {
+  color: var(--red);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.delete-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.delete-confirm-btn {
+  background: var(--red);
+  border: 1px solid var(--red);
+  color: #fff;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.delete-confirm-btn:hover { opacity: 0.88; }
+
 
 .op-tag {
   display: inline-block;
