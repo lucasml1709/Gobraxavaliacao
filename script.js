@@ -362,12 +362,12 @@ function renderTableHeader(hasGestores) {
     : `${tableMonth > 0 ? `<th class="right month-compare-head" onclick="sortBy('${MONTH_KEYS[tableMonth - 1]}')">${MONTHS[tableMonth - 1]}</th>
       <th class="compare-col" onclick="sortBy('tableTrend')">Comparativo</th>` : ''}
       <th class="right month-compare-head" onclick="sortBy('${MONTH_KEYS[tableMonth]}')">${MONTHS[tableMonth]}</th>
-      <th class="right" onclick="sortBy('tableKm')">Km ${MONTH_SHORT[tableMonth]}</th>`;
+      <th class="right km-compare-col" onclick="sortBy('tableKm')">Km ${MONTH_SHORT[tableMonth]}</th>`;
 
   document.getElementById('tableHeaderRow').innerHTML = `
     <th style="width:40px">#</th>
     <th>Motorista</th>
-    ${hasGestores ? '<th id="th-gestor" style="font-size:11px">Gestor</th>' : ''}
+    ${hasGestores ? '<th id="th-gestor" class="gestor-cell" style="font-size:11px">Gestor</th>' : ''}
     ${selectedMonthHeaders}
     <th style="width:40px"></th>
   `;
@@ -665,12 +665,12 @@ function renderTable() {
       : `${tableMonth > 0 ? `${monthCellHtml(d.scores[tableMonth - 1], d.kms[tableMonth - 1], d.ops[tableMonth - 1], true)}
         ${comparisonHtml()}` : ''}
         ${monthCellHtml(d.scores[tableMonth], d.kms[tableMonth], d.ops[tableMonth], true)}
-        <td class="right" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${tableKm(d) ? tableKm(d).toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>`;
+        <td class="right km-compare-col" style="color:var(--muted);font-size:12px;font-family:'JetBrains Mono',monospace">${tableKm(d) ? tableKm(d).toLocaleString('pt-BR', {maximumFractionDigits:0}) + ' km' : '<span style="font-size:11px">Sem movimentação</span>'}</td>`;
 
     return `<tr onclick="openModal('${d.name.replace(/'/g,"\\'")}')">
       <td style="color:var(--muted);font-size:12px;width:40px">${i+1}</td>
       <td class="driver-name">${d.name}${recebeTag}</td>
-      ${hasGestores ? `<td style="font-size:12px;color:var(--muted)">${d.gestor || '—'}</td>` : ''}
+      ${hasGestores ? `<td class="gestor-cell" style="font-size:12px;color:var(--muted)">${d.gestor || '—'}</td>` : ''}
       ${monthCellsHtml}
       <td class="right" style="width:40px" onclick="event.stopPropagation()">
         <button class="delete-row-btn" title="Excluir motorista" onclick="openDeleteModal('${d.name.replace(/'/g,"\\'")}')">✕</button>
