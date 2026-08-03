@@ -40,9 +40,9 @@ function chartGridColor() {
 }
 
 // --- PROCESS DATA --------------------------------------------------------------------
-const MONTHS = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'];
-const MONTH_SHORT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'];
-const MONTH_KEYS = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun'];
+const MONTHS = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'];
+const MONTH_SHORT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul'];
+const MONTH_KEYS = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul'];
 const RANKING_MIN_KM = 1500;
 const WORST_MAX_SCORE = 81;
 
