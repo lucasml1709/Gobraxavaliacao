@@ -207,6 +207,7 @@ main { padding: 24px 32px; }
 }
 .month-toggle-group {
   display: inline-flex;
+  flex-wrap: wrap;
   gap: 0;
   border: 1px solid var(--border);
   border-radius: 4px;
@@ -614,9 +615,12 @@ tbody td.driver-name {
 
 .modal-months {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   margin-bottom: 20px;
+}
+@media (max-width: 640px) {
+  .modal-months { grid-template-columns: repeat(2, 1fr); }
 }
 
 .modal-month-card {
