@@ -7,6 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ranking.css">
 </head>
 <body>
 
@@ -100,6 +101,40 @@
         </div>
       </div>
       <div id="worstGrid"></div>
+    </div>
+  </div>
+
+  <!-- RANKING DE PONTUAÇÃO -->
+  <div class="ranking-section">
+    <div class="ranking-header">
+      <div>
+        <div class="ranking-title">Ranking de Pontuação</div>
+        <div class="ranking-subtitle" id="rankingSubtitle"></div>
+      </div>
+      <div class="ranking-tabs" id="rankingTabs"></div>
+    </div>
+
+    <div class="ranking-podium" id="rankingPodium"></div>
+
+    <div class="table-card">
+      <div class="table-header">
+        <div class="table-title">Classificação</div>
+        <div class="count-badge" id="rankingCountBadge">0 motoristas</div>
+        <div class="search-wrap" style="margin-left:auto">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="rankingSearchInput" placeholder="Pesquisar motorista..." oninput="onRankingSearch()">
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr id="rankingTableHeader"></tr></thead>
+          <tbody id="rankingTableBody"></tbody>
+        </table>
+        <div class="empty-state" id="rankingEmptyState" style="display:none">
+          <div class="emoji">🔍</div>
+          <p>Nenhum motorista encontrado.</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -211,6 +246,22 @@
   </div>
 </div>
 
+<!-- RANKING DETAIL MODAL -->
+<div class="modal-overlay" id="rankingModalOverlay" onclick="closeRankingModal(event)">
+  <div class="modal" id="rankingModalContent">
+    <div class="modal-top">
+      <div>
+        <div class="modal-name" id="rankingModalName"></div>
+        <div style="font-size:13px;color:var(--muted);margin-top:4px" id="rankingModalSub"></div>
+      </div>
+      <button class="modal-close" onclick="closeRankingModalBtn()">✕</button>
+    </div>
+    <div class="modal-months rk-modal-summary" id="rankingModalSummary"></div>
+    <div class="chart-title" style="margin-bottom:0">Detalhamento mês a mês</div>
+    <div id="rankingModalMonths" style="margin-top:12px;border:1px solid var(--border);border-radius:5px;overflow:hidden"></div>
+  </div>
+</div>
+
 <!-- DELETE CONFIRMATION MODAL -->
 <div class="modal-overlay" id="deleteModalOverlay" onclick="closeDeleteModal(event)">
   <div class="modal delete-modal" id="deleteModalContent">
@@ -235,5 +286,7 @@
 
 <script src="driverData.js"></script>
 <script src="script.js"></script>
+<script src="rankingData.js"></script>
+<script src="ranking.js"></script>
 </body>
 </html>

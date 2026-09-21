@@ -1,0 +1,156 @@
+/* =========================================================================
+   RANKING DE PONTUAÇÃO — módulo adicional
+   Reaproveita as variáveis de tema (--bg, --surface, --accent, etc.) e as
+   classes .table-card / .top3-item / .score-pill já definidas em style.css.
+   ========================================================================= */
+
+.ranking-section { margin-bottom: 24px; }
+
+.ranking-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.ranking-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.ranking-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.ranking-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-left: auto;
+}
+
+.rk-tab {
+  background: var(--surface2);
+  border: none;
+  border-right: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Barlow', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.rk-tab:last-child { border-right: none; }
+.rk-tab:hover { background: rgba(0,212,255,0.08); color: var(--accent); }
+.rk-tab.active { background: var(--accent2); color: #fff; }
+.rk-tab[data-tab="geral"].active { background: var(--accent); }
+
+/* Podium (top 3 da aba selecionada) */
+.ranking-podium {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.ranking-podium-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 16px 18px;
+}
+@media (max-width: 900px) {
+  .ranking-podium { grid-template-columns: 1fr; }
+}
+
+/* Pontuação pill (mesma linguagem do score-pill, cor de destaque distinta) */
+.pt-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255,107,53,0.15);
+  color: var(--accent2);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+}
+
+.rk-months-participated {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.rk-month-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+  display: inline-block;
+}
+.rk-month-dot.on { background: var(--green); }
+
+/* Detalhe mensal dentro do modal "Geral" */
+.rk-modal-month-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 70px 70px 80px;
+  gap: 10px;
+  align-items: center;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.rk-modal-month-row:last-child { border-bottom: none; }
+.rk-modal-month-row.header {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.rk-modal-month-row .rk-pos {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--muted);
+}
+.rk-modal-month-row .rk-pos.top10 { color: var(--yellow); }
+.rk-modal-month-row .rk-pos.top3 { color: var(--accent2); }
+.rk-modal-month-row .rk-name-muted { color: var(--muted); }
+.rk-modal-month-row .rk-km { font-family: 'JetBrains Mono', monospace; color: var(--muted); text-align: right; }
+.rk-modal-month-row .rk-nota { text-align: right; font-weight: 600; }
+.rk-modal-month-row .rk-pts { text-align: right; font-weight: 800; color: var(--accent2); font-family: 'Barlow Condensed', sans-serif; font-size: 14px; }
+.rk-modal-month-empty { color: var(--muted); font-style: italic; }
+
+.rk-modal-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+@media (max-width: 640px) {
+  .rk-modal-summary { grid-template-columns: repeat(2, 1fr); }
+}
+
+.rk-rank-cell {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--muted);
+  width: 40px;
+}
+.rk-rank-cell.gold   { color: #ffd700; }
+.rk-rank-cell.silver { color: #c0c0c0; }
+.rk-rank-cell.bronze { color: #cd7f32; }
