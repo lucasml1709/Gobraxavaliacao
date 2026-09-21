@@ -45,7 +45,7 @@
         motorista: e.motorista,
         pontuacao: e.totalPontuacao,
         km: e.totalKm,
-        nota: e.mediaNota,
+        nota: e.mediaNota !== null && e.mediaNota !== undefined ? Math.round(e.mediaNota) : null,
         meses: e.mesesParticipados,
       }));
     }
@@ -193,8 +193,9 @@
     if (!entry) return;
 
     document.getElementById('rankingModalName').textContent = entry.motorista;
+    const mediaNotaArred = entry.mediaNota !== null && entry.mediaNota !== undefined ? Math.round(entry.mediaNota) : null;
     document.getElementById('rankingModalSub').innerHTML =
-      `Participou de <strong>${entry.mesesParticipados}/${MESES.length}</strong> meses · nota média <strong>${entry.mediaNota ?? '—'}</strong> · ${fmtKm(entry.totalKm)} rodados`;
+      `Participou de <strong>${entry.mesesParticipados}/${MESES.length}</strong> meses · nota média <strong>${mediaNotaArred ?? '—'}</strong> · ${fmtKm(entry.totalKm)} rodados`;
 
     const summaryHtml = `
       <div class="modal-month-card">
