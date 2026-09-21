@@ -141,8 +141,8 @@
       head.innerHTML = `
         <th style="width:44px">#</th>
         <th>Motorista</th>
-        <th class="right" onclick="sortRankingBy('meses')">Meses</th>
-        <th class="right" onclick="sortRankingBy('nota')">Nota média</th>
+        <th class="rk-center" onclick="sortRankingBy('meses')">Meses</th>
+        <th class="rk-center" onclick="sortRankingBy('nota')">Nota média</th>
         <th class="right" onclick="sortRankingBy('km')">Km total</th>
         <th class="right" onclick="sortRankingBy('pontuacao')">Pontuação</th>`;
     } else {
@@ -150,7 +150,7 @@
         <th style="width:44px">#</th>
         <th>Motorista</th>
         <th class="right" onclick="sortRankingBy('km')">Km rodado</th>
-        <th class="right" onclick="sortRankingBy('nota')">Nota</th>
+        <th class="rk-center" onclick="sortRankingBy('nota')">Nota</th>
         <th class="right" onclick="sortRankingBy('pontuacao')">Pontuação</th>`;
     }
   }
@@ -172,12 +172,12 @@
     tbody.innerHTML = rows.map((r, i) => {
       const rc = rankClass(r.posicao);
       const cells = rkTab === 'geral'
-        ? `<td class="right">${r.meses}/${MESES.length}</td>
-           <td class="right">${r.nota !== null ? r.nota : '—'}</td>
+        ? `<td class="rk-center">${r.meses}/${MESES.length}</td>
+           <td class="rk-center">${r.nota !== null ? r.nota : '—'}</td>
            <td class="right" style="font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:12px">${fmtKm(r.km)}</td>
            <td class="right"><span class="pt-pill">${fmtNum(r.pontuacao)}</span></td>`
         : `<td class="right" style="font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:12px">${fmtKm(r.km)}</td>
-           <td class="right">${r.nota !== null ? r.nota : '—'}</td>
+           <td class="rk-center">${r.nota !== null ? r.nota : '—'}</td>
            <td class="right"><span class="pt-pill">${fmtNum(r.pontuacao)}</span></td>`;
       return `<tr onclick="openRankingModal('${esc(r.motorista)}')">
         <td class="rk-rank-cell ${rc}">${r.posicao}</td>
@@ -211,7 +211,7 @@
       </div>
       <div class="modal-month-card">
         <div class="modal-month-name">Km total</div>
-        <div class="modal-month-score" style="font-size:22px">${fmtKm(entry.totalKm)}</div>
+        <div class="modal-month-score">${fmtKm(entry.totalKm)}</div>
       </div>`;
     document.getElementById('rankingModalSummary').innerHTML = summaryHtml;
 

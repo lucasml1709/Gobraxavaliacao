@@ -105,13 +105,16 @@
 /* Detalhe mensal dentro do modal "Geral" */
 .rk-modal-month-row {
   display: grid;
-  grid-template-columns: 90px 1fr 70px 70px 80px;
+  grid-template-columns: 70px repeat(4, 1fr);
   gap: 10px;
   align-items: center;
-  padding: 9px 12px;
+  padding: 9px 14px;
   border-bottom: 1px solid var(--border);
   font-size: 12px;
+  text-align: center;
 }
+/* Coluna do mês fica à esquerda; as demais centralizadas */
+.rk-modal-month-row > :first-child { text-align: left; }
 .rk-modal-month-row:last-child { border-bottom: none; }
 .rk-modal-month-row.header {
   font-size: 10px;
@@ -119,6 +122,7 @@
   letter-spacing: 0.8px;
   color: var(--muted);
   font-weight: 700;
+  background: var(--surface2);
 }
 .rk-modal-month-row .rk-pos {
   font-family: 'Barlow Condensed', sans-serif;
@@ -128,11 +132,15 @@
 }
 .rk-modal-month-row .rk-pos.top10 { color: var(--yellow); }
 .rk-modal-month-row .rk-pos.top3 { color: var(--accent2); }
-.rk-modal-month-row .rk-name-muted { color: var(--muted); }
-.rk-modal-month-row .rk-km { font-family: 'JetBrains Mono', monospace; color: var(--muted); text-align: right; }
-.rk-modal-month-row .rk-nota { text-align: right; font-weight: 600; }
-.rk-modal-month-row .rk-pts { text-align: right; font-weight: 800; color: var(--accent2); font-family: 'Barlow Condensed', sans-serif; font-size: 14px; }
-.rk-modal-month-empty { color: var(--muted); font-style: italic; }
+.rk-modal-month-row .rk-km { font-family: 'JetBrains Mono', monospace; color: var(--muted); }
+.rk-modal-month-row .rk-nota { font-weight: 600; }
+.rk-modal-month-row .rk-pts {
+  font-weight: 800;
+  color: var(--accent2);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+}
+.rk-modal-month-empty { color: var(--muted); font-style: italic; text-align: left; }
 
 .rk-modal-summary {
   display: grid;
@@ -140,8 +148,27 @@
   gap: 12px;
   margin-bottom: 18px;
 }
+.rk-modal-summary .modal-month-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.rk-modal-summary .modal-month-score {
+  font-size: 26px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.rk-modal-summary .modal-month-card { padding: 14px 8px; }
 @media (max-width: 640px) {
   .rk-modal-summary { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Colunas centralizadas da tabela de classificação (header + célula juntos) */
+thead th.rk-center,
+tbody td.rk-center {
+  text-align: center;
 }
 
 .rk-rank-cell {
