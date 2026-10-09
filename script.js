@@ -500,16 +500,16 @@ function renderCharts() {
         y: { beginAtZero: true, ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } }
       },
       plugins: { ...chartDefaults.plugins, legend: { display: false } },
+      // Clique/hover valem para a coluna inteira (em qualquer altura), não só na barra
+      interaction: { mode: 'index', intersect: false },
       onClick: (evt, elements) => {
-        if (elements.length > 0) {
-          const score = binValues[elements[0].index];
-          setBinFilter(score, score);
-        } else {
-          clearBinFilter();
+        if (elements.length > 0 && counts[elements[0].index] > 0) {
+          openBinModal(binValues[elements[0].index]);
         }
       },
       onHover: (evt, elements) => {
-        evt.native.target.style.cursor = elements.length ? 'pointer' : 'default';
+        const clicavel = elements.length > 0 && counts[elements[0].index] > 0;
+        evt.native.target.style.cursor = clicavel ? 'pointer' : 'default';
       }
     }
   });
@@ -567,6 +567,57 @@ function renderTop3() {
     </div>`;
   }).join('');
   document.getElementById('top3Container').innerHTML = html;
+}
+
+// --- BIN MODAL (motoristas de uma nota) ----------------------------------------------
+function openBinModal(score) {
+  const drivers = ALL_DRIVERS
+    .filter(d => {
+      const s = monthScore(d);
+      return s !== null && Math.round(s) === score;
+    })
+    .sort((a, b) => monthKm(b) - monthKm(a) || a.name.localeCompare(b.name));
+
+  const monthLabel = globalMonth === 'all' ? 'Todos os meses' : MONTHS[globalMonth];
+  const color = scoreColor(score);
+  const bonus = score > 80
+    ? '<span style="color:var(--green);font-weight:600">✓ Recebem bônus</span>'
+    : '<span style="color:var(--red);font-weight:600">✗ Não recebem bônus</span>';
+
+  document.getElementById('binModalName').innerHTML = `Nota <span style="color:${color}">${score}</span>`;
+  document.getElementById('binModalSub').innerHTML =
+    `<strong>${drivers.length}</strong> motorista${drivers.length === 1 ? '' : 's'} · ${monthLabel} · ${bonus}`;
+
+  const opTags = (op) => op ? op.split(' + ').map(o => {
+    const k = o.trim().replace(/\s/g, '_');
+    return `<span class="op-tag op-${k}">${o.trim()}</span>`;
+  }).join(' ') : '';
+
+  document.getElementById('binModalList').innerHTML = drivers.length
+    ? drivers.map((d, i) => {
+        const km = monthKm(d);
+        const kmLabel = km ? km.toLocaleString('pt-BR', { maximumFractionDigits: 0 }) + ' km' : 'Sem movimentação';
+        const op = monthOp(d);
+        const safe = d.name.replace(/'/g, "\\'");
+        return `<div class="bin-driver-row" onclick="closeBinModalBtn(); openModal('${safe}')">
+          <div class="bin-driver-rank">${i + 1}</div>
+          <div class="bin-driver-info">
+            <div class="bin-driver-name" title="${d.name}">${d.name}</div>
+            <div class="bin-driver-km">${kmLabel}</div>
+          </div>
+          <div class="bin-driver-ops">${opTags(op)}</div>
+        </div>`;
+      }).join('')
+    : '<div class="worst-empty">Nenhum motorista com essa nota.</div>';
+
+  document.getElementById('binModalOverlay').classList.add('open');
+}
+
+function closeBinModal(e) {
+  if (e.target === document.getElementById('binModalOverlay')) closeBinModalBtn();
+}
+function closeBinModalBtn() {
+  document.getElementById('binModalOverlay').classList.remove('open');
 }
 
 // --- TABLE ---------------------------------------------------------------------------
