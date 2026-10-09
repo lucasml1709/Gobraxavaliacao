@@ -453,23 +453,28 @@ function renderCharts() {
     plugins: { legend: { labels: { color: chartTickColor(), font: { family: 'Barlow', size: 12 } } } }
   };
 
-  // Distribution histogram — use monthScore if globalMonth is set
-  const binEdges = [0,10,20,30,40,50,60,70,80,90,101];
-  const binLabels = ['0-9','10-19','20-29','30-39','40-49','50-59','60-69','70-79','80-89','90-100'];
-  const counts = new Array(10).fill(0);
-  ALL_DRIVERS.forEach(d => {
-    const s = monthScore(d);
-    if (s !== null) {
-      const idx = binEdges.findIndex((edge, i) => i < binEdges.length - 1 && s >= binEdges[i] && s < binEdges[i+1]);
-      if (idx >= 0) counts[idx]++;
-    }
-  });
+  // Distribution histogram — uma barra por nota, da menor à maior que existe
+  const scoresList = ALL_DRIVERS
+    .map(d => monthScore(d))
+    .filter(s => s !== null)
+    .map(s => Math.round(s));
 
-  const colors = binLabels.map((_, i) => {
-    const start = i * 10;
-    if (start >= 90) return 'rgba(0,230,118,0.8)';
-    if (start >= 80) return 'rgba(0,212,255,0.8)';
-    if (start >= 60) return 'rgba(255,211,42,0.8)';
+  const minScore = scoresList.length ? Math.min(...scoresList) : 0;
+  const maxScore = scoresList.length ? Math.max(...scoresList) : 0;
+
+  const binLabels = [];
+  const binValues = [];
+  const counts = [];
+  for (let n = minScore; n <= maxScore; n++) {
+    binLabels.push(String(n));
+    binValues.push(n);
+    counts.push(scoresList.filter(s => s === n).length);
+  }
+
+  const colors = binValues.map(n => {
+    if (n >= 90) return 'rgba(0,230,118,0.8)';
+    if (n > 80)  return 'rgba(0,212,255,0.8)';
+    if (n >= 70) return 'rgba(255,211,42,0.8)';
     return 'rgba(255,71,87,0.8)';
   });
 
@@ -478,21 +483,27 @@ function renderCharts() {
     type: 'bar',
     data: {
       labels: binLabels,
-      datasets: [{ label: 'Motoristas', data: counts, backgroundColor: colors, borderRadius: 4, borderSkipped: false }]
+      datasets: [{
+        label: 'Motoristas',
+        data: counts,
+        backgroundColor: colors,
+        borderRadius: 3,
+        borderSkipped: false,
+        categoryPercentage: 0.95,
+        barPercentage: 0.9
+      }]
     },
     options: {
       ...chartDefaults,
       scales: {
-        x: { ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } },
-        y: { ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } }
+        x: { ticks: { color: chartTickColor(), font: { family: 'Barlow' }, maxRotation: 0, autoSkip: true }, grid: { color: chartGridColor() } },
+        y: { beginAtZero: true, ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } }
       },
       plugins: { ...chartDefaults.plugins, legend: { display: false } },
       onClick: (evt, elements) => {
         if (elements.length > 0) {
-          const idx = elements[0].index;
-          const low = binEdges[idx];
-          const high = binEdges[idx + 1] - 1;
-          setBinFilter(low, high);
+          const score = binValues[elements[0].index];
+          setBinFilter(score, score);
         } else {
           clearBinFilter();
         }
@@ -524,7 +535,7 @@ function clearBinFilter() {
 // --- BIN FILTER TAG ---
 function getBinFilterHtml() {
   if (!activeBinFilter) return '';
-  return `<button class="bin-filter-tag" onclick="clearBinFilter()">&times; Notas ${activeBinFilter.low}-${activeBinFilter.high}</button>`;
+  return `<button class="bin-filter-tag" onclick="clearBinFilter()">&times; ${activeBinFilter.low === activeBinFilter.high ? 'Nota ' + activeBinFilter.low : 'Notas ' + activeBinFilter.low + '-' + activeBinFilter.high}</button>`;
 }
 
 function renderTop3() {
