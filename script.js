@@ -256,9 +256,13 @@ function closeAllDropdowns() {
   document.querySelectorAll('.dd-trigger').forEach(b => b.classList.remove('open'));
 }
 
+let searchTimer = null;
 function onSearch() {
-  searchQuery = document.getElementById('searchInput').value.trim();
-  renderTable();
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    searchQuery = document.getElementById('searchInput').value.trim();
+    renderTable();
+  }, 200);
 }
 
 function setTableMonth(month) {
@@ -453,28 +457,23 @@ function renderCharts() {
     plugins: { legend: { labels: { color: chartTickColor(), font: { family: 'Barlow', size: 12 } } } }
   };
 
-  // Distribution histogram — uma barra por nota, da menor à maior que existe
-  const scoresList = ALL_DRIVERS
-    .map(d => monthScore(d))
-    .filter(s => s !== null)
-    .map(s => Math.round(s));
+  // Distribution histogram — use monthScore if globalMonth is set
+  const binEdges = [0,10,20,30,40,50,60,70,80,90,101];
+  const binLabels = ['0-9','10-19','20-29','30-39','40-49','50-59','60-69','70-79','80-89','90-100'];
+  const counts = new Array(10).fill(0);
+  ALL_DRIVERS.forEach(d => {
+    const s = monthScore(d);
+    if (s !== null) {
+      const idx = binEdges.findIndex((edge, i) => i < binEdges.length - 1 && s >= binEdges[i] && s < binEdges[i+1]);
+      if (idx >= 0) counts[idx]++;
+    }
+  });
 
-  const minScore = scoresList.length ? Math.min(...scoresList) : 0;
-  const maxScore = scoresList.length ? Math.max(...scoresList) : 0;
-
-  const binLabels = [];
-  const binValues = [];
-  const counts = [];
-  for (let n = minScore; n <= maxScore; n++) {
-    binLabels.push(String(n));
-    binValues.push(n);
-    counts.push(scoresList.filter(s => s === n).length);
-  }
-
-  const colors = binValues.map(n => {
-    if (n >= 90) return 'rgba(0,230,118,0.8)';
-    if (n > 80)  return 'rgba(0,212,255,0.8)';
-    if (n >= 70) return 'rgba(255,211,42,0.8)';
+  const colors = binLabels.map((_, i) => {
+    const start = i * 10;
+    if (start >= 90) return 'rgba(0,230,118,0.8)';
+    if (start >= 80) return 'rgba(0,212,255,0.8)';
+    if (start >= 60) return 'rgba(255,211,42,0.8)';
     return 'rgba(255,71,87,0.8)';
   });
 
@@ -483,33 +482,27 @@ function renderCharts() {
     type: 'bar',
     data: {
       labels: binLabels,
-      datasets: [{
-        label: 'Motoristas',
-        data: counts,
-        backgroundColor: colors,
-        borderRadius: 3,
-        borderSkipped: false,
-        categoryPercentage: 0.95,
-        barPercentage: 0.9
-      }]
+      datasets: [{ label: 'Motoristas', data: counts, backgroundColor: colors, borderRadius: 4, borderSkipped: false }]
     },
     options: {
       ...chartDefaults,
       scales: {
-        x: { ticks: { color: chartTickColor(), font: { family: 'Barlow' }, maxRotation: 0, autoSkip: true }, grid: { color: chartGridColor() } },
-        y: { beginAtZero: true, ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } }
+        x: { ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } },
+        y: { ticks: { color: chartTickColor(), font: { family: 'Barlow' } }, grid: { color: chartGridColor() } }
       },
       plugins: { ...chartDefaults.plugins, legend: { display: false } },
-      // Clique/hover valem para a coluna inteira (em qualquer altura), não só na barra
-      interaction: { mode: 'index', intersect: false },
       onClick: (evt, elements) => {
-        if (elements.length > 0 && counts[elements[0].index] > 0) {
-          openBinModal(binValues[elements[0].index]);
+        if (elements.length > 0) {
+          const idx = elements[0].index;
+          const low = binEdges[idx];
+          const high = binEdges[idx + 1] - 1;
+          setBinFilter(low, high);
+        } else {
+          clearBinFilter();
         }
       },
       onHover: (evt, elements) => {
-        const clicavel = elements.length > 0 && counts[elements[0].index] > 0;
-        evt.native.target.style.cursor = clicavel ? 'pointer' : 'default';
+        evt.native.target.style.cursor = elements.length ? 'pointer' : 'default';
       }
     }
   });
@@ -535,7 +528,7 @@ function clearBinFilter() {
 // --- BIN FILTER TAG ---
 function getBinFilterHtml() {
   if (!activeBinFilter) return '';
-  return `<button class="bin-filter-tag" onclick="clearBinFilter()">&times; ${activeBinFilter.low === activeBinFilter.high ? 'Nota ' + activeBinFilter.low : 'Notas ' + activeBinFilter.low + '-' + activeBinFilter.high}</button>`;
+  return `<button class="bin-filter-tag" onclick="clearBinFilter()">&times; Notas ${activeBinFilter.low}-${activeBinFilter.high}</button>`;
 }
 
 function renderTop3() {
@@ -569,59 +562,16 @@ function renderTop3() {
   document.getElementById('top3Container').innerHTML = html;
 }
 
-// --- BIN MODAL (motoristas de uma nota) ----------------------------------------------
-function openBinModal(score) {
-  const drivers = ALL_DRIVERS
-    .filter(d => {
-      const s = monthScore(d);
-      return s !== null && Math.round(s) === score;
-    })
-    .sort((a, b) => monthKm(b) - monthKm(a) || a.name.localeCompare(b.name));
-
-  const monthLabel = globalMonth === 'all' ? 'Todos os meses' : MONTHS[globalMonth];
-  const color = scoreColor(score);
-  const bonus = score > 80
-    ? '<span style="color:var(--green);font-weight:600">✓ Recebem bônus</span>'
-    : '<span style="color:var(--red);font-weight:600">✗ Não recebem bônus</span>';
-
-  document.getElementById('binModalName').innerHTML = `Nota <span style="color:${color}">${score}</span>`;
-  document.getElementById('binModalSub').innerHTML =
-    `<strong>${drivers.length}</strong> motorista${drivers.length === 1 ? '' : 's'} · ${monthLabel} · ${bonus}`;
-
-  const opTags = (op) => op ? op.split(' + ').map(o => {
-    const k = o.trim().replace(/\s/g, '_');
-    return `<span class="op-tag op-${k}">${o.trim()}</span>`;
-  }).join(' ') : '';
-
-  document.getElementById('binModalList').innerHTML = drivers.length
-    ? drivers.map((d, i) => {
-        const km = monthKm(d);
-        const kmLabel = km ? km.toLocaleString('pt-BR', { maximumFractionDigits: 0 }) + ' km' : 'Sem movimentação';
-        const op = monthOp(d);
-        const safe = d.name.replace(/'/g, "\\'");
-        return `<div class="bin-driver-row" onclick="closeBinModalBtn(); openModal('${safe}')">
-          <div class="bin-driver-rank">${i + 1}</div>
-          <div class="bin-driver-info">
-            <div class="bin-driver-name" title="${d.name}">${d.name}</div>
-            <div class="bin-driver-km">${kmLabel}</div>
-          </div>
-          <div class="bin-driver-ops">${opTags(op)}</div>
-        </div>`;
-      }).join('')
-    : '<div class="worst-empty">Nenhum motorista com essa nota.</div>';
-
-  document.getElementById('binModalOverlay').classList.add('open');
-}
-
-function closeBinModal(e) {
-  if (e.target === document.getElementById('binModalOverlay')) closeBinModalBtn();
-}
-function closeBinModalBtn() {
-  document.getElementById('binModalOverlay').classList.remove('open');
-}
-
 // --- TABLE ---------------------------------------------------------------------------
-function renderTable() {
+const TABLE_PAGE_SIZE = 50;
+let tableLimit = TABLE_PAGE_SIZE;
+function showMoreRows() {
+  tableLimit += TABLE_PAGE_SIZE;
+  renderTable(true);
+}
+
+function renderTable(keepLimit = false) {
+  if (!keepLimit) tableLimit = TABLE_PAGE_SIZE;
   let filtered = applyFilters(ALL_DRIVERS);
   if (tableMonth !== 'all') {
     filtered = filtered.filter(d => d.scores[tableMonth] !== null);
@@ -649,7 +599,10 @@ function renderTable() {
   }
   empty.style.display = 'none';
 
-  tbody.innerHTML = sorted.map((d, i) => {
+  const visible = sorted.slice(0, tableLimit);
+  const remaining = sorted.length - visible.length;
+
+  tbody.innerHTML = visible.map((d, i) => {
     const ms = tableScore(d);
     const tableReceivesBonus = tableMonth === 'all' ? receivesBonus(d) : ms > 80;
     const recebeTag = tableReceivesBonus ? `<span class="badge-recebe">✓ recebe</span>` : ``;
@@ -738,7 +691,11 @@ function renderTable() {
         <button class="delete-row-btn" title="Excluir motorista" onclick="openDeleteModal('${d.name.replace(/'/g,"\\'")}')">✕</button>
       </td>
     </tr>`;
-  }).join('');
+  }).join('') + (remaining > 0
+    ? `<tr class="show-more-row"><td colspan="20" style="text-align:center;padding:14px">
+        <button class="show-more-btn" onclick="showMoreRows()">Mostrar mais ${Math.min(TABLE_PAGE_SIZE, remaining)} (restam ${remaining})</button>
+      </td></tr>`
+    : '');
 }
 
 // --- MODAL ---------------------------------------------------------------------------
