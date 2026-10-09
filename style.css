@@ -1021,3 +1021,45 @@ thead th:hover { color: var(--accent); }
   background: rgba(255,255,255,0.15);
   flex-shrink: 0;
 }
+
+/* BIN MODAL (motoristas por nota) */
+.bin-modal { width: 560px; }
+.bin-driver-list {
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+  max-height: 55vh;
+  overflow-y: auto;
+}
+.bin-driver-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.bin-driver-row:last-child { border-bottom: none; }
+.bin-driver-row:hover { background: var(--surface2); }
+.bin-driver-rank {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--muted);
+  min-width: 28px;
+}
+.bin-driver-info { flex: 1; min-width: 0; }
+.bin-driver-name {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bin-driver-km {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.bin-driver-ops { flex-shrink: 0; }

@@ -234,6 +234,20 @@
   </div>
 </main>
 
+<!-- BIN MODAL (motoristas por nota) -->
+<div class="modal-overlay" id="binModalOverlay" onclick="closeBinModal(event)">
+  <div class="modal bin-modal" id="binModalContent">
+    <div class="modal-top">
+      <div>
+        <div class="modal-name" id="binModalName"></div>
+        <div style="font-size:13px;color:var(--muted);margin-top:4px" id="binModalSub"></div>
+      </div>
+      <button class="modal-close" onclick="closeBinModalBtn()">✕</button>
+    </div>
+    <div class="bin-driver-list" id="binModalList"></div>
+  </div>
+</div>
+
 <!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
   <div class="modal" id="modalContent">
